@@ -14,7 +14,7 @@ Luca Torchaina <br>
  -Hola soy Luca, tengo 21 años y me anoté a este curso no solo para adentrarme al mundo de la tecnología sino para lograr una buena inserción laboral en el futuro. Me agradan los deportes, especialmente el futbol y el ciclismo.
 
 Luis Cisternas Martinotti <br>
- -Hola
+ -Hola soy Luis Cisternas, traductor, 31 años, me matricule en Digital House para adquirir herramientas nuevas que me ayuden en mi vida laboral y porque me gusta el diseño gráfico y me interesa aprender a desarrollarlo de la manera más profesional posible. Me gusta subir cerros en bicicleta y tengo 4 gatos, 3 en la playa y 1 en Santiago
 
 Carlos Steavenz Sánchez <br>
  -Hola
