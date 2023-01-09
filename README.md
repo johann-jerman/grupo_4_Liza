@@ -16,8 +16,8 @@ Luca Torchaina <br>
 Luis Cisternas Martinotti <br>
  -Hola soy Luis Cisternas, traductor, 31 años, me matricule en Digital House para adquirir herramientas nuevas que me ayuden en mi vida laboral y porque me gusta el diseño gráfico y me interesa aprender a desarrollarlo de la manera más profesional posible. Me gusta subir cerros en bicicleta y tengo 4 gatos, 3 en la playa y 1 en Santiago
 
-Carlos Steavenz Sánchez <br>
- -Hola
+Carlos Steven Sánchez <br>
+ - Hola a todos!, Soy Carlos, tengo 32 años, todos me llaman Stip, soy Adminitrador de empresas, trabajo en el area de innovación de una empresa de tecnologia, ingresé al curso de Digital House porque me interesa la programación WEB anhelo iniciar una carrera laboral centrada en el desarrollo.
 
 Micaela Duque <br>
  -Hola! soy Micaela Duque, tengo 35 años y soy Licenciada en Artes Visuales. Me anoté en éste curso con la intención de redireccionar mi carrera retomando mis estudios en Diseño web. Empecé éste curso con mucha espectativa y por suerte todo va viento en popa!!!
