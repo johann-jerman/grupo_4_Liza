@@ -23,7 +23,7 @@ Micaela Duque <br>
  -Hola! soy Micaela Duque, tengo 35 años y soy Licenciada en Artes Visuales. Me anoté en éste curso con la intención de redireccionar mi carrera retomando mis estudios en Diseño web. Empecé éste curso con mucha espectativa y por suerte todo va viento en popa!!!
 
 Farid Jottar <br>
- -Hola
+ -Hola soy Farid Jottar tengo 21 años, estudiante de programacion, me gustan los videojuegos y la musica electronica. me anote al curso ya que desde siempre me interesa la programacion, la tecnologia y mirar al futuro.
 
 
 ### <h3> Listado de Referencias </h3>
