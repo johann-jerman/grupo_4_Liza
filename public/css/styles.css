@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.promotion-conteiner{
+}
+
+.promotion{
+    height: 30px;
+    width: 30vw;
+    background-color: grey;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+.header-conteiner{
+    display: flex;
+}

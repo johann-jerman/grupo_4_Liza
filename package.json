@@ -1,0 +1,22 @@
+{
+  "name": "grupo_4_liza",
+  "version": "1.0.0",
+  "description": "Hola nosotros somos el grupo N°4 y decidimos realizar un proyecto, este consiste en un E-commerce de una tienda de ropa lisa, decidimo que el nombre del proyecto seria Liza ya que es un nombre llamativo facil de recordar y elgante. Nuestro publico objetivo serian personas de 20 a 30 años de ambos generos dispuestos a comprar ropa lisa por medio de internet",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johann-jerman/grupo_4_Liza.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johann-jerman/grupo_4_Liza/issues"
+  },
+  "homepage": "https://github.com/johann-jerman/grupo_4_Liza#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
