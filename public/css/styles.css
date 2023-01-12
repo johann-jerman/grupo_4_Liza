@@ -1,22 +1,182 @@
+/* aca poner los colores
+.color1 {color: #002734;}
+.color2 {color: #00495a;}
+.color3 {color: #00778b;}
+.color4 {color: #00b2c7;}
+.color5 {color: #00fbff;}
+*/
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 
 }
-
+/* comienza el header */
+/* barra promocion superior */
 .promotion-conteiner{
+    background-color: #002734;
+    color: white;
+    height: 25px;
+    padding: 5px;
+    text-align: center;
 }
 
-.promotion{
+/* .promotion{
     height: 30px;
     width: 30vw;
     background-color: grey;
     text-align: center;
     margin: 0 auto;
     border-radius: 15px;
+} */
+/* comienza la navegacion del header */
+header{
+    background-color: #00fbff;
 }
-
 .header-conteiner{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+}
+/* empieza el burger menu */
+.burger-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 27px;
+    height: 27px;
+    border: 1px solid #00495a;
+    border-radius: 10px;
+}
+/* link hombre/mujer */
+.link-genre{
+    display: none;
+}
+.men{
+    border-right: 1px solid black;
+}
+/* logotipo */
+.logo{
+    justify-content: center;
+}
+/* barra de busqueda */
+.search-conteiner {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    order: 1;
+}
+
+
+/* .search-bar{
+    display: flex;
+    width: 20%;
+    border: 1px solid #000;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+.search-bar input{
+    width: 70%;
+    border-radius: 10px;
+    border: none;
+}
+input:focus{
+    border: 1px solid white;
+}
+.search-bar button{
+    width: 22%;
+    border: none;
+    background: #fff;
+    border-radius: 10px;
+    margin-left: 2px;
+} */
+/* listas de carrito perfil */
+.header-conteiner ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 70px;
+}
+.list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style:none;
+    width: 27px;
+    height: 27px;
+    margin: 2px;
+    border: 1px solid #00495a;
+    border-radius: 10px;
+}
+
+
+/* aca empieza el footer */
+.footer-conteiner{
+    margin: 0 auto;
+    padding: 5px;
+    color: white;
+    background-color: #00778b;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+footer li{
+    list-style:none;
+
+}
+.footer-img{
+    width: 50xp;
+    height: 50px;
+}
+
+@media (min-width: 768px){
+    .promotion-conteiner{
+        width: 50vw;
+        margin: 0 auto;
+        border-radius: 20px;
+    }
+
+    /* aca comiensa el header */
+    .burger-menu{
+        display: none;
+    }
+
+    .link-genre{
+        display: flex;
+    }
+    .search-conteiner{
+        width: 30%;
+        max-width: 700px;
+        order: 0;
+    }
+
+    /* aca empiesa el footer */
+    footer{
+        display: flex;
+    }
+    .footer-conteiner{
+        margin: 0;
+        width: 20vw;
+        border-right: 1px solid black;
+    }
+    .footer-img{
+        width: 40xp;
+        height: 40px;
+    }
+}
+
+@media (min-width: 1024px){
+    /* aca empiesa el footer */
+    footer{
+        display: flex;
+    }
+    .footer-conteiner{
+        margin: 0;
+        width: 20vw;
+        border-right: 1px solid black;
+    }
 }

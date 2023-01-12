@@ -5,39 +5,108 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/28e80e8067.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Liza</title>
   </head>
   <body>
     <header>
-        <div class="promotion-conteiner">
-            <p class="promotion">Tres cuotas sin interes</p>
-        </div>
+      <!-- marcador de promocion superior -->
+      <div class="promotion-conteiner">
+        <p class="promotion">Tres cuotas sin interes</p>
+      </div>
+      <!-- comienza el header -->
       <div class="header-conteiner">
-        <div>
-          <a href="">Hombres</a>
-          <a href="">Mujeres</a>
+        <!-- burger menu para movile -->
+        <div class="burger-menu">
+          <i class="fa-solid fa-bars"></i>
         </div>
-        <a href="./index.html">
+        <!-- linkeado de hombres y Mujeres para desktop -->
+        <div class="link-genre">
+          <a class="men" href="/men">Hombres</a>
+          <a href="/women">Mujeres</a>
+        </div>
+        <!-- Logo de Liza -->
+        <a class="logo" href="/">
           <img
             src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fimg-corp.com%2F&psig=AOvVaw3mITeba2mn9DUq9TqiejML&ust=1673392597320000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCOCJwavPu_wCFQAAAAAdAAAAABAE"
             alt="logo Liza"
           />
         </a>
         <!-- barra de busqueda -->
-        <div>
-          <button></button>
-          <input type="search" />
+        <div class="search-conteiner">
+          <form action="search-bar">
+            <input type="text" name="q" placeholder="buscar">
+            <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
         </div>
+        <!-- <div class="search-bar">
+          <button >
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <input type="text"  placeholder="buscar"/>
+        </div> -->
         <!-- seccion direcciones -->
         <ul>
-          <li><a href="">carrito de compras</a></li>
-          <li><a href="">login</a></li>
+          <li class="list">
+            <a href="/shopping-cart">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+          </li>
+          <li class="list">
+            <a href="">
+              <i class="fa-solid fa-user"></i>
+            </a>
+          </li>
         </ul>
       </div>
     </header>
 
     <main></main>
 
-    <footer></footer>
+    <footer>
+      <div class="footer-conteiner"><img src="" alt="logo de Liza"></div>
+      <div class="footer-conteiner">
+        <ul>
+          <li>Contactanos</li>
+          <li>Sobre nosotros</li>
+          <li>Encontranos</li>
+        </ul>
+      </div>
+      <div class="footer-conteiner">
+        <ul>
+          <li>Cambios y devoluciones</li>
+          <li>preguntas frecuentes</li>
+          <li>Terminos de uso</li>
+        </ul>
+      </div>
+      <div class="footer-conteiner ">
+        <a href="" target="_blank" >
+          <img src="https://www.pngplay.com/wp-content/uploads/8/Whatsapp-PNG-Images-HD.png" 
+          alt="Logo whatsapp" 
+          class="footer-img">
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" >
+          <img src="https://www.edigitalagency.com.au/wp-content/uploads/new-small-Instagram-logo-full-colour-png-184x184-pixels.png" alt="Logo intagram" 
+          class="footer-img">
+        </a>
+        <a href="https://twitter.com/" target="_blank" >
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png" 
+          alt="Logo twitter" 
+          class="footer-img">
+        </a>
+      </div>
+      <div  class="footer-conteiner">
+        <p>
+          Horario de atencion <br>
+          Lunes a Viernes <br>
+          8:00 am - 5:00pm
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
