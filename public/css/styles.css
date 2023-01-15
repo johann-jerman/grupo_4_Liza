@@ -1,14 +1,15 @@
 /* aca poner los colores
-.color1 {color: #002734;}
-.color2 {color: #00495a;}
-.color3 {color: #00778b;}
-.color4 {color: #00b2c7;}
-.color5 {color: #00fbff;}
+.color1 {color: #f2f2f2;}
+.color2 {color: #005993;}
+.color3 {color: #038487;}
+.color4 {color: #05325b;}
+.color5 {color: #071f41;}
 */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 /* comienza el header */
 /* barra promocion superior */
@@ -18,13 +19,25 @@
   background-color: #00fbff;
 }
 .promotion-conteiner {
+  position: relative;
+
   background-color: #002734;
   color: white;
   height: 25px;
   padding: 5px;
   text-align: center;
+  animation-name: fromto;
+  animation-duration: 10000ms;
+  animation-iteration-count: infinite;
 }
-
+/* pormocion bar animaciones */
+@keyframes fromto{
+  0%{left: 0px;}
+  25%{left: 25%;}
+  50%{right: 25%;}
+  /* 75%{left: 75%;} */
+  /* 100%{left: 100%;} */
+}
 /* .promotion{
     height: 30px;
     width: 30vw;
@@ -66,37 +79,31 @@
 }
 /* barra de busqueda */
 .search-conteiner {
-  width: 100vw;
+  width: 43%;
+  height: 32px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  order: 1;
+  background-color: #fff;
+  border: #fff 1px solid;
+  border-radius: 10px;
 }
 
-/* .search-bar{
-    display: flex;
-    width: 20%;
-    border: 1px solid #000;
-    border-radius: 10px;
-    justify-content: space-between;
+.search-conteiner input {
+  width: 90%;
+  height: 100%;
+  outline: none;
+  justify-content: flex-start;
+  border: none;
+  border-radius: 10px;
 }
 
-.search-bar input{
-    width: 70%;
-    border-radius: 10px;
-    border: none;
+.search-conteiner button {
+  height: 100%;
+  border: none;
+  justify-content: flex-end;
+  border-radius: 10px;
+  background-color: #fff;
+  padding-left: 5px;
 }
-input:focus{
-    border: 1px solid white;
-}
-.search-bar button{
-    width: 22%;
-    border: none;
-    background: #fff;
-    border-radius: 10px;
-    margin-left: 2px;
-} */
 /* listas de carrito perfil */
 .header-conteiner ul {
   display: flex;
@@ -139,6 +146,7 @@ input:focus{
   background-size: contain;
   border-radius: 7px;
 }
+
 .main-nav a p {
   text-align: center;
   background-color: #666;
