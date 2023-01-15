@@ -1,25 +1,38 @@
 /* aca poner los colores
+los colores viejos
 .color1 {color: #002734;}
 .color2 {color: #00495a;}
 .color3 {color: #00778b;}
 .color4 {color: #00b2c7;}
 .color5 {color: #00fbff;}
+
+los colores nuevos
+.color1 {color: #042850 ;}
+.color2 {color: #048484 ;}
+.color3 {color: #045c94 ;}
+.color4 {color: #147c8c ;}
+.color5 {color: #f4f4f4 ;}
+
+font-family: 'Montserrat', sans-serif;
 */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 /* comienza el header */
 /* barra promocion superior */
 .promotion-bar {
   position: relative;
+  font-family: 'Montserrat', sans-serif;
   z-index: 100;
-  background-color: #00fbff;
+  background-color: #042850;
 }
 .promotion-conteiner {
-  background-color: #002734;
-  color: white;
+  background-color: #048484;
+  color: #f4f4f4;
+  font-family: 'Montserrat', sans-serif;
   height: 25px;
   padding: 5px;
   text-align: center;
@@ -35,8 +48,13 @@
 } */
 /* comienza la navegacion del header */
 
+a{
+  color:#f4f4f4
+}
+
 .header-conteiner {
-  background-color: #00b2c7;
+  background-color: #045c94;
+  font-family: 'Montserrat', sans-serif;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -47,10 +65,10 @@
 .burger-menu {
   display: flex;
   justify-content: center;
+  font-family: 'Montserrat', sans-serif;
   align-items: center;
   width: 27px;
   height: 27px;
-  border: 1px solid #00495a;
   border-radius: 10px;
 }
 /* link hombre/mnoujer */
@@ -58,12 +76,19 @@
   display: none;
 }
 .men {
-  border-right: 1px solid black;
+  border-right: 4px solid #f4f4f4;
 }
 /* logotipo */
 .logo {
   justify-content: center;
 }
+
+.size-logo{
+  width: 60px;
+  height: 55px;
+}
+
+
 /* barra de busqueda */
 .search-conteiner {
   width: 100vw;
@@ -112,7 +137,6 @@ input:focus{
   width: 27px;
   height: 27px;
   margin: 2px;
-  border: 1px solid #00495a;
   border-radius: 10px;
 }
 /* aca empieza el main */
@@ -122,16 +146,17 @@ input:focus{
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: #00fbff;
+  background-color: #f4f4f4;
   padding: 15px;
 }
 .main-nav {
   width: 65vw;
   max-width: 275px;
   height: 40vh;
-  border: 1px solid gray;
+  border: 1px solid #045c94;
   border-radius: 7px;
   margin: 15px;
+  box-shadow: 0px 0px 10px #042850;
 }
 .img-main {
   width: 100%;
@@ -141,11 +166,13 @@ input:focus{
 }
 .main-nav a p {
   text-align: center;
-  background-color: #666;
+  background-color: #042850;
   border-radius: 10px;
+  box-shadow: 0px 0px 10px #042850;
 }
 .main-nav a p:hover {
-  background-color: purple;
+  background-color: #045c94;
+  box-shadow: 0px 0px 10px #042850;
 }
 /* aca comienza la seccion favoritas y ofertas */
 h2 {
@@ -181,10 +208,9 @@ h2 {
 .footer-conteiner {
   margin: 0 auto;
   padding: 5px;
-  color: white;
-  background-color: #00778b;
+  color: #f4f4f4;
+  background-color: #042850;
   text-align: center;
-  border-bottom: 1px solid black;
 }
 footer li {
   list-style: none;
@@ -253,6 +279,9 @@ footer li {
   .footer-conteiner {
     margin: 0;
     width: 20vw;
-    border-right: 1px solid black;
   }
+}
+
+.size-text-footer{
+  font-size: small;
 }
