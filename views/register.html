@@ -5,13 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/register.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/28e80e8067.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap"
+      rel="stylesheet"
+    />
     <title>Liza</title>
   </head>
   <body>
@@ -34,27 +43,17 @@
           <a href="/women">Mujeres</a>
         </div>
         <!-- Logo de Liza -->
-        <a class="logo" href="">
-          <img class="size-logo"
-            src="/images/logoLIZA.jpg"
-            alt="logo Liza"
-          />
+        <a class="logo" href="/">
+          <img class="size-logo" src="/images/logoLIZA.jpg" alt="logo Liza" />
         </a>
         <!-- barra de busqueda -->
         <div class="search-conteiner">
-          <form action="search-bar">
-            <input type="text" name="q" placeholder="buscar" />
-            <button type="submit">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </form>
-        </div>
-        <!-- <div class="search-bar">
-          <button >
+          <input type="text" name="q" placeholder="buscar" />
+          <button type="submit">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
-          <input type="text"  placeholder="buscar"/>
-        </div> -->
+        </div>
+
         <!-- seccion direcciones -->
         <ul>
           <li class="list">
@@ -63,25 +62,19 @@
             </a>
           </li>
           <li class="list">
-            <a href="">
+            <a href="/register">
               <i class="fa-solid fa-user"></i>
             </a>
           </li>
         </ul>
       </div>
     </header>
-
     <main>
-        <h2>Crear nueva cuenta de cliente</h2>
-        <h3>Crear nueva cuenta </h3>
-      <form class="form" action="/">
+      <h2>Crear nueva cuenta de cliente</h2>
+      <h3>Crear nueva cuenta</h3>
+      <form class="form" action="/login">
         <label for="name">Nombres * </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Nombres"
-        />
+        <input type="text" id="name" name="name" placeholder="Nombres" />
 
         <label for="surname">Apellidos * </label>
         <input
@@ -92,14 +85,14 @@
           minlength="4"
         />
         <div>
-            <input
-              type="checkbox"
-              id="suscribe-newsletter"
-              name="suscribe-newsletter"
-              value="suscribe-newsletter"
-              class="user-option"
-            />Suscribirme al Newsletter
-          </div>
+          <input
+            type="checkbox"
+            id="suscribe-newsletter"
+            name="suscribe-newsletter"
+            value="suscribe-newsletter"
+            class="user-option"
+          />Suscribirme al Newsletter
+        </div>
 
         <label for="email">Correo Electrónico *</label>
         <input
@@ -113,7 +106,11 @@
         <input type="password" id="password" name="password" />
 
         <label for="confirm-password">Confirmar Contraseña *</label>
-        <input type="confirm-password" id="confirm-password" name="confirm-password" />
+        <input
+          type="confirm-password"
+          id="confirm-password"
+          name="confirm-password"
+        />
 
         <h4>*Campos requeridos</h4>
 
@@ -121,51 +118,53 @@
       </form>
     </main>
     <footer>
-        <div class="footer-conteiner"><img class="size-logo" src="/images/logoLIZA.jpg" alt="logo de Liza" /></div>
-        <div class="footer-conteiner">
-          <ul>
-            <li class="size-text-footer">Contactanos</li>
-            <li class="size-text-footer">Sobre nosotros</li>
-            <li class="size-text-footer">Encontranos</li>
-          </ul>
-        </div>
-        <div class="footer-conteiner">
-          <ul>
-            <li class="size-text-footer">Cambios y devoluciones</li>
-            <li class="size-text-footer">preguntas frecuentes</li>
-            <li class="size-text-footer">Terminos de uso</li>
-          </ul>
-        </div>
-        <div class="footer-conteiner">
-          <a href="" target="_blank">
-            <img
-              src="https://www.pngplay.com/wp-content/uploads/8/Whatsapp-PNG-Images-HD.png"
-              alt="Logo whatsapp"
-              class="footer-img"
-            />
-          </a>
-          <a href="https://www.instagram.com/" target="_blank">
-            <img
-              src="https://www.edigitalagency.com.au/wp-content/uploads/new-small-Instagram-logo-full-colour-png-184x184-pixels.png"
-              alt="Logo intagram"
-              class="footer-img"
-            />
-          </a>
-          <a href="https://twitter.com/" target="_blank">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png"
-              alt="Logo twitter"
-              class="footer-img"
-            />
-          </a>
-        </div>
-        <div class="footer-conteiner">
-          <p class="size-text-footer">
-            Horario de atencion <br />
-            Lunes a Viernes <br />
-            8:00 am - 5:00pm
-          </p>
-        </div>
-      </footer>
+      <div class="footer-conteiner">
+        <img class="size-logo" src="/images/logoLIZA.jpg" alt="logo de Liza" />
+      </div>
+      <div class="footer-conteiner">
+        <ul>
+          <li class="size-text-footer">Contactanos</li>
+          <li class="size-text-footer">Sobre nosotros</li>
+          <li class="size-text-footer">Encontranos</li>
+        </ul>
+      </div>
+      <div class="footer-conteiner">
+        <ul>
+          <li class="size-text-footer">Cambios y devoluciones</li>
+          <li class="size-text-footer">preguntas frecuentes</li>
+          <li class="size-text-footer">Terminos de uso</li>
+        </ul>
+      </div>
+      <div class="footer-conteiner">
+        <a href="" target="_blank">
+          <img
+            src="https://www.pngplay.com/wp-content/uploads/8/Whatsapp-PNG-Images-HD.png"
+            alt="Logo whatsapp"
+            class="footer-img"
+          />
+        </a>
+        <a href="https://www.instagram.com/" target="_blank">
+          <img
+            src="https://www.edigitalagency.com.au/wp-content/uploads/new-small-Instagram-logo-full-colour-png-184x184-pixels.png"
+            alt="Logo intagram"
+            class="footer-img"
+          />
+        </a>
+        <a href="https://twitter.com/" target="_blank">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png"
+            alt="Logo twitter"
+            class="footer-img"
+          />
+        </a>
+      </div>
+      <div class="footer-conteiner">
+        <p class="size-text-footer">
+          Horario de atencion <br />
+          Lunes a Viernes <br />
+          8:00 am - 5:00pm
+        </p>
+      </div>
+    </footer>
   </body>
 </html>

@@ -19,7 +19,7 @@ font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 /* comienza el header */
 /* barra promocion superior */
@@ -38,25 +38,25 @@ font-family: 'Montserrat', sans-serif;
   animation-name: fromto;
   animation-duration: 30000ms;
   animation-iteration-count: infinite;
+  border-radius: 20px;
 }
 /* pormocion bar animaciones */
-@keyframes fromto{
-  0%{left: 75%;}
-  /* 50%{left: -100%;} */
-  100%{left: -75%;}
+@keyframes fromto {
+  0% {
+    left: 25%;
+  }
+  50% {
+    left: -75%;
+  }
+  100%{
+    left: 25%;
+  }
 }
-/* .promotion{
-    height: 30px;
-    width: 30vw;
-    background-color: grey;
-    text-align: center;
-    margin: 0 auto;
-    border-radius: 15px;
-} */
+
 /* comienza la navegacion del header */
 
-a{
-  color:#f4f4f4;
+a {
+  color: #f4f4f4;
   text-decoration: none;
 }
 
@@ -77,6 +77,9 @@ a{
   height: 27px;
   border-radius: 10px;
 }
+.burger-menu i {
+  color: #f4f4f4;
+}
 /* link hombre/mnoujer */
 .link-genre {
   display: none;
@@ -89,11 +92,10 @@ a{
   justify-content: center;
 }
 
-.size-logo{
+.size-logo {
   width: 60px;
   height: 55px;
 }
-
 
 /* barra de busqueda */
 .search-conteiner {
@@ -283,6 +285,6 @@ footer li {
   }
 }
 
-.size-text-footer{
+.size-text-footer {
   font-size: small;
 }
