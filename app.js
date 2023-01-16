@@ -28,5 +28,5 @@ app.get('/shopping-cart', (req, res)=>{
 });
 
 app.listen(PORT, ()=>{
-    console.log(`server corrinedo en ${PORT}`);
+    console.log(`server corriendo en ${PORT}`);
 });
