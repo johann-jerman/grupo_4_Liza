@@ -1,0 +1,28 @@
+.box-index {
+    width: 55vw;
+    max-width: 260px;
+    margin: 15px;
+    /* margin-bottom: 25px; */
+    border-radius: 7px;
+  }
+  .box-index img {
+    width: 100%;
+    height: 90%;
+    background-size: cover;
+    border-radius: 7px;
+  }
+  .box-index div {
+    text-align: center;
+    background-color: #042850;
+    color: white;
+    border-radius: 10px;
+  }
+
+
+  .index-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 15px;
+  }
+
