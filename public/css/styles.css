@@ -29,22 +29,21 @@ font-family: 'Montserrat', sans-serif;
   background-color: #042850;
 }
 .promotion-conteiner {
+  position: relative;
   background-color: #048484;
   color: #f4f4f4;
   height: 25px;
   padding: 5px;
   text-align: center;
   animation-name: fromto;
-  animation-duration: 10000ms;
+  animation-duration: 30000ms;
   animation-iteration-count: infinite;
 }
 /* pormocion bar animaciones */
 @keyframes fromto{
-  0%{left: 0px;}
-  25%{left: 25%;}
-  50%{right: 25%;}
-  /* 75%{left: 75%;} */
-  /* 100%{left: 100%;} */
+  0%{left: 75%;}
+  /* 50%{left: -100%;} */
+  100%{left: -75%;}
 }
 /* .promotion{
     height: 30px;
@@ -57,7 +56,8 @@ font-family: 'Montserrat', sans-serif;
 /* comienza la navegacion del header */
 
 a{
-  color:#f4f4f4
+  color:#f4f4f4;
+  text-decoration: none;
 }
 
 .header-conteiner {
@@ -201,7 +201,7 @@ h2 {
 }
 .box-index div {
   text-align: center;
-  background-color: #666;
+  background-color: #042850;
   color: white;
   border-radius: 10px;
 }
