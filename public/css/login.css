@@ -151,24 +151,25 @@ a {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  border-radius: 30px;
 }
 
 .form label {
   justify-content: flex-start;
 }
 
-.form input {
-  width: 60%;
+.input{
+  width: 50%;
   height: 32px;
-  padding: 2px;
-  margin: 0.5rem;
-  border: 1px solid #042850;
+  margin-bottom: 10px;
+  border: #045c94 1px solid;
+  border-radius: 20px;
 }
 
-.form input:hover {
-  width: 90%;
-  border: 1px dashed #045c94;
+.input:hover{
+  width: 65%;
   transition: 1000ms;
+  
 }
 .user-type {
   width: 40%;
@@ -181,20 +182,18 @@ a {
 }
 
 .form button {
+  margin: 15px;
+  width: 175px;
+  height: 30px;
   background-color: #045c94;
+  color: #f4f4f4;
+  border-radius: 25px;
   border: none;
-  border-radius: 10px;
   cursor: pointer;
-  padding: 0.8rem 1.2rem;
-  margin: 5px;
-  color: #fafafa;
 }
 .form button:hover {
   background-color: #042850;
-  color: #fafafa;
-  border: 25px;
-  padding: 1rem 1.2rem;
-  transition: 2000ms;
+  transition: 1000ms;
 }
 
 p {

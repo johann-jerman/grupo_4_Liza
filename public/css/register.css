@@ -132,6 +132,10 @@ a {
   border-radius: 10px;
 }
 /* aca empieza el main */
+.register-tittle{
+  text-align: center;
+  margin: 10px 0;
+}
 .form {
   background-color: #ebebeb;
   width: 90%;
@@ -141,8 +145,34 @@ a {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  border-radius: 30px;
 }
-
+.input{
+  width: 50%;
+  height: 32px;
+  margin-bottom: 10px;
+  border: #045c94 1px solid;
+  border-radius: 20px;
+}
+.input:hover{
+  width: 65%;
+  transition: 1000ms;
+  
+}
+.submit{
+  margin: 15px;
+  width: 150px;
+  height: 30px;
+  background-color: #045c94;
+  color: #f4f4f4;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+}
+.submit:hover{
+  background-color: #042850;
+  transition: 1000ms;
+}
 .size-text-footer {
   font-size: small;
 }

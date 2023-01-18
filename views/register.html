@@ -70,11 +70,20 @@
       </div>
     </header>
     <main>
-      <h2>Crear nueva cuenta de cliente</h2>
-      <h3>Crear nueva cuenta</h3>
+      <h2 class="register-tittle">
+        Crear nueva cuenta de cliente
+      </h2>
+      <h3 class="register-tittle">
+        Crear nueva cuenta
+      </h3>
       <form class="form" action="/login">
         <label for="name">Nombres * </label>
-        <input type="text" id="name" name="name" placeholder="Nombres" />
+        <input type="text" 
+        id="name" 
+        name="name" 
+        placeholder="Nombres"
+        class="input" 
+        />
 
         <label for="surname">Apellidos * </label>
         <input
@@ -83,6 +92,7 @@
           name="surname"
           placeholder="Apellidos"
           minlength="4"
+          class="input"
         />
         <div>
           <input
@@ -100,21 +110,25 @@
           id="email"
           name="email"
           placeholder="Correo Electrónico"
+          class="input"
         />
 
         <label for="password">Contraseña *</label>
-        <input type="password" id="password" name="password" />
+        <input type="password" id="password" name="password" 
+        class="input"
+        />
 
         <label for="confirm-password">Confirmar Contraseña *</label>
         <input
           type="confirm-password"
           id="confirm-password"
           name="confirm-password"
+          class="input"
         />
 
         <h4>*Campos requeridos</h4>
 
-        <button type="submit">Crear una cuenta</button>
+        <button class="submit" type="submit">Crear una cuenta</button>
       </form>
     </main>
     <footer>

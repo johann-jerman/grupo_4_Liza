@@ -24,8 +24,8 @@ font-family: 'Montserrat', sans-serif;
 /* comienza el header */
 /* barra promocion superior */
 .promotion-bar {
-  position: relative;
-  z-index: 100;
+  /* position: relative; */
+  /* z-index: 100; */
   background-color: #042850;
 }
 .promotion-conteiner {
@@ -88,9 +88,7 @@ a {
   border-right: 4px solid #f4f4f4;
 }
 /* logotipo */
-.logo {
-  justify-content: center;
-}
+
 
 .size-logo {
   width: 60px;
