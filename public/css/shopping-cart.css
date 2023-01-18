@@ -1,0 +1,9 @@
+.content{
+    display: flex;
+    margin: 40px;
+    width: 100%;
+}
+.detail-shop,.total{
+    width: 50%;
+}
+
