@@ -244,7 +244,7 @@ footer li {
   /* aca comienza el main */
   /* aca comienza la navegacion del main */
   .main-nav {
-    width: 23vw;
+    width: 27vw;
     max-width: none;
   }
   /* aca comienza la seccion ofertas y fav */
@@ -271,7 +271,7 @@ footer li {
   /* aca empieza el main  */
   /* aca empiza el nav main */
   .main-nav {
-
+    width: 22vw;
     height: 50vh;
   }
   /* aca empiesa el footer */

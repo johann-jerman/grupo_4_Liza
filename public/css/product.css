@@ -176,6 +176,20 @@ a {
 .color3{
   background-color: #A67881;
 }
+.add-conteiner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+}
+.add-cart{
+  width: 125px;
+  height: 30px;
+  background-color: #045c94;
+  color: #f4f4f4;
+  border: 1px solid #042850;
+  border-radius: 10px;
+}
 h3, h4, h5{
   margin: 10px;
   margin-left: 0;
@@ -247,6 +261,7 @@ footer li {
   }
   .main-product{
     width: 30vw;
+    height: 60vh;
   }
   .product-viewer{
     display: flex;
@@ -283,6 +298,9 @@ footer li {
   .offer-conteiner div{
     width: 20vw;
 
+  }
+  .main-product{
+    width: 20vw;
   }
   /* aca empiesa el footer */
   footer {
