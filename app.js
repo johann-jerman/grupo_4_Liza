@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3004
 
 app.use(express.static('public'));
 
+// definiendo rutas
 app.get('/', (req, res)=>{
     res.sendFile(path.resolve(__dirname, './views/index.html'))
 });

@@ -154,7 +154,7 @@ a {
   border: #045c94 1px solid;
   border-radius: 20px;
 }
-.input:hover{
+.input:focus{
   width: 65%;
   transition: 1000ms;
   
