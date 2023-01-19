@@ -149,20 +149,26 @@ a {
 }
 /* aca empieza el main */
 section{
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
     /* justify-content: center; */
-    align-items: center;
+    /* align-items: center; */
     width: 100%;
     border: 1px solid black;
     margin: 15px 0;
 }
-th{
-    margin: 0;    
+.cart-product{
+  width: 100%;
 }
-img{
+.cart-img{
     width: 30vw;
     height: 20vh;
+}
+.color-car{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #045c94;
 }
 /* aca empieza el footer */
 .footer-conteiner {
