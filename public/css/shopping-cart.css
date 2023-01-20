@@ -89,7 +89,13 @@ a {
 .burger-menu i {
   color: #f4f4f4;
 }
+
+
+
 /* link hombre/mnoujer */
+
+
+
 .link-genre {
   display: none;
 }
@@ -104,6 +110,8 @@ a {
 }
 
 /* barra de busqueda */
+
+
 .search-conteiner {
   width: 43%;
   height: 32px;
@@ -130,7 +138,15 @@ a {
   background-color: #fff;
   padding-left: 5px;
 }
+
+
+
+
 /* listas de carrito perfil */
+
+
+
+
 .header-conteiner ul {
   display: flex;
   flex-wrap: wrap;
@@ -147,29 +163,100 @@ a {
   margin: 2px;
   border-radius: 10px;
 }
+
+
+
 /* aca empieza el main */
-section{
-    /* display: flex; */
-    /* flex-wrap: wrap; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    width: 100%;
-    border: 1px solid black;
-    margin: 15px 0;
+
+.box-resume {
+  
 }
-.cart-product{
+
+.purchase-data{
+    
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+ td,th{
+
+
+ }
+
+.content{
+  
   width: 100%;
+  display: flex;
+
 }
-.cart-img{
-    width: 30vw;
-    height: 20vh;
+.detail-shop,.total{
+
+  width: 50%;
+
+
 }
-.color-car{
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #045c94;
+
+.box-gray{
+
+    background-color: bisque;
+    width: 500px;
+    text-align: center;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px #042850;
+    padding-bottom: 30px;
 }
+
+.box-gray table{
+  margin: auto;
+
+}
+
+.box-gray tr,th{
+
+display: flex
+  
+}
+
+.box-gray tr{
+  display: table;
+  width: 100%;
+  border-bottom: 1px solid black ;
+  
+  
+
+}
+
+.box-gray td{
+
+      width: 50%;
+}
+
+.price{  
+  text-align: right;
+}
+
+.finish-button{
+margin-top: 30px;
+  color: #fff;
+  background-color: #042850;
+  border-radius: 30px ;
+  padding: 10px 30px;
+
+}
+
+.content-product{
+  display: flex;
+}
+
+
+
+
+
+
+
 /* aca empieza el footer */
 .footer-conteiner {
   margin: 0 auto;
@@ -206,9 +293,23 @@ footer li {
     max-width: 700px;
     order: 0;
   }
-  /* aca comienza el main */
 
-  /* aca empiesa el footer */
+h3{
+  text-align: left;
+  padding: 15px;
+}
+
+.subtitle2{
+  text-align: left;
+  padding: 8px;
+}
+
+
+
+
+
+
+  /* aca empieza el footer */
   footer {
     display: flex;
   }
