@@ -168,171 +168,35 @@ a {
 
 /* aca empieza el main */
 
-.box-resume {
-  
-}
-
-.purchase-data{
-    
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-}
- td,th{
-
-
- }
-
-.content{
-  
-  width: 100%;
-  display: flex;
-
-}
-.detail-shop,.total{
-
-  width: 50%;
-
-
-}
-
-.box-gray{
-
-    background-color: bisque;
-    width: 500px;
-    text-align: center;
-    margin: auto;
-    border-radius: 15px;
-    box-shadow: 0px 0px 10px #042850;
-    padding-bottom: 30px;
-}
-
-.box-gray table{
-  margin: auto;
-
-}
-
-.box-gray tr,th{
-
-display: flex
-  
-}
-
-.box-gray tr{
-  display: table;
-  width: 100%;
-  border-bottom: 1px solid black ;
-  
-  
-
-}
-
-.box-gray td{
-
-      width: 50%;
-}
-
-.price{  
-  text-align: right;
-}
-
-.finish-button{
+main{
 margin-top: 30px;
-  color: #fff;
-  background-color: #042850;
-  border-radius: 30px ;
-  padding: 10px 30px;
-
+margin-bottom: 30px;
 }
 
-.content-product{
-  display: flex;
+.grid-cart{
+  border: 3px solid #333;
+  background-color: aquamarine;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: ;
+  gap: 20px;
 }
 
-
-
-
-
-
-
-/* aca empieza el footer */
-.footer-conteiner {
-  margin: 0 auto;
-  padding: 5px;
-  color: #f4f4f4;
-  background-color: #042850;
-  text-align: center;
-}
-footer li {
-  list-style: none;
-}
-.footer-img {
-  width: 50xp;
-  height: 50px;
+.product-detail{
+  background-color: peru;
 }
 
-@media (min-width: 768px) {
-  .promotion-conteiner {
-    width: 50vw;
-    margin: 0 auto;
-    border-radius: 20px;
-  }
-
-  /* aca comiensa el header */
-  .burger-menu {
-    display: none;
-  }
-
-  .link-genre {
-    display: flex;
-  }
-  .search-conteiner {
-    width: 30%;
-    max-width: 700px;
-    order: 0;
-  }
-
-h3{
-  text-align: left;
-  padding: 15px;
+.grid-product{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  object-fit: contain;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+ 
+img{
+  width: 100%;
+  object-fit: contain;
 }
 
-.subtitle2{
-  text-align: left;
-  padding: 8px;
-}
-
-
-
-
-
-
-  /* aca empieza el footer */
-  footer {
-    display: flex;
-  }
-  .footer-conteiner {
-    margin: 0;
-    width: 20vw;
-    border-right: 1px solid black;
-  }
-  .footer-img {
-    width: 40xp;
-    height: 40px;
-  }
-}
-
-@media (min-width: 1024px) {
-  /* aca empieza el main  */
-
-  /* aca empiesa el footer */
-  footer {
-    display: flex;
-  }
-  .footer-conteiner {
-    margin: 0;
-    width: 20vw;
-  }
-}
