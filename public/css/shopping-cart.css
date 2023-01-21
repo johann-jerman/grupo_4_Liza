@@ -1,13 +1,5 @@
-/* .content{
-    display: flex;
-    margin: 40px;
-    width: 100%;
-}
-.detail-shop,.total{
-    width: 50%;
-} */
+/* ---- Paleta de colores ----
 
-/* aca poner los colores
 los colores viejos
 .color1 {color: #002734;}
 .color2 {color: #00495a;}
@@ -22,8 +14,8 @@ los colores nuevos
 .color4 {color: #147c8c ;}
 .color5 {color: #f4f4f4 ;}
 
-font-family: 'Montserrat', sans-serif;
-*/
+font-family: 'Montserrat', sans-serif; */
+
 * {
   margin: 0;
   padding: 0;
@@ -32,9 +24,8 @@ font-family: 'Montserrat', sans-serif;
 }
 /* comienza el header */
 /* barra promocion superior */
+
 .promotion-bar {
-  /* position: relative; */
-  /* z-index: 100; */
   background-color: #042850;
 }
 .promotion-conteiner {
@@ -49,7 +40,8 @@ font-family: 'Montserrat', sans-serif;
   animation-iteration-count: infinite;
   border-radius: 20px;
 }
-/* pormocion bar animaciones */
+/* ---- Animaciones promoción bar  ---- */
+
 @keyframes fromto {
   0% {
     left: 25%;
@@ -57,12 +49,12 @@ font-family: 'Montserrat', sans-serif;
   50% {
     left: -75%;
   }
-  100% {
+  100%{
     left: 25%;
   }
 }
 
-/* comienza la navegacion del header */
+/* ---- Navegacion del header ---- */
 
 a {
   color: #f4f4f4;
@@ -77,7 +69,9 @@ a {
   align-items: center;
   height: 65px;
 }
-/* empieza el burger menu */
+
+/* ----Burger menu---- */
+
 .burger-menu {
   display: flex;
   justify-content: center;
@@ -89,12 +83,7 @@ a {
 .burger-menu i {
   color: #f4f4f4;
 }
-
-
-
-/* link hombre/mnoujer */
-
-
+/* ----Link hombre/mujer---- */
 
 .link-genre {
   display: none;
@@ -102,6 +91,7 @@ a {
 .men {
   border-right: 4px solid #f4f4f4;
 }
+
 /* logotipo */
 
 .size-logo {
@@ -109,8 +99,7 @@ a {
   height: 55px;
 }
 
-/* barra de busqueda */
-
+/* ----Barra de busqueda---- */
 
 .search-conteiner {
   width: 43%;
@@ -139,13 +128,7 @@ a {
   padding-left: 5px;
 }
 
-
-
-
-/* listas de carrito perfil */
-
-
-
+/* ---listas de carrito perfil---- */
 
 .header-conteiner ul {
   display: flex;
@@ -165,38 +148,140 @@ a {
 }
 
 
-
-/* aca empieza el main */
+/* ----Main---- */
 
 main{
-margin-top: 30px;
-margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  }
+  .grid-cart{
+    margin: 20px;
+    border: 3px solid #333;
+    background-color: aquamarine;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .product-detail{
+    background-color: peru;
+  }
+  .grid-product{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    object-fit: contain;
+    place-items: center;
+       
+  }
+   
+  .photo{
+    width: 100%;
+    padding: 10px;
+  }
+  .description-product{
+    display: grid;
+    gap: 5px;
+  }
+
+.size-clothing , .colour-clothing{
+  display: flex;
+}
+.colour-clothing-word , .size-clothing-word{
+  width: 70px;
 }
 
-.grid-cart{
-  border: 3px solid #333;
-  background-color: aquamarine;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas: ;
-  gap: 20px;
+.cant{
+  width: 60px;
+  height: 30px;
 }
 
-.product-detail{
-  background-color: peru;
+.colour-clothing-point{
+  width: 20px;
+  background-color: #042850; 
+  border-radius: 30px ;
+  border: none; 
+  
+}
+  .total-price{
+    padding-bottom: 20px;
+    text-align: center;
+  }
+
+
+
+  /* ----Footer---- */
+
+.footer-conteiner {
+  margin: 0 auto;
+  padding: 5px;
+  color: #f4f4f4;
+  background-color: #042850;
+  text-align: center;
+}
+footer li {
+  list-style: none;
+}
+.footer-img {
+  width: 50xp;
+  height: 50px;
 }
 
-.grid-product{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  object-fit: contain;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
+/* ----Diseño adaptativo primer punto de quiebre---- */
+
+@media (min-width: 768px) {
+  .promotion-conteiner {
+    width: 50vw;
+    margin: 0 auto;
+    border-radius: 20px;
+  }
+
+  /* ---Header--- */
+
+  .burger-menu {
+    display: none;
+  }
+
+  .link-genre {
+    display: flex;
+  }
+  .search-conteiner {
+    width: 30%;
+    max-width: 700px;
+    order: 0;
+  }
+  
+  /* ----Footer---- */
+
+  footer {
+    display: flex;
+  }
+  .footer-conteiner {
+    margin: 0;
+    width: 20vw;
+    border-right: 1px solid black;
+  }
+  .footer-img {
+    width: 40xp;
+    height: 40px;
+  }
 }
- 
-img{
-  width: 100%;
-  object-fit: contain;
+
+/* ----Diseño adaptativo segundo punto de quiebre---- */
+
+@media (min-width: 1024px) {
+
+  /*----footer---- */
+
+  footer {
+    display: flex;
+  }
+  .footer-conteiner {
+    margin: 0;
+    width: 20vw;
+  }
 }
+
+.size-text-footer {
+  font-size: small;
+}
+
 

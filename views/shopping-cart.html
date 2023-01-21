@@ -87,15 +87,20 @@
     <!-- cajones con el detalle del producto -->
     <section class="product-detail">
       <div class="grid-product">
-        <img src="https://png.pngtree.com/png-vector/20201208/ourmid/pngtree-question-mark-sign-flat-design-png-image_2521719.jpg" alt="foto del producto">
-        <div>
+        <img class="photo" src="https://png.pngtree.com/png-vector/20201208/ourmid/pngtree-question-mark-sign-flat-design-png-image_2521719.jpg" alt="foto del producto">
+        <div class="description-product">
           <h3>Nombre producto</h3>
-          <p>Talla</p>
-          <p>M</p>
-          <p>color</p>
-          <img src="" alt="color de prendaS">
-        </div>
-        <div class="cant">1</div>
+          <Div class="size-clothing">
+            <p class="size-clothing-word">Talla</p>
+            <p class="size-hand">M</p>
+          </Div>
+          <div class="colour-clothing">
+            <p class="colour-clothing-word">color</p>
+            <button class="colour-clothing-point"></button>
+            <!-- <p class="colour-clothing-point">Negro</p> -->
+          </div>
+          </div>
+          <input class="cant" type="number"/>
         <div class="precio">
           <p>$ 00.000</p>
           <img src="" alt="Papelera">
@@ -105,15 +110,19 @@
     </section>
     <section class="product-detail">
       <div class="grid-product">
-        <img src="https://png.pngtree.com/png-vector/20201208/ourmid/pngtree-question-mark-sign-flat-design-png-image_2521719.jpg" alt="foto del producto" alt="foto del producto">
-        <div>
+        <img class="photo" src="https://png.pngtree.com/png-vector/20201208/ourmid/pngtree-question-mark-sign-flat-design-png-image_2521719.jpg" alt="foto del producto" alt="foto del producto">
+        <div class="description-product">
           <h3>Nombre producto</h3>
-          <p>Talla</p>
-          <p>M</p>
-          <p>color</p>
-          <img src="" alt="color de prendaS">
+          <div class="size-clothing">
+            <p class="size-clothing-word">Talla: </p>
+            <p class="size-hand">M</p>
+          </div>
+          <div class="colour-clothing">
+            <p class="colour-clothing-word">color</p>
+            <button class="colour-clothing-point"></button>
+          </div>
         </div>
-        <div class="cant">1</div>
+        <input class="cant" type="number"/>
         <div class="precio">
           <p>$ 00.000</p>
           <img src="" alt="Papelera">
@@ -135,7 +144,58 @@
 
     </aside>
    </div> 
-  </main>  
+  </main> 
+   
+  <footer>
+    <div class="footer-conteiner"><img class="size-logo" src="/images/logoLIZA.jpg" alt="logo de Liza" /></div>
+    <div class="footer-conteiner">
+      <ul>
+        <li class="size-text-footer">Contactanos</li>
+        <li class="size-text-footer">Sobre nosotros</li>
+        <li class="size-text-footer">Encontranos</li>
+      </ul>
+    </div>
+    <div class="footer-conteiner">
+      <ul>
+        <li class="size-text-footer">Cambios y devoluciones</li>
+        <li class="size-text-footer">preguntas frecuentes</li>
+        <li class="size-text-footer">Terminos de uso</li>
+      </ul>
+    </div>
+    <div class="footer-conteiner">
+      <a href="" target="_blank">
+        <!-- aca link de facebook https://www.pngmart.com/files/15/Circle-Facebook-Logo-PNG-Photo.png -->
+        <img
+          src="https://www.pngplay.com/wp-content/uploads/8/Whatsapp-PNG-Images-HD.png"
+          alt="Logo whatsapp"
+          class="footer-img"
+        />
+      </a>
+      <a href="https://www.instagram.com/" target="_blank">
+        <img
+          src="https://www.edigitalagency.com.au/wp-content/uploads/new-small-Instagram-logo-full-colour-png-184x184-pixels.png"
+          alt="Logo intagram"
+          class="footer-img"
+        />
+      </a>
+      <a href="https://twitter.com/" target="_blank">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png"
+          alt="Logo twitter"
+          class="footer-img"
+        />
+      </a>
+    </div>
+    <div class="footer-conteiner">
+      <p class="size-text-footer">
+        Horario de atencion <br />
+        Lunes a Viernes <br />
+        8:00 am - 5:00pm
+      </p>
+    </div>
+  </footer>
 
 </body>
+
+
 </html>
