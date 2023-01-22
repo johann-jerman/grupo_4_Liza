@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/shopping-cart.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/28e80e8067.js"
       crossorigin="anonymous"
@@ -18,184 +21,208 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Liza</title>
   </head>
-<body>
-  <header>
-
-    <!-- marcador de promocion superior Flotante -->
-    <div class="promotion-bar">
-      <div class="promotion-conteiner">
-        <p class="promotion">Tres cuotas sin interes</p>
-      </div>
-    </div>
-
-    <!-- comienza el header -->
-    <div class="header-conteiner">
-
-      <!-- burger menu para movile -->
-      <div class="burger-menu">
-        <i class="fa-solid fa-bars"></i>
-      </div>
-
-
-      <!-- linkeado de hombres y Mujeres para desktop -->
-      <div class="link-genre">
-        <a class="men" href="/men">Hombres</a>
-        <a href="/women">Mujeres</a>
-      </div>
-
-
-      <!-- Logo de Liza -->
-      <a class="logo" href="/">
-        <img class="size-logo"
-          src="/images/logoLIZA.jpg"
-          alt="logo Liza"
-        />
-      </a>
-
-
-      <!-- barra de busqueda -->
-      <div class="search-conteiner">
-        <input type="text" name="q" placeholder="buscar" />
-        <button type="submit">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-      </div>
-
-      <!-- seccion direcciones -->    
-      <ul>
-        <li class="list">
-          <a href="/shopping-cart">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </a>
-        </li>
-        <li class="list">
-          <a href="/register">
-            <i class="fa-solid fa-user"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </header>
-  
-  <!-- comienza el contenido de pagina -->
-
-  <main>
-  <h3>Carrito de Compras</h3>
-   <div class="grid-cart">
-    <!-- cajones con el detalle del producto -->
-    <section class="product-detail">
-      <div class="grid-product">
-        <img class="photo" src="https://png.pngtree.com/png-vector/20201208/ourmid/pngtree-question-mark-sign-flat-design-png-image_2521719.jpg" alt="foto del producto">
-        <div class="description-product">
-          <h3>Nombre producto</h3>
-          <Div class="size-clothing">
-            <p class="size-clothing-word">Talla</p>
-            <p class="size-hand">M</p>
-          </Div>
-          <div class="colour-clothing">
-            <p class="colour-clothing-word">color</p>
-            <button class="colour-clothing-point"></button>
-            <!-- <p class="colour-clothing-point">Negro</p> -->
-          </div>
-          </div>
-          <input class="cant" type="number"/>
-        <div class="precio">
-          <p>$ 00.000</p>
-          <img src="" alt="Papelera">
-          <img src="" alt="Editar">
+  <body>
+    <header>
+      <!-- marcador de promocion superior Flotante -->
+      <div class="promotion-bar">
+        <div class="promotion-conteiner">
+          <p class="promotion">Tres cuotas sin interes</p>
         </div>
       </div>
-    </section>
-    <section class="product-detail">
-      <div class="grid-product">
-        <img class="photo" src="https://png.pngtree.com/png-vector/20201208/ourmid/pngtree-question-mark-sign-flat-design-png-image_2521719.jpg" alt="foto del producto" alt="foto del producto">
-        <div class="description-product">
-          <h3>Nombre producto</h3>
-          <div class="size-clothing">
-            <p class="size-clothing-word">Talla: </p>
-            <p class="size-hand">M</p>
-          </div>
-          <div class="colour-clothing">
-            <p class="colour-clothing-word">color</p>
-            <button class="colour-clothing-point"></button>
-          </div>
+
+      <!-- comienza el header -->
+      <div class="header-conteiner">
+        <!-- burger menu para movile -->
+        <div class="burger-menu">
+          <i class="fa-solid fa-bars"></i>
         </div>
-        <input class="cant" type="number"/>
-        <div class="precio">
-          <p>$ 00.000</p>
-          <img src="" alt="Papelera">
-          <img src="" alt="Editar">
+
+        <!-- linkeado de hombres y Mujeres para desktop -->
+        <div class="link-genre">
+          <a class="men" href="/men">Hombres</a>
+          <a href="/women">Mujeres</a>
         </div>
+
+        <!-- Logo de Liza -->
+        <a class="logo" href="/">
+          <img class="size-logo" src="/images/logoLIZA.jpg" alt="logo Liza" />
+        </a>
+
+        <!-- barra de busqueda -->
+        <div class="search-conteiner">
+          <input type="text" name="q" placeholder="buscar" />
+          <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <!-- seccion direcciones -->
+        <ul>
+          <li class="list">
+            <a href="/shopping-cart">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+          </li>
+          <li class="list">
+            <a href="/register">
+              <i class="fa-solid fa-user"></i>
+            </a>
+          </li>
+        </ul>
       </div>
-    </section>
-    <aside class="total-price">
-      <h3>Resumen</h3>
-      <div>
-        <p>Estimación de envío e impuestos</p>
-        <p>$ 00.000</p>
-        <p>Subtotal</p>
-        <p>$ 00.000</p>
-        <p>Total del pedido</p>
-        <p>$ 00.000</p>
-        <button>Finalizar Compra</button>
+    </header>
+
+    <!-- comienza el contenido de pagina -->
+
+    <main>
+      <h3>Carrito de Compras</h3>
+      <div class="grid-cart">
+        <!-- cajones con el detalle del producto -->
+        <section class="product-detail">
+          <!-- grilla de producto agregado al carrito-->
+          <div class="grid-product">
+            <img
+              class="photo"
+              src="https://png.pngtree.com/png-vector/20201208/ourmid/pngtree-question-mark-sign-flat-design-png-image_2521719.jpg"
+              alt="foto del producto"
+            />
+            <!--Segundo cajón de la grilla-->
+            <div class="description-product">
+              <h4>Nombre producto</h4>
+              <div class="size-clothing">
+                <p class="size-clothing-word">Talla</p>
+                <p class="size-hand">M</p>
+              </div>
+              <div class="colour-clothing">
+                <p class="colour-clothing-word">color</p>
+                <button class="colour-clothing-point"></button>
+              </div>
+            </div>
+            <!-- Tercer cajon de la grilla-->
+            <input class="cant" type="number" />
+            <!-- cuarto cajon de la grilla-->
+            <div class="price">
+              <div class="container-price">
+                <p class="price-value">$ 00.000</p>
+              </div>
+              <div class="icons">
+                <!-- Papelera -->
+                <i class="fa-sharp fa-solid fa-trash"></i>
+                <!-- Editar -->
+                <i class="fa-sharp fa-solid fa-pen"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="product-detail">
+          <!-- grilla de producto agregado al carrito-->
+          <div class="grid-product">
+            <img
+              class="photo"
+              src="https://png.pngtree.com/png-vector/20201208/ourmid/pngtree-question-mark-sign-flat-design-png-image_2521719.jpg"
+              alt="foto del producto"
+            />
+            <!--Segundo cajón de la grilla-->
+            <div class="description-product">
+              <h4>Nombre producto</h4>
+              <div class="size-clothing">
+                <p class="size-clothing-word">Talla</p>
+                <p class="size-hand">M</p>
+              </div>
+              <div class="colour-clothing">
+                <p class="colour-clothing-word">color</p>
+                <button class="colour-clothing-point"></button>
+              </div>
+            </div>
+            <!-- Tercer cajon de la grilla-->
+            <input class="cant" type="number" />
+            <!-- cuarto cajon de la grilla-->
+            <div class="price">
+              <div class="container-price">
+                <p class="price-value">$ 00.000</p>
+              </div>
+              <div class="icons">
+                <!-- Papelera -->
+                <i class="fa-sharp fa-solid fa-trash"></i>
+                <!-- Editar -->
+                <i class="fa-sharp fa-solid fa-pen"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+        <aside class="total-price">
+          <h3>Resumen</h3>
+          <div class="total-price-grid">
+            <p class="total-colum1">Estimación de envío e impuestos</p>
+            <p class="value-price">$ 00.000</p>
+            <p class="total-colum1">Subtotal</p>
+            <p class="value-price">$ 00.000</p>
+            <p class="total-colum1">Total del pedido</p>
+            <p class="value-price">$ 00.000</p>
+          </div>
+          <button class="finish-shop">Finalizar Compra</button>
+        </aside>
       </div>
+    </main>
 
-    </aside>
-   </div> 
-  </main> 
-   
-  <footer>
-    <div class="footer-conteiner"><img class="size-logo" src="/images/logoLIZA.jpg" alt="logo de Liza" /></div>
-    <div class="footer-conteiner">
-      <ul>
-        <li class="size-text-footer">Contactanos</li>
-        <li class="size-text-footer">Sobre nosotros</li>
-        <li class="size-text-footer">Encontranos</li>
-      </ul>
-    </div>
-    <div class="footer-conteiner">
-      <ul>
-        <li class="size-text-footer">Cambios y devoluciones</li>
-        <li class="size-text-footer">preguntas frecuentes</li>
-        <li class="size-text-footer">Terminos de uso</li>
-      </ul>
-    </div>
-    <div class="footer-conteiner">
-      <a href="" target="_blank">
-        <!-- aca link de facebook https://www.pngmart.com/files/15/Circle-Facebook-Logo-PNG-Photo.png -->
-        <img
-          src="https://www.pngplay.com/wp-content/uploads/8/Whatsapp-PNG-Images-HD.png"
-          alt="Logo whatsapp"
-          class="footer-img"
-        />
-      </a>
-      <a href="https://www.instagram.com/" target="_blank">
-        <img
-          src="https://www.edigitalagency.com.au/wp-content/uploads/new-small-Instagram-logo-full-colour-png-184x184-pixels.png"
-          alt="Logo intagram"
-          class="footer-img"
-        />
-      </a>
-      <a href="https://twitter.com/" target="_blank">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png"
-          alt="Logo twitter"
-          class="footer-img"
-        />
-      </a>
-    </div>
-    <div class="footer-conteiner">
-      <p class="size-text-footer">
-        Horario de atencion <br />
-        Lunes a Viernes <br />
-        8:00 am - 5:00pm
-      </p>
-    </div>
-  </footer>
-
-</body>
-
-
+    <footer>
+      <div class="footer-conteiner">
+        <img class="size-logo" src="/images/logoLIZA.jpg" alt="logo de Liza" />
+      </div>
+      <div class="footer-conteiner">
+        <ul>
+          <li class="size-text-footer">Contactanos</li>
+          <li class="size-text-footer">Sobre nosotros</li>
+          <li class="size-text-footer">Encontranos</li>
+        </ul>
+      </div>
+      <div class="footer-conteiner">
+        <ul>
+          <li class="size-text-footer">Cambios y devoluciones</li>
+          <li class="size-text-footer">preguntas frecuentes</li>
+          <li class="size-text-footer">Terminos de uso</li>
+        </ul>
+      </div>
+      <div class="footer-conteiner">
+        <a href="" target="_blank">
+          <!-- aca link de facebook https://www.pngmart.com/files/15/Circle-Facebook-Logo-PNG-Photo.png -->
+          <img
+            src="https://www.pngplay.com/wp-content/uploads/8/Whatsapp-PNG-Images-HD.png"
+            alt="Logo whatsapp"
+            class="footer-img"
+          />
+        </a>
+        <a href="https://www.instagram.com/" target="_blank">
+          <img
+            src="https://www.edigitalagency.com.au/wp-content/uploads/new-small-Instagram-logo-full-colour-png-184x184-pixels.png"
+            alt="Logo intagram"
+            class="footer-img"
+          />
+        </a>
+        <a href="https://twitter.com/" target="_blank">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png"
+            alt="Logo twitter"
+            class="footer-img"
+          />
+        </a>
+      </div>
+      <div class="footer-conteiner">
+        <p class="size-text-footer">
+          Horario de atencion <br />
+          Lunes a Viernes <br />
+          8:00 am - 5:00pm
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
