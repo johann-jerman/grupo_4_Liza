@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head') %>
+
+</head>
+<body>
+<%- include('./partials/header') %>
+<main>
+    <!-- elegi una opcion para entrar hasta ingresar con contraseña -->
+    <form class="form" action="/">
+      <h2>Elegí una opción para entrar</h2>
+
+      <h3>Ingresar con código</h3>
+      <p>
+        Te vamos a mandar un código por mail para que puedas acceder a todas
+        las funciones de tu cuenta, y si lo deseas que puedas crearte una
+        contraseña más adelante
+      </p>
+
+      <button type="submit">Recibir código por mail</button>
+
+      <h3>Ya tengo código</h3>
+
+      <button type="submit">Ingresar con Google</button>
+    </form>
+    <!-- form con usuario y password -->
+    <form class="form" action="/">
+      <h3>Ingresar con Contraseña</h3>
+      <label for="name">Nombre de usuario:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="nombre de usuario"
+        class="input"
+      />
+
+      <label for="password">Contraseña:</label>
+      <input
+        type="text"
+        id="password"
+        name="password"
+        placeholder="contraseña"
+        class="input"
+      />
+
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+
+<%- include('./partials/footer') %>    
+</body>
+</html>

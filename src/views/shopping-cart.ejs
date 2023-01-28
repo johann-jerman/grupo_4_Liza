@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head') %>
+
+</head>
+<body>
+<%- include('./partials/header') %>
+<main>
+    <div class="grid-cart">
+      <!-- cajones con el detalle del producto -->
+      <section class="product-detail">
+        <h3>Carrito de Compras</h3>
+        <!-- grilla de producto agregado al carrito-->
+        <div class="grid-product">
+          <img
+            class="photo"
+            src="./images/01_Carrito_de_compras.jpg"
+            alt="foto del producto"
+          />
+          <!--Segundo cajón de la grilla-->
+          <div class="description-product">
+            <h4>Remera Gris</h4>
+            <div class="size-clothing">
+              <p class="size-clothing-word">Talla</p>
+              <p class="size-hand">M</p>
+            </div>
+            <div class="colour-clothing">
+              <p class="colour-clothing-word">color</p>
+              <button class="colour-clothing-point"></button>
+            </div>
+          </div>
+          <!-- Tercer cajon de la grilla-->
+          <input class="cant" type="number" />
+          <!-- cuarto cajon de la grilla-->
+          <div class="price">
+            <div class="container-price">
+              <p class="price-value">$ 00.000</p>
+            </div>
+            <div class="icons">
+              <!-- Papelera -->
+              <i class="fa-sharp fa-solid fa-trash"></i>
+              <!-- Editar -->
+              <i class="fa-sharp fa-solid fa-pen"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="product-detail">
+        <!-- grilla de producto agregado al carrito-->
+        <div class="grid-product">
+          <img
+            class="photo"
+            src="./images/02_Carrito_de_compras.jpg"
+            alt="foto del producto"
+          />
+          <!--Segundo cajón de la grilla-->
+          <div class="description-product">
+            <h4>Remera Azul Oceano</h4>
+            <div class="size-clothing">
+              <p class="size-clothing-word">Talla</p>
+              <p class="size-hand">M</p>
+            </div>
+            <div class="colour-clothing">
+              <p class="colour-clothing-word">color</p>
+              <button class="colour-clothing-point"></button>
+            </div>
+          </div>
+          <!-- Tercer cajon de la grilla-->
+          <input class="cant" type="number" />
+          <!-- cuarto cajon de la grilla-->
+          <div class="price">
+            <div class="container-price">
+              <p class="price-value">$ 00.000</p>
+            </div>
+            <div class="icons">
+              <!-- Papelera -->
+              <i class="fa-sharp fa-solid fa-trash"></i>
+              <!-- Editar -->
+              <i class="fa-sharp fa-solid fa-pen"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+      <aside class="total-price">
+        <h5>Resumen</h5>
+        <div class="total-price-grid">
+          <p class="total-colum1">Estimación de envío e impuestos</p>
+          <p class="value-price">$ 00.000</p>
+          <p class="total-colum1">Subtotal</p>
+          <p class="value-price">$ 00.000</p>
+          <p class="total-colum1">Total del pedido</p>
+          <p class="value-price">$ 00.000</p>
+        </div>
+        <div class="button-central">
+          <div class="button">
+            <button class="finish-shop">Finalizar Compra</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+<%- include('./partials/footer') %>    
+</body>
+</html>
