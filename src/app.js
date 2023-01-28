@@ -3,7 +3,10 @@ const app = express();
 const path = require('path');
 const PORT = process.env.PORT || 3004
 
+//seteo de public y template engine
 app.use(express.static('public'));
+app.set('view engine', 'ejs');
+app.set('views', './src/views');
 
 // definiendo rutas
 app.get('/', (req, res)=>{
