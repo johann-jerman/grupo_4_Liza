@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3004
 
 //seteo de public y template engine
 app.use(express.static('public'));
-app.set('view engine', 'ejs');
+app.set('view engine', path.resolve(__dirname, 'views'));
 app.set('views', './src/views');
 
 // definiendo rutas
@@ -32,5 +32,5 @@ app.get('/shopping-cart', (req, res)=>{
 });
 
 app.listen(PORT, ()=>{
-    console.log(`server corriendo en ${PORT}`);
+    console.log(`server corriendo en http://localhost:${PORT}`);
 });
