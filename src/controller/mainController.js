@@ -1,24 +1,38 @@
 const mainController = {
     home : (req, res) => {
-        res.render('index',)
+        res.render('index',{
+            css: './css/styles.css'
+        })
     },
     login : (req, res) => {
-        res.render('login')
+        res.render('login',{
+            css: './css/login.css'
+        })
     },
     register : (req, res) => {
-        res.render('register')
+        res.render('register',{
+            css: './css/register.css'
+        })
     },
     man : (req, res) => {
-        res.render('man')
+        res.render('man',{
+            css: './css/genre.css'
+        })
     },
     women : (req, res) => {
-        res.render('women')
+        res.render('women',{
+            css: './css/genre.css'
+        })
     },
     product : (req, res) => {
-        res.render('product')
+        res.render('product',{
+            css: './css/product.css'
+        })
     },
     shoppingCart : (req, res) => {
-        res.render('shopping-cart')
+        res.render('shopping-cart',{
+            css: './css/shopping-cart.css'
+        })
     },
 };
 
