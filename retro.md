@@ -13,4 +13,21 @@
 ### Dejar de hacer
     Pasar tanto tiempo sin comunicarnos
 
+<br>
+<br>
 
+
+# <h1 align="center"> Grupo_4_Liza </h1>
+
+## <h2 align="center"> Retrospectiva del primer Sprint </h2>
+
+### Comenzar a hacer
+    Reunirnos virtualmente una vez a la semana, con el fin de nivelar los conocimientos,  aclarar dudas y coordinar el trabajo a realizar en el sprint
+### Hacer màs
+    comunicarnos continuamente y apoyarnos en las dudas que tengamos con respecto al curso y el sprint  
+### Continuar haciendo
+    Seguir al día con las entregas de los sprint
+### Hacer menos
+    Dejar pasar el tiempo sin comunicarnos entre todos 
+### Dejar de hacer
+    no utilizar el trello para la asignación de tareas
