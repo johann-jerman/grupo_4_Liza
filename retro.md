@@ -17,9 +17,7 @@
 <br>
 
 
-# <h1 align="center"> Grupo_4_Liza </h1>
-
-## <h2 align="center"> Retrospectiva del primer Sprint </h2>
+## <h2 align="center"> Retrospectiva del segundo Sprint </h2>
 
 ### Comenzar a hacer
     Reunirnos virtualmente una vez a la semana, con el fin de nivelar los conocimientos,  aclarar dudas y coordinar el trabajo a realizar en el sprint
