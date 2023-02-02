@@ -1,0 +1,24 @@
+const productController = {
+    man : (req, res) => {
+        res.render('./products/man',{
+            css: './css/genre.css'
+        })
+    },
+    women : (req, res) => {
+        res.render('./products/women',{
+            css: './css/genre.css'
+        })
+    },
+    product : (req, res) => {
+        res.render('./products/product',{
+            css: './css/product.css'
+        })
+    },
+    shoppingCart : (req, res) => {
+        res.render('./products/shopping-cart',{
+            css: './css/shopping-cart.css'
+        })
+    },
+};
+
+module.exports = productController
