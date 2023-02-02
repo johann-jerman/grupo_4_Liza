@@ -9,6 +9,13 @@ const userController = {
             css: './css/register.css'
         })
     },
+    see: (req, res)=> {
+        res.render('./users/admin',{
+            css: './css/admin.css'
+        })
+    }
+
+    
 };
 
 module.exports = userController
