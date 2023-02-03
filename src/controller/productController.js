@@ -19,7 +19,7 @@ const productController = {
             css: './css/shopping-cart.css'
         })
     },
-    newProduct: (req, res)=> {
+    create: (req, res)=> {
         res.render('./product/newProduct',{
             css: './css/newProduct.css'
         })
