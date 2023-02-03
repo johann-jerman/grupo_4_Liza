@@ -19,6 +19,11 @@ const productController = {
             css: './css/shopping-cart.css'
         })
     },
+    newProduct: (req, res)=> {
+        res.render('./product/newProduct',{
+            css: './css/newProduct.css'
+        })
+    }
 };
 
 module.exports = productController
