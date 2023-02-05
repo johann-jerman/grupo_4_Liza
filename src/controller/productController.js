@@ -21,9 +21,14 @@ const productController = {
     },
     create: (req, res)=> {
         res.render('./products/new-product',{
+<<<<<<< HEAD
             css: './css/.css'
         })
         
+=======
+         css: './css/new-product.css'
+         })
+>>>>>>> 8501840b5668f34c9eba466fd6d038406f2fbeda
     }
 };
 
