@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
-    "first_name": "Doralyn",
+    "first_name": "admin",
     "last_name": "Giovanni",
     "email": "dgiovanni0@slashdot.org",
-    "password": "lRFiOaGUllwL",
+    "password": "admin",
     "status": "admin"
   },
   {
