@@ -13,7 +13,7 @@ router.get('/shopping-cart',productController.shoppingCart);
 router.get('/login',userController.login);
 router.get('/register',userController.register);
 router.get('/admin',userController.see);
-router.get('/newProduct',productController.create);
+router.get('/new-product',productController.create);
 
 
 module.exports = router
