@@ -20,9 +20,9 @@ const productController = {
         })
     },
     create: (req, res)=> {
-        res.render('./product/newProduct',{
-            css: './css/newProduct.css'
-        })
+        res.render('./products/new-product',{
+         css: './css/new-product.css'
+         })
     }
 };
 
