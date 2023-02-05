@@ -10,7 +10,7 @@
     <section>
       <article class="product-article">
         <div class="all-product">
-          <div class="product-viewer">
+          <!-- <div class="product-viewer">
             <img
               src="https://http2.mlstatic.com/D_NQ_NP_645400-MLA52444053312_112022-W.jpg"
               alt="imagen de productos"
@@ -23,49 +23,48 @@
               src="https://sublishop.com.ar/wp-content/uploads/2022/02/09-300x338.png"
               alt="imagen de productos"
             />
-          </div>
+          </div> -->
           <img
-            src="https://http2.mlstatic.com/D_NQ_NP_617084-MLA48699208421_122021-V.jpg"
+            src="/images/<%= producto.image %> "
             alt="imagen principal de producto"
             class="main-product"
           />
         </div>
         <div class="description-product">
-          <h3>Nombre del producto</h3>
-          <h5>$10000</h5>
+          <h3><%= producto.name %> </h3>
+          <h5>$<%= producto.price %> </h5>
           <h4>Talla</h4>
           <div class="size-conteiner">
-            <div class="size">S</div>
-            <div class="size">M</div>
-            <div class="size">L</div>
-            <div class="size">XL</div>
+            <% if (producto.size == 'S') { %>
+              <div class="size">S</div>
+            <% } %>
+            <% if (producto.size == 'L') { %>
+              <div class="size">L</div>
+            <% } %>
+            <% if (producto.size == 'M') { %>
+              <div class="size">M</div>
+            <% } %>
           </div>
           <h4>Color</h4>
-          <div class="color-conteiner">
+          <!-- <div class="color-conteiner">
             <div class="product-color color1"></div>
             <div class="product-color color2"></div>
             <div class="product-color color3"></div>
-          </div>
+          </div> -->
           <div class="add-conteiner">
             <button type="submit" class="add-cart">Agregar al carrito</button>
           </div> 
           <h4>Descripcion</h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam
-            quidem voluptatibus est? Sequi provident soluta quae rem voluptas
-            distinctio cum veniam! Ex nostrum exercitationem nulla animi quam
-            esse at facere?Lorem, ipsum dolor sit amet consectetur adipisicing
-            elit. Ducimus asperiores quam eum voluptate dolorum, praesentium
-            sequi est et incidunt aut illo quisquam non laudantium error id
-            fugit, libero sit magni.
+            <%= producto.decription %> .
           </p>
-          <h4>Cuidados</h4>
+          <!-- <h4>Cuidados</h4>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
             tenetur? Maxime aperiam non quidem, porro a fugiat totam fugit
             quas labore fuga sint ullam necessitatibus eligendi asperiores, ad
             dolorum quaerat.
-          </p>
+          </p> -->
         </div>
       </article>
       <article>

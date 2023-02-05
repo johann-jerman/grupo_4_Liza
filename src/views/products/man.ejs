@@ -9,7 +9,25 @@
 <main>
     <h2 class="genre-tittle">MEN</h2>
     <section class="index-section">
-      <article class="box-index">
+      <% for( let i = 0; i < products.length; i++ ) { %>
+        <% if (products[i].category == 'man') { %>
+          <article class="box-index">
+            <a href="/product/detail/<%= products[i].id %> ">
+              <img
+                src="/images/<%= products[i].image %> "
+                alt="Imagen del Producto"
+              />
+              <div>
+                <p><%= products[i].decription %> </p>
+                <p><%= products[i].price %> </p>
+                <h4><%= products[i].name %> </h4>
+              </div>
+            </a>
+          </article>
+            <% } %>
+          <% } %>
+      
+      <!-- <article class="box-index">
         <a href="/product/detail">
           <img
             src="https://png.pngtree.com/png-vector/20201208/ourmid/pngtree-question-mark-sign-flat-design-png-image_2521719.jpg"
@@ -171,7 +189,7 @@
             <h4>Nombre del Artículo</h4>
           </div>
         </a>
-      </article>
+      </article> -->
     </section>
   </main>
 
