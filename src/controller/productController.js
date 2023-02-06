@@ -36,7 +36,9 @@ const productController = {
          })
     },
     store: (req, res)=> {
-        
+        // TODO: 
+
+        res.redirect('/')
     }
 };
 

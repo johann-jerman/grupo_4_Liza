@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-// const methodOverride =  require('method-override'); 
+const methodOverride =  require('method-override'); 
 const PORT = process.env.PORT || 3004
 
 const mainRoutes = require('./routes/mainRoutes');
@@ -12,8 +12,13 @@ const userRoutes = require('./routes/userRoutes');
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, 'views'));
-// app.use(express.json());
-// app.use(methodOverride('_method')); 
+
+//agregar informacion como json
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// utilizacion de metodo put delete
+app.use(methodOverride('_method')); 
 
 
 app.use(mainRoutes)
