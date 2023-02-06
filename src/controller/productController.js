@@ -34,6 +34,9 @@ const productController = {
         res.render('./products/new-product',{
          css: '/css/new-product.css'
          })
+    },
+    store: (req, res)=> {
+        
     }
 };
 

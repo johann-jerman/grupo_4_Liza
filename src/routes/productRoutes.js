@@ -8,11 +8,12 @@ router.get('/product/man',productController.man);
 router.get('/product/women',productController.women);
 
 //ruta por get muestra de producto
-router.get('/product/detail/:id?',productController.detail);
+router.get('/product/detail/:id',productController.detail);
 
-
-router.get('/product/shopping-cart',productController.shoppingCart);
+//ruta de cracion de producto
 router.get('/product/newProduct',productController.create);
+router.post('/product/newProduct',productController.store);
+router.get('/product/shopping-cart',productController.shoppingCart);
 
 module.exports = router
 
