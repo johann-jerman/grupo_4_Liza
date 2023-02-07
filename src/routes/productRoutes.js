@@ -7,11 +7,11 @@ const productController = require('../controller/productController');
 //configuracion de multer
 const storage = multer.diskStorage({
     destination: (req, file, cb)=>{
-        cb(null, 'public/images/products')
+        cb(null, path.resolve(__dirname, '../public/images/products'))
     },
 
     filename: (req, file, cb)=>{
-        let filename = Date.now() + path.extname(file.originalname)
+        let filename = 'product-' + Date.now() + path.extname(file.originalname)
         cb(null, filename)
     }
 })
@@ -27,7 +27,7 @@ router.get('/product/detail/:id',productController.detail);
 
 //ruta de cracion de producto
 router.get('/product/newProduct',productController.create);
-router.post('/product/newProduct',productController.store);
+router.post('/product/newProduct', upload.single('image'),productController.store);
 
 //rutas del carrito de compra
 router.get('/product/shopping-cart',productController.shoppingCart);

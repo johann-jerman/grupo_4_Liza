@@ -20,7 +20,7 @@ app.use(express.json());
 // utilizacion de metodo put delete
 app.use(methodOverride('_method')); 
 
-
+//uso de rutas
 app.use(mainRoutes)
 app.use(productRoutes)
 app.use(userRoutes)

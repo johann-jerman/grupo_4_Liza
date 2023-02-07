@@ -5,7 +5,8 @@
     "last_name": "Giovanni",
     "email": "dgiovanni0@slashdot.org",
     "password": "admin",
-    "status": "admin"
+    "status": "admin",
+    "image": ""
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "last_name": "Telezhkin",
     "email": "rtelezhkin1@eventbrite.com",
     "password": "5hZsbYsVsZs8",
-    "status": "admin"
+    "status": "admin",
+    "image": ""
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "last_name": "Pley",
     "email": "mpley2@vkontakte.ru",
     "password": "q8gobQKuHJE",
-    "status": "admin"
+    "status": "admin",
+    "image": ""
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "last_name": "Mugg",
     "email": "bmugg3@furl.net",
     "password": "SiS4N8mG",
-    "status": "user"
+    "status": "user",
+    "image": ""
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "last_name": "Jeannenet",
     "email": "zjeannenet4@webs.com",
     "password": "ZlKSkkKidAc",
-    "status": "user"
+    "status": "user",
+    "image": ""
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "last_name": "Probate",
     "email": "mprobate5@reverbnation.com",
     "password": "Cdnkxfu3MUb",
-    "status": "user"
+    "status": "user",
+    "image": ""
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "last_name": "Barkway",
     "email": "gbarkway6@sbwire.com",
     "password": "tTLO2U4Cj",
-    "status": "user"
+    "status": "user",
+    "image": ""
   },
   {
     "id": 8,
@@ -61,7 +68,8 @@
     "last_name": "De Fraine",
     "email": "ddefraine7@columbia.edu",
     "password": "kl9Ufw",
-    "status": "user"
+    "status": "user",
+    "image": ""
   },
   {
     "id": 9,
@@ -69,7 +77,8 @@
     "last_name": "McQuade",
     "email": "rmcquade8@eventbrite.com",
     "password": "uCOreNfpUB5f",
-    "status": "user"
+    "status": "user",
+    "image": ""
   },
   {
     "id": 10,
@@ -77,7 +86,8 @@
     "last_name": "Leckey",
     "email": "gleckey9@odnoklassniki.ru",
     "password": "EY6404ub5z",
-    "status": "user"
+    "status": "user",
+    "image": ""
   },
   {
     "id": 11,
@@ -85,7 +95,8 @@
     "last_name": "Gerbel",
     "email": "mgerbela@booking.com",
     "password": "2WE3lu",
-    "status": "user"
+    "status": "user",
+    "image": ""
   },
   {
     "id": 12,
@@ -93,7 +104,8 @@
     "last_name": "Willets",
     "email": "mwilletsb@goo.gl",
     "password": "CvdvjOc",
-    "status": "user"
+    "status": "user",
+    "image": ""
   },
   {
     "id": 13,
@@ -101,7 +113,8 @@
     "last_name": "Eadington",
     "email": "jeadingtonc@newsvine.com",
     "password": "ubv1qmmwU",
-    "status": "user"
+    "status": "user",
+    "image": ""
   },
   {
     "id": 14,
@@ -109,7 +122,8 @@
     "last_name": "Gliddon",
     "email": "hgliddond@furl.net",
     "password": "ciL4A0ZLp",
-    "status": "user"
+    "status": "user",
+    "image": ""
   },
   {
     "id": 15,
@@ -117,7 +131,8 @@
     "last_name": "Thyer",
     "email": "dthyere@omniture.com",
     "password": "dCXTia6mlb7",
-    "status": "user"
+    "status": "user",
+    "image": ""
   },
   {
     "id": 16,
@@ -125,7 +140,8 @@
     "last_name": "Loughrey",
     "email": "vloughreyf@omniture.com",
     "password": "PJwGogY10qq",
-    "status": "user"
+    "status": "user",
+    "image": ""
   },
   {
     "id": 17,
@@ -133,7 +149,8 @@
     "last_name": "Aysh",
     "email": "kayshg@nydailynews.com",
     "password": "r9TwrQKD",
-    "status": "user"
+    "status": "user",
+    "image": ""
   },
   {
     "id": 18,
@@ -141,7 +158,8 @@
     "last_name": "Baxstair",
     "email": "hbaxstairh@github.com",
     "password": "XAebc0X3",
-    "status": "user"
+    "status": "user",
+    "image": ""
   },
   {
     "id": 19,
@@ -149,7 +167,8 @@
     "last_name": "McGilvra",
     "email": "mmcgilvrai@hostgator.com",
     "password": "vjTdPaKACT53",
-    "status": "user"
+    "status": "user",
+    "image": ""
   },
   {
     "id": 20,
@@ -157,6 +176,7 @@
     "last_name": "Reffe",
     "email": "nreffej@imageshack.us",
     "password": "WNQsX8eo5",
-    "status": "user"
+    "status": "user",
+    "image": ""
   }
 ]
