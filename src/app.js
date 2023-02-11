@@ -22,8 +22,8 @@ app.use(methodOverride('_method'));
 
 //uso de rutas
 app.use(mainRoutes)
-app.use(productRoutes)
-app.use(userRoutes)
+app.use('/product', productRoutes)
+app.use('/user', userRoutes)
 
 // app.use((req, res, next)=>{
 //     res.status(404).render('error');

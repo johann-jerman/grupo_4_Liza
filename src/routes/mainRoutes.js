@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 const mainController = require('../controller/mainController');
-router.get('/',mainController.home);
 
+router.get('/',mainController.home);
 
 // const productController = require('../controller/productController');
 // router.get('/man',productController.man);

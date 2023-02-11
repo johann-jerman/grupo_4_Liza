@@ -9,13 +9,13 @@ const productController = {
     man : (req, res) => {
         res.render('./products/man',{
             css: '/css/genre.css',
-            products: products
+            products
         })
     },
     women : (req, res) => {
         res.render('./products/women',{
             css: '/css/genre.css',
-            products: products
+            products
         })
     },
     // muestra de producto particular
@@ -24,7 +24,7 @@ const productController = {
         
         res.render('./products/detail',{
             css: '/css/product.css',
-            producto: producto
+            producto
         })
     },
     //carrito de compras
@@ -40,11 +40,18 @@ const productController = {
          })
     },
     store: (req, res)=> {
-        let store= req.body
-         
-        products.push(...store, )
+        // TODO:
+        console.log(req.body);
 
-        res.redirect('/')
+        res.send('img cargada!!!')
+    },
+    edit: (req, res)=>{
+        // TODO:
+        res.send('hola mundo')
+    },
+    update: (req, res)=>{
+        // TODO:
+        res.send('hola mundo')
     }
 };
 
