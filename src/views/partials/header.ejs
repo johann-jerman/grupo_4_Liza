@@ -1,49 +1,48 @@
-<body>
-    <header>
-      <!-- marcador de promocion superior -->
-      <div class="promotion-bar">
-        <div class="promotion-conteiner">
-          <p class="promotion">Tres cuotas sin interes</p>
-        </div>
-      </div>
-      <!-- comienza el header -->
-      <div class="header-conteiner">
+<!-- <script src=".header.js"></script> -->
+<body>  
+  <header>
+    <!-- comienza el header -->
+    <div class="header-conteiner">
+      <div class="rows1">
         <!-- burger menu para movile -->
         <div class="burger-menu">
           <i class="fa-solid fa-bars"></i>
         </div>
-        <!-- linkeado de hombres y Mujeres para desktop -->
-        <div class="link-genre">
-          <a class="men" href="/man">Hombres</a>
-          <a href="/women">Mujeres</a>
-        </div>
         <!-- Logo de Liza -->
-        <a class="logo" href="/">
-          <img class="size-logo"
-            src="/images/logoLIZA.jpg"
-            alt="logo Liza"
-          />
-        </a>
-        <!-- barra de busqueda -->
-        <div class="search-conteiner">
-          <input type="text" name="q" placeholder="buscar" />
-          <button type="submit">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
+        <div class="logo">
+          <a href="/">
+            <img class="size-logo" src="/images/LogoLizaText.png" alt="logo Liza" />
+          </a>
         </div>
-
-        <!-- seccion direcciones -->
-        <ul>
-          <li class="list">
-            <a href="/product/shopping-cart">
-              <i class="fa-solid fa-cart-shopping"></i>
-            </a>
-          </li>
-          <li class="list">
-            <a href="/user/register">
-              <i class="fa-solid fa-user"></i>
-            </a>
-          </li>
-        </ul>
       </div>
-    </header>
+      <!-- barra de busqueda -->
+      <div class="search-conteiner">
+        <form class="form">
+          <input type="text" required>
+          <label class="lbl-nombre">
+            <span class="text-nomb">Buscar</span>
+          </label>
+        </form>
+      </div>
+
+      <!-- icono carrito -->
+      <div class="cart">
+          <a href="/product/shopping-cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+        </div>
+      <!-- icono User -->
+      <div class="user">
+          <a href="/user/register">
+          <i class="fa-solid fa-user"></i>
+      </div>
+
+
+    </div>
+    <!-- marcador de promocion superior -->
+    <div class="promotion-bar">
+      <p id="promotion1">Envío Gratis en compras superiores a $25.000</p>
+      <!-- <p id="promotion2">3 x 2 Aprovecha !! </p> -->
+    </div>
+    
+  </header>
