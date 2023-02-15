@@ -40,19 +40,69 @@ const productController = {
          })
     },
     store: (req, res)=> {
-        // TODO:
-        console.log(req.body);
+        let body = req.body
+        let file = req.file
 
-        res.send('img cargada!!!')
+        let newProduct = {
+            ...body,
+            id : Date.now(),
+            image : file ? file.filename : ' ' 
+        }
+
+        products.push(newProduct);
+
+        fs.writeFileSync(productsFilePath ,JSON.stringify(products, null, ' '))
+
+        res.redirect('/product/newProduct')
     },
+    //edicion de producto
     edit: (req, res)=>{
-        // TODO:
-        res.send('hola mundo')
+        let producto = products.find(product => product.id == req.params.id)
+
+        res.render('./products/edit-product',{
+            css: '/css/new-product.css',
+            producto
+        })
     },
     update: (req, res)=>{
-        // TODO:
-        res.send('hola mundo')
-    }
+        let idUrl = req.params.id; 
+        let product = products.find(product => product.id == idUrl);
+        
+        let body = req.body;
+        
+        product.name = body.name;
+        product.decription = body.decription;
+        product.price = body.price;
+        product.size = body.size;
+        product.category = body.category;
+        
+        fs.writeFileSync(productsFilePath ,JSON.stringify(products, null, ' '))
+        
+        res.redirect('/')
+    },
+    // eliminar 1 producto
+    delete: (req, res)=>{
+        let idUrl = req.params.id; 
+        let producto = products.find(product => product.id == idUrl);
+
+        res.render('./products/delete-product',{
+            css: '/css/new-product.css',
+            producto
+        })
+    },
+    erase: (req, res)=>{
+        let idUrl = req.params.id; 
+        let product = products.find(product => product.id == idUrl);
+        let index = products.indexOf(product);
+
+        products.splice(index, 1);
+
+
+        fs.unlinkSync(path.resolve(__dirname, '../../public/images/products/' + product.image));
+        fs.writeFileSync(productsFilePath ,JSON.stringify(products, null, ' '));
+
+        res.redirect('/');
+    } 
 };
 
 module.exports = productController
