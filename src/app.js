@@ -25,10 +25,10 @@ app.use(mainRoutes);
 app.use('/product', productRoutes);
 app.use('/user', userRoutes);
 
-// app.use((req, res, next)=>{
-//     res.status(404).render('error');
-//     next();
-// })
+app.use((req, res, next)=>{
+res.status(404).render('error' , {css:null});
+next();
+})
 
 
 app.listen(PORT, ()=>{
