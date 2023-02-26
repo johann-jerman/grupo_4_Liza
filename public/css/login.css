@@ -22,7 +22,7 @@
 }
 
 /* aca comienza el main  */
-.form {
+.register-form {
   background-color: #ebebeb;
   width: 90%;
   max-width: 900px;
@@ -34,11 +34,11 @@
   border-radius: 30px;
 }
 
-.form label {
+.register-form .register-label {
   justify-content: flex-start;
 }
 
-.input{
+.register-input{
   width: 50%;
   height: 32px;
   margin-bottom: 10px;
@@ -46,7 +46,7 @@
   border-radius: 20px;
 }
 
-.input:hover{
+.register-input:hover{
   width: 65%;
   transition: 1000ms;
   
@@ -61,7 +61,7 @@
   display: block;
 }
 
-.form button {
+.register-form .register-button {
   margin: 15px;
   width: 175px;
   height: 30px;
@@ -71,12 +71,12 @@
   border: none;
   cursor: pointer;
 }
-.form button:hover {
+.register-form .register-button:hover {
   background-color: #042850;
   transition: 1000ms;
 }
 
-p {
+.p {
   text-align: center;
 }
 

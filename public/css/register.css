@@ -17,7 +17,7 @@
   text-align: center;
   margin: 10px 0;
 }
-.form {
+.register-form {
   background-color: #ebebeb;
   width: 90%;
   max-width: 900px;
@@ -28,7 +28,7 @@
   align-items: center;
   border-radius: 30px;
 }
-.input{
+.register-input{
   width: 50%;
   height: 32px;
   margin-bottom: 10px;

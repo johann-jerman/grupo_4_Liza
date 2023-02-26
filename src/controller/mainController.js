@@ -1,7 +1,7 @@
 const mainController = {
     home : (req, res) => {
         res.render('index',{
-            css: './css/styles.css',
+            css: '/css/styles.css',
         })
     },
 };
