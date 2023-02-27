@@ -69,9 +69,10 @@ h2{
   text-decoration: underline;
 }
 
-a{ color: #f4f4f4;
-text-decoration: none;
-padding: 10px !important;}
+a{ 
+  color: #f4f4f4;
+  text-decoration: none;
+}
 
 li{ padding: 10px;}
 
