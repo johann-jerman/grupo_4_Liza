@@ -71,7 +71,7 @@ const productController = {
         let body = req.body;
         
         product.name = body.name;
-        product.decription = body.decription;
+        product.description = body.description;
         product.price = body.price;
         product.size = body.size;
         product.category = body.category;
