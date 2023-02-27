@@ -46,6 +46,13 @@
   color: #f4f4f4;
 }
 
+.github{
+  background-color: #0D1117;
+  padding: 8px;
+  border-radius: 50px;
+  color: #f4f4f4;
+}
+
 .headerfooter {display: flex;
 justify-content: space-between;
 padding: 20px;
@@ -71,7 +78,7 @@ h2{
 
 a{ 
   color: #f4f4f4;
-  text-decoration: none;
+text-decoration: none;
 }
 
 li{ padding: 10px;}
