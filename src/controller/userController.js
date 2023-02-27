@@ -1,7 +1,7 @@
 const userController = {
     login : (req, res) => {
         res.render('./users/login',{
-            css: '/css/login.css'
+            css: '/css/register.css'
         })
     },
     register : (req, res) => {
