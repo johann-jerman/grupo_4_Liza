@@ -26,8 +26,8 @@ app.use('/product', productRoutes);
 app.use('/user', userRoutes);
 
 app.use((req, res, next)=>{
-res.status(404).render('error' , {css:null});
-next();
+    res.status(404).render('error' , {css:null});
+    next();
 })
 
 
