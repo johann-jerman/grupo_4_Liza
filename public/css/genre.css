@@ -27,9 +27,8 @@ font-family: 'Montserrat', sans-serif;
 }
 .box-index {
     width: 55vw;
-    max-width: 260px;
-    margin: 10px;
-    margin-bottom: 20px;
+    max-width: 300px;
+    margin: 15px;
     border-radius: 7px;
   }
   .box-index:hover {
@@ -37,12 +36,15 @@ font-family: 'Montserrat', sans-serif;
   }
   .box-index img {
     width: 100%;
-    height: 80%;
-    /* background-size: cover; */
+    /* height: 80%; */
+    background-size: cover;
     border-radius: 7px;
   }
-  article p{
+  .box-index p{
     display: none;
+  }
+  .box-index p,h4{
+    color: #fefefe;
   }
   .box-index:hover p{
     display: block;
@@ -50,7 +52,7 @@ font-family: 'Montserrat', sans-serif;
   .box-index div {
     text-align: center;
     background-color: #048484;
-    color: black;
+    /* color: black; */
     border-radius: 7px;
     padding: 10px;
   }

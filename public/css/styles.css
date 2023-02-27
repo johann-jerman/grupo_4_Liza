@@ -45,6 +45,7 @@ font-family: 'Montserrat', sans-serif;
   height: 100%;
   background-size: contain;
   border-radius: 7px;
+  object-fit: cover;
 }
 
 .main-nav a p {
