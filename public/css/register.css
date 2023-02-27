@@ -71,6 +71,21 @@
   font-size: small;
 }
 
+.cookie-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-cookie{
+  margin: 10px 5px 10px;
+  width: 1.3rem;
+  height: 1.3rem;
+}
+.cookie-div p{
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
 
 @media (min-width: 768px) {
   
