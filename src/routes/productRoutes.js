@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const productController = require('../controller/productController');
 const upload = require('../middleware/multer');
+const productValidator = require("../middleware/productValidator");
 
 
 //rutas muestra de productos men y women
@@ -10,7 +11,7 @@ router.get('/women',productController.women);
 
 //ruta de cracion de producto
 router.get('/newProduct',productController.create);
-router.post('/newProduct', upload.single('image') ,productController.store);
+router.post('/newProduct', upload.single('image'),productValidator ,productController.store);
 
 //rutas de edicion de producto
 router.get('/edit/:id', productController.edit);

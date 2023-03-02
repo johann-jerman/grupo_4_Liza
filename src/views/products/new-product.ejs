@@ -12,17 +12,26 @@
         
         <div class="form-group">
           <label for="name">Nombre:</label>
-          <input type="text" id="name" name="name">
+        <input type="text" id="name" name="name" value="<%= locals.oldBody && oldBody.name? oldBody.name:"" %>">
+          <% if (locals.error && error.name) { %>
+           <p><%= error.name.msg %></p>
+          <% } %>
         </div>
         
         <div class="form-group">
           <label for="description">Descripción:</label>
-          <textarea id="description" name="description"></textarea>
+          <textarea id="description" name="description"><%= locals.oldBody && oldBody.description? oldBody.description:"" %></textarea>
+          <% if (locals.error && error.description) { %>
+           <p><%= error.description.msg %></p>
+          <% } %>
         </div>
         
         <div class="form-group">
           <label for="image">Imagen:</label>
           <input type="file" id="image" name="image">
+          <% if (locals.error && error.image) { %>
+           <p><%= error.image.msg %></p>
+          <% } %>
         </div>
         
         <div class="form-group">
@@ -46,7 +55,10 @@
         
         <div class="form-group">
           <label for="price">Precio:</label>
-          <input type="text" id="price" name="price" value="">
+          <input type="text" id="price" name="price" value="<%= locals.oldBody && oldBody.price? oldBody.price:"" %>">
+          <% if (locals.error && error.price) { %>
+           <p><%= error.price.msg %></p>
+          <% } %>
         </div>
         
         <button type="submit" class="add-btn">Add</button>

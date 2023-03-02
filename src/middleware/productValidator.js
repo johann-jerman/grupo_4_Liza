@@ -1,18 +1,27 @@
-const {body} = require('express-validator');
-
+const {body} = require("express-validator");
+const path = require("path");
 const productValidator = [
-    body('name')
-        .notEmpty().withMessage('El campo no puede estar vacio.').bail(),
-    body('description')
-        .notEmpty().withMessage('El campo no puede estar vacio.').bail(),
-    body('image')
-        .notEmpty().withMessage('El campo no puede estar vacio.').bail(),
-    body('category')
-        .notEmpty().withMessage('El campo no puede estar vacio.').bail(),
-    body('size')
-        .notEmpty().withMessage('El campo no puede estar vacio.').bail(),
-    body('price')
-        .notEmpty().withMessage('El campo no puede estar vacio.').bail(),
-];
+    body("name")
+        .isLength({min:5}).withMessage("minimo 5 caracteres"),
+    
+    body("description")
+        .isLength({max:100}).withMessage("maximo 100 caracteres"),
+    
+    body("price")
+        .isNumeric().withMessage("ingresar solo numeros"),
+    
+    body("image")
+        .custom((val, {req})=>{
+            const file = req.file
+            const validExtension = [".jpg" ,".png" ,".svg" , ".jpeg"]
+            if(!req.file){
+                throw new Error("ingresar una imagen")
+            }
+            const extension = path.extname(file.originalname)
+            if(!validExtension.includes(extension)){
+                throw new Error(`Las extenciones validas son ${validExtension.join(', ')}`)
+            }
+        })
+]
 
 module.exports = productValidator;
