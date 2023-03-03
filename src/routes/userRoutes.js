@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-
+const userValidator = require('../middleware/userValidator');
 
 const userController = require('../controller/userController');
 
@@ -22,6 +22,7 @@ const upload = multer ({storage})
 
 router.get('/login',userController.login);
 router.get('/register',userController.register);
+router.post('/register',userValidator,userController.registerProcess);
 router.get('/admin',userController.see);
 
 

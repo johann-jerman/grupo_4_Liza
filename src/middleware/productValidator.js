@@ -21,6 +21,7 @@ const productValidator = [
             if(!validExtension.includes(extension)){
                 throw new Error(`Las extenciones validas son ${validExtension.join(', ')}`)
             }
+            return true
         })
 ]
 
