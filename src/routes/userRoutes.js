@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-const userValidator = require('../middleware/userValidator');
 
 const userController = require('../controller/userController');
+const userValidator = require('../middleware/userValidator');
 
 //configuracion de multer
 const storage = multer.diskStorage({

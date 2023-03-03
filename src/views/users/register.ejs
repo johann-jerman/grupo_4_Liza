@@ -7,7 +7,7 @@
 <body>
 <%- include('../partials/header') %>
 <main>
-  <form class="register-form" action="/user/login">
+  <form class="register-form" action="/user/register" method="post">
     
     <h3 class="register-tittle">
       Crear nueva cuenta
@@ -70,7 +70,7 @@
       
       <label for="confirm-password">Confirmar Contraseña: </label>
       <input
-      type="confirm-password"
+      type="password"
       id="confirm-password"
       name="confirm-password"
       class="register-input"
