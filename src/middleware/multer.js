@@ -1,7 +1,6 @@
-const express = require('express');
+
 const multer = require('multer');
 const path = require('path');
-
 
 const storage = multer.diskStorage({
     destination : (req, file, cb)=>{
@@ -11,7 +10,7 @@ const storage = multer.diskStorage({
     },
     filename : (req, file, cb) => {
         let multerRutes = req.originalUrl.includes('product')? 'products' : 'users';
-        let nombreImg = `${multerRutes}` + Date.now() + path.extname(file.originalname)
+        let nombreImg = `${multerRutes}-` + Date.now() + path.extname(file.originalname)
         cb(null, nombreImg)
     }
 })

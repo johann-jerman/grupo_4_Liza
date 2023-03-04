@@ -9,11 +9,7 @@ const userController = {
         })
     },
     registerProcess : (req, res) => {
-        //TODO: crear usuario, mandar errores
         const error = validationResult(req)
-        console.log(req.body);
-        console.log(req.file);
-        console.log(error);
         const body = {
             ...req.body,
             password: bcrypt.hashSync(req.body.password,10),
@@ -28,7 +24,8 @@ const userController = {
             })  
         }
 
-        User.createUser(body)
+        User.createUser(body);
+        return res.redirect('/user/register');
     },
     login : (req, res) => {
         res.render('./users/login',{
