@@ -5,25 +5,24 @@ const multer = require('multer');
 const userController = require('../controller/userController');
 const userValidator = require('../middleware/userValidator');
 
-//configuracion de multer
-const storage = multer.diskStorage({
-    destination: (req, file, cb)=>{
-        let name = path.resolve(__dirname, '../../public/images/user')
-        cb(null, name)
-    },
+const upload = require('../middleware/multer');
 
-    filename: (req, file, cb)=>{
-        let filename = 'user-' + Date.now() + path.extname(file.originalname)
-        cb(null, filename)
-    }
-})
-
-const upload = multer ({storage})
-
-router.get('/login',userController.login);
+// register rutes
 router.get('/register',userController.register);
 router.post('/register',userValidator,userController.registerProcess);
-router.get('/admin',userController.see);
+
+// login rutes
+router.get('/login',userController.login);
+// router.post('/login', userController.loginPocess);
+
+//logout rutes
+// router.post('logout', userController.logout);
+
+// profile rutes
+// router.get('/profile', userController.profile);
+
+//admin routes
+router.get('/admin',userController.admin);
 
 
 module.exports = router

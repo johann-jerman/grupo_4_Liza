@@ -5,11 +5,13 @@ const path = require('path');
 
 const storage = multer.diskStorage({
     destination : (req, file, cb)=>{
-        let pathImg = path.resolve(__dirname, '../../public/images/products') 
+        let multerRutes = req.originalUrl.includes('product')? 'products' : 'users';
+        let pathImg = path.resolve(__dirname, `../../public/images/${multerRutes}`) 
         cb(null, pathImg)
     },
     filename : (req, file, cb) => {
-        let nombreImg = 'product-' + Date.now() + path.extname(file.originalname)
+        let multerRutes = req.originalUrl.includes('product')? 'products' : 'users';
+        let nombreImg = `${multerRutes}` + Date.now() + path.extname(file.originalname)
         cb(null, nombreImg)
     }
 })
