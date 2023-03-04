@@ -13,7 +13,7 @@ router.post('/register',upload.single("image"),userValidator,userController.regi
 
 // login rutes
 router.get('/login',userController.login);
-// router.post('/login', userController.loginPocess);
+router.post('/login', userController.loginPocess);
 
 //logout rutes
 // router.post('logout', userController.logout);

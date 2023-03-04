@@ -23,9 +23,23 @@ const userController = {
                 oldBody: req.body
             })  
         }
+        let invalidEmail = User.findByField('email', body.email)
+        if(invalidEmail){
+            return res.render('users/register',{
+                css: '/css/register.css', 
+                error: {
+                    email: {
+                        msg: 'El email ya existente'
+                    }
+                },
+                oldBody: req.body
+            })  
+        }
+
+        delete body.confirmPassword
 
         User.createUser(body);
-        return res.redirect('/user/register');
+        return res.redirect('/user/login');
     },
     login : (req, res) => {
         res.render('./users/login',{
@@ -33,6 +47,19 @@ const userController = {
         })
     },
     loginPocess : (req, res) => {
+        let body = req.body
+        let toLoggin = User.findByField('email', body.email)
+
+        if (toLoggin) {
+            let validPassword = bcrypt.compareSync(body.password, toLoggin.password)
+            if (validPassword) {
+                delete toLoggin.password
+                req.session.isLogged = toLoggin
+                return res.render('users/profile', {
+                    css: null,
+                })
+            }
+        }
 
     },
     logout : (req, res) => {
