@@ -10,6 +10,12 @@ const mainRoutes = require('./routes/mainRoutes');
 const productRoutes = require('./routes/productRoutes');
 const userRoutes = require('./routes/userRoutes');
 
+app.use(session({
+    secret : 'Este mensage es secreto',
+    resave : false,
+    saveUninitialized : false
+}));
+app.use(userLoggedMiddelware)
 //seteo de public y template engine
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -22,23 +28,17 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(session({
-    secret : 'Este mensage es secreto',
-    resave : false,
-    saveUninitialized : false
-}));
 
-app.use(userLoggedMiddelware)
 
 //uso de rutas
 app.use(mainRoutes);
 app.use('/product', productRoutes);
 app.use('/user', userRoutes);
 
-app.use((req, res, next)=>{
-    res.status(404).render('error' , {css:null});
-    next();
-})
+// app.use((req, res, next)=>{
+//     res.status(404).render('error' , {css:null});
+//     next();
+// })
 
 
 app.listen(PORT, ()=>{

@@ -41,23 +41,29 @@ const userController = {
         User.createUser(body);
         return res.redirect('/user/login');
     },
+
     login : (req, res) => {
+        console.log('hola jose ro mati'); 
+
         res.render('./users/login',{
             css: '/css/register.css'
         })
     },
+
     loginPocess : (req, res) => {
-        let body = req.body
-        let toLoggin = User.findByField('email', body.email)
+        let body = req.body;
+        let toLoggin = User.findByField('email', body.email);
 
         if (toLoggin) {
-            let validPassword = bcrypt.compareSync(body.password, toLoggin.password)
+
+            let validPassword = bcrypt.compareSync(body.password, toLoggin.password);
+
             if (validPassword) {
-                delete toLoggin.password
-                req.session.isLogged = toLoggin
-                return res.render('users/profile', {
-                    css: null,
-                })
+                delete toLoggin.password;
+                req.session.userLogged = toLoggin;
+
+
+                return res.redirect('/user/profile');
             }
         }
 
@@ -66,7 +72,11 @@ const userController = {
 
     },
     profile : (req, res) => {
-
+        console.log('hola jose ro mati');
+        res.render('./users/profile', {
+            css : null ,
+            user : req.session.userLogged
+        })
     },
     admin: (req, res)=> {
         res.render('./users/admin',{

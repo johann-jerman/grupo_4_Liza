@@ -1,11 +1,12 @@
 
-function userLoggedMiddelware (req, res, next) {
-    res.session.logged = false
-    if (req.session && req.session.isLogged) {
-        res.session.logged = true
-        res.session.isLogged = res.session.isLogged
+function userLoggedMiddleware (req, res, next) {
+    res.locals.logged = false;
+
+    if (req.session.userLogged) {
+        res.locals.logged = true;
+        res.locals.userLogged = req.session.userLogged;
     }
     next()
 } 
 
-module.exports = userLoggedMiddelware
+module.exports = userLoggedMiddleware

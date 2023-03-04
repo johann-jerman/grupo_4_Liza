@@ -186,5 +186,13 @@
   "email": "romina.jaime@icloud.com",
   "password": "$2b$10$o5Jc43Ea9Vtaar8IZP4qruB2VUEGZIf2ZwlglpKuj7v4kCXzu3N8W",
   "image": "users-1677958193770.png"
+ },
+ {
+  "id": 1677961640966,
+  "name": "asd",
+  "lastname": "asd",
+  "email": "johannjerman014@gmail.com",
+  "password": "$2b$10$NpL0pTFYK.O3l.9EuCIZYe/njiNaIJiR177HiVjg9UwG.6rq0PIIW",
+  "image": "users-1677961640871.jpg"
  }
 ]
