@@ -83,7 +83,9 @@
       name="image"
       class="register-input"
       />  
-      
+      <% if (locals.error && error.image) { %>
+       <p><%= error.image.msg %></p>
+      <% } %>
 
       <button class="submit" type="submit">Crear cuenta</button>
       <button class="submit" type="reset">Reiniciar Formulario</button>

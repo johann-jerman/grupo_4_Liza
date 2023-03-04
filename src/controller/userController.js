@@ -11,7 +11,14 @@ const userController = {
     registerProcess : (req, res) => {
         //TODO: crear usuario, mandar errores
         const error = validationResult(req)
-        
+        console.log(req.body);
+        console.log(req.file);
+        console.log(error);
+        const body = {
+            ...req.body,
+            password: bcrypt.hashSync(req.body.password,10),
+            image: req.file? req.file.filename: "usuarioDefault.png"
+        }
         
         if(!error.isEmpty()) {
             return res.render('users/register',{
@@ -20,6 +27,8 @@ const userController = {
                 oldBody: req.body
             })  
         }
+
+        User.createUser(body)
     },
     login : (req, res) => {
         res.render('./users/login',{

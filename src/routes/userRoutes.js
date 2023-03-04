@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const multer = require('multer');
+
 
 const userController = require('../controller/userController');
 const userValidator = require('../middleware/userValidator');
@@ -9,7 +9,7 @@ const upload = require('../middleware/multer');
 
 // register rutes
 router.get('/register',userController.register);
-router.post('/register',userValidator,userController.registerProcess);
+router.post('/register',upload.single("image"),userValidator,userController.registerProcess);
 
 // login rutes
 router.get('/login',userController.login);
