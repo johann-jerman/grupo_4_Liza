@@ -7,10 +7,11 @@ const userValidator = [
     body('lastname')
         .isLength({min: 2}).withMessage('incluir al menos dos caracteres'),
     body('email')
+        .notEmpty().withMessage('El campo debe completarse').bail()
         .isEmail().withMessage('Incluir tu correo electronico'),
     body('password')
         .custom((val,{req})=> {
-            let passwordVal = req.body.confirm-password
+            let passwordVal = req.body.confirmPassword
             if(val != passwordVal ){
                 throw new Error('Contraseñas no validas');
             }
