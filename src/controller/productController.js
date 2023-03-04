@@ -44,7 +44,8 @@ const productController = {
         let body = req.body
         let file = req.file
         let error = validationResult(req)
-        console.log(error.mapped());
+       
+
         if(!error.isEmpty()){
             return res.render('./products/new-product',{
                 css: '/css/new-product.css',
@@ -53,7 +54,8 @@ const productController = {
                 })
                 
         }
-
+        
+        // console.log(newProduct);
 
         let newProduct = {
             ...body,

@@ -13,7 +13,7 @@ const userController = {
         const error = validationResult(req)
         
         
-        console.log(error);if(!error.isEmpty()) {
+        if(!error.isEmpty()) {
             return res.render('users/register',{
                 css: '/css/register.css', 
                 error: error.mapped(),
