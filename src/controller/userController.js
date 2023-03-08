@@ -43,7 +43,6 @@ const userController = {
     },
 
     login : (req, res) => {
-        console.log('hola jose ro mati'); 
 
         res.render('./users/login',{
             css: '/css/register.css'
@@ -61,7 +60,9 @@ const userController = {
             if (validPassword) {
                 delete toLoggin.password;
                 req.session.userLogged = toLoggin;
-
+                    if (toLoggin.rememberme) {
+                        res.cookie('userCookie', toLoggin, {maxage:1000*60*5})
+                    }
 
                 return res.redirect('/user/profile');
             }
@@ -69,10 +70,12 @@ const userController = {
 
     },
     logout : (req, res) => {
+        req.session.destroy()
+        res.clearCookie('userCookie')
+        res.redirect('/')
 
     },
     profile : (req, res) => {
-        console.log('hola jose ro mati');
         res.render('./users/profile', {
             css : null ,
             user : req.session.userLogged

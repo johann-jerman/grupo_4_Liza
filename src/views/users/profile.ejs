@@ -4,5 +4,8 @@
 <body>
     <%- include('../partials/header.ejs') %>
     <p><%= user.email %></p>
+    <form action="/user/logout" method="POST"> 
+        <button type="submit">Logout</button>
+    </form>
 </body>
 </html>

@@ -4,6 +4,7 @@ const path = require('path');
 const methodOverride =  require('method-override'); 
 const PORT = process.env.PORT || 3004;
 const session = require ('express-session');
+const cookie = require('cookie-parser');
 const userLoggedMiddelware = require('./middleware/userLoggedMiddleware');
 
 const mainRoutes = require('./routes/mainRoutes');
@@ -15,7 +16,8 @@ app.use(session({
     resave : false,
     saveUninitialized : false
 }));
-app.use(userLoggedMiddelware)
+app.use(cookie('Clave Secreta'));
+app.use(userLoggedMiddelware);
 //seteo de public y template engine
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
