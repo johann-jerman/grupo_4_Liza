@@ -51,22 +51,41 @@ const userController = {
 
     loginPocess : (req, res) => {
         let body = req.body;
-        let toLoggin = User.findByField('email', body.email);
+        let error = validationResult(req);
 
-        if (toLoggin) {
-
-            let validPassword = bcrypt.compareSync(body.password, toLoggin.password);
-
-            if (validPassword) {
-                delete toLoggin.password;
-                req.session.userLogged = toLoggin;
-                    if (toLoggin.rememberme) {
-                        res.cookie('userCookie', toLoggin, {maxage:1000*60*5})
-                    }
-
-                return res.redirect('/user/profile');
-            }
+        if (!error.isEmpty()) {
+            return res.render('./users/login',{
+                css: '/css/register.css',
+                error: error.mapped(),
+            })    
         }
+
+        let toLoggin = User.findByField('email', body.email);
+        let validPassword = bcrypt.compareSync(body.password, toLoggin.password);        
+        
+        
+
+        if (toLoggin && validPassword) {
+
+            delete toLoggin.password;
+            req.session.userLogged = toLoggin;
+                
+                if (toLoggin.rememberme) {
+                    res.cookie('userCookie', toLoggin, {maxage:1000*60*5})
+                }
+
+            return res.redirect('/user/profile');
+        }
+        let mensage = toLoggin? 'Password invalida' : 'Mail invalido';
+
+        res.render('./users/login',{
+            css: '/css/register.css',
+            error: {
+                campo : {
+                    msg: mensage
+                }
+            }
+        })
 
     },
     logout : (req, res) => {

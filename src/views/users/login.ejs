@@ -21,6 +21,10 @@
         class="register-input"
       />
 
+      <% if (locals.error && error.email) { %>
+       <p><%= error.email.msg %></p>
+      <% } %>
+
       <label for="password" class="register-label">Contraseña:</label>
       <input
         type="password"
@@ -30,6 +34,14 @@
         class="register-input"
       />
 
+      <% if (locals.error && error.password) { %>
+        <p><%= error.password.msg %></p>
+       <% } %>
+
+      <% if (locals.error && error.campo) { %>
+       <p><%= error.campo.msg %></p>
+      <% } %>
+        
       <div class="cookie-div">
         <input type="checkbox" 
         name="rememberme" 
@@ -38,7 +50,11 @@
         <p>Recordame</p>
       </div>
 
-      <button type="submit" class="submit">Enviar</button>
+      
+      <button type="submit" class="submit">Iniciar sesion</button>
+      <div class="ancor-conteiner">
+        <a href="/user/register" class="register-tologin">Crear cuenta</a>
+      </div>
     </form>
   </main>
 

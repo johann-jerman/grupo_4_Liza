@@ -85,7 +85,22 @@
   font-size: 1.1rem;
   letter-spacing: 1px;
 }
-
+.ancor-conteiner{
+  margin: 6px;
+  padding: 4px;
+  border: 1px solid #0f66ca;
+  border-radius: 7px;
+}
+.register-tologin{
+  color: #0f66ca;
+}
+.ancor-conteiner:hover{
+  transition: 1000ms;
+  background: #045c94;
+}
+.ancor-conteiner:hover .register-tologin{
+  color: #fcfcfc;
+}
 
 @media (min-width: 768px) {
   

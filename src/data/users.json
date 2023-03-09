@@ -194,5 +194,14 @@
   "email": "johannjerman014@gmail.com",
   "password": "$2b$10$NpL0pTFYK.O3l.9EuCIZYe/njiNaIJiR177HiVjg9UwG.6rq0PIIW",
   "image": "users-1677961640871.jpg"
+ },
+ {
+  "id": 1678365094952,
+  "name": "johann",
+  "lastname": "jerman",
+  "email": "johannadmin@gmail.com",
+  "password": "$2b$10$AX8kNjqmWaqS3FMT60JDEeZkF4NKDsE7dqEIKb6E2PtA7w0KeD.P2",
+  "image": "usuarioDefault.png",
+  "status": "admin"
  }
 ]

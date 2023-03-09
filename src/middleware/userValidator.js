@@ -21,11 +21,14 @@ const userValidator = [
         .custom((val,{req})=>{
             const validExtension = ['.jpg', '.jpeg', '.png', '.svg']
             const file = req.file
-            const extension = path.extname(file.originalname)
             
-            if(!validExtension.includes(extension)) {
-                throw new Error(`Debe incluir ${validExtension.join(', ')}`)
+            if (req.file) {
+                const extension = path.extname(file.originalname)
+                if(!validExtension.includes(extension)) {
+                    throw new Error(`Debe incluir ${validExtension.join(', ')}`)
+                }
             }
+            
           
             return true
         })
