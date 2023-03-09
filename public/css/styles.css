@@ -28,17 +28,17 @@ font-family: 'Montserrat', sans-serif;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: #f4f4f4;
+  background-color: #254362;
   padding: 15px;
 }
 .main-nav {
   width: 65vw;
   max-width: 275px;
   height: 40vh;
-  border: 1px solid #045c94;
+  border: 1px solid white;
   border-radius: 7px;
   margin: 15px;
-  box-shadow: 0px 0px 10px #042850;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.785);
 }
 .img-main {
   width: 100%;
@@ -51,7 +51,7 @@ font-family: 'Montserrat', sans-serif;
 .main-nav a p {
   text-align: center;
   background-color: #042850;
-  border-radius: 10px;
+  border-radius: 0px;
   box-shadow: 0px 0px 10px #042850;
 }
 .main-nav a p:hover {
