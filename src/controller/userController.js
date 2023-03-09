@@ -1,5 +1,6 @@
 const {validationResult} = require('express-validator');
 const User = require('../services/User');
+const Admin = require('../services/Admin');
 const bcrypt = require('bcrypt');
 
 const userController = {
@@ -63,7 +64,11 @@ const userController = {
         let toLoggin = User.findByField('email', body.email);
         let validPassword = bcrypt.compareSync(body.password, toLoggin.password);        
         
-        
+        if(toLoggin.status == 'admin'){
+            req.session.admin = toLoggin
+
+            return res.redirect('/user/admin')
+        }
 
         if (toLoggin && validPassword) {
 
@@ -101,8 +106,11 @@ const userController = {
         })
     },
     admin: (req, res)=> {
+        let products = Admin.getAllProduct()
+        
         res.render('./users/admin',{
-            css: '/css/admin.css'
+            css: '/css/admin.css',
+            products
         })
     }
 

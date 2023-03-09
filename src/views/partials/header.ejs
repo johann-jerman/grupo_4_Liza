@@ -36,11 +36,27 @@
         </a>
       </div>
       <!-- icono User -->
-      <div class="user">
-        <a href="/user/login">
-          <i class="fa-solid fa-user"></i>
-        </a>
-      </div>
+      <% if (!locals.logged) { %>
+        <div class="user">
+          <a href="/user/login">
+            <i class="fa-solid fa-user"></i>
+          </a>
+        </div>
+      <% } %>
+      <% if (locals.logged) { %>
+        <div class="user">
+          <a href="/user/profile">
+            <i class="fa-solid fa-user"></i>
+          </a>
+        </div>
+      <% } %>
+    <% if (locals.isAdmin) { %>
+        <div class="user">
+          <a href="/user/admin">
+            <i class="fa-solid fa-user"></i>
+          </a>
+        </div>
+      <% } %>
       <!-- <div> 
 evento on click mouse over
       </div> -->

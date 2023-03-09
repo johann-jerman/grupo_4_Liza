@@ -7,7 +7,8 @@ const userValidator = require('../middleware/userValidator');
 const loginValidator = require('../middleware/loginValidator');
 const authMiddleware = require('../middleware/authMiddleware');
 const guessMiddleware = require('../middleware/guessMiddleware');
-
+const adminMiddleware = require('../middleware/adminMiddleware')
+ 
 
 const upload = require('../middleware/multer');
 // register rutes
@@ -22,10 +23,10 @@ router.post('/login', loginValidator,userController.loginPocess);
 router.post('/logout', userController.logout);
 
 // profile rutes
-router.get('/profile', guessMiddleware, userController.profile);
+router.get('/profile', guessMiddleware,  userController.profile);
 
 //admin routes
-// router.get('/admin',userController.admin);
+router.get('/admin', adminMiddleware,userController.admin);
 
 
 module.exports = router
