@@ -5,7 +5,7 @@ module.exports = (sequelize,DataType) => {
         id : {
             primaryKey : true,
             autoIncrement : true,
-            type : DataType.INTERGER
+            type : DataType.INTEGER
         },
 
         size : {
@@ -16,7 +16,7 @@ module.exports = (sequelize,DataType) => {
     };
     
     const config =  {
-        tableName : "sizesProduct",
+        tableName : "sizesproduct",
         timestamp : true,
         underscored : true,
         paranoid : true,

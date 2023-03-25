@@ -2,6 +2,7 @@ const {validationResult} = require('express-validator');
 const User = require('../services/User');
 const Admin = require('../services/Admin');
 const bcrypt = require('bcrypt');
+const db = require('../database/models')
 
 const userController = {
     register : (req, res) => {
@@ -111,6 +112,34 @@ const userController = {
         res.render('./users/admin',{
             css: '/css/admin.css',
             products
+        })
+    },
+    prueba: async (req, res) => {
+        let userCategory= await db.UserCategory.findAll(
+            {
+                include: 'user'
+            }
+        )
+        let user= await db.User.findAll(
+            {
+                include: 'userCategory'
+            }
+        )
+        let produto= await db.Product.findAll()
+        let size= await db.Size.findAll()
+        let image= await db.Image.findAll()
+        let category= await db.CategoryProduct.findAll()
+        let color= await db.Color.findAll()
+
+
+        console.log(user);
+        res.json( {
+            produto,
+            color,
+            category,
+            user,
+            userCategory,
+            size,image
         })
     }
 

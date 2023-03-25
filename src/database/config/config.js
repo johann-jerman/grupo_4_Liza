@@ -2,9 +2,9 @@ module.exports =
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "liza_db",
-    "host": "3306",
+    "password": "admin",
+    "database": "prueva_liza",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {

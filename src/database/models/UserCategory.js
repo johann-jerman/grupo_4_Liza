@@ -5,7 +5,7 @@ module.exports = (sequelize,DataType) => {
         id : {
             primaryKey : true,
             autoIncrement : true,
-            type : DataType.INTERGER
+            type : DataType.INTEGER
         },
 
         category : {
@@ -16,7 +16,7 @@ module.exports = (sequelize,DataType) => {
     };
     
     const config =  {
-        tableName : "userCategory",
+        tableName : "usercategory",
         timestamp : true,
         underscored : true,
         paranoid : true,
@@ -27,11 +27,10 @@ module.exports = (sequelize,DataType) => {
 
     const UserCategory = sequelize.define(alias,cols,config);
 
-    User.associate = (models)=> {
-        User.hasMany(models.UserCategory,{
-            as : "categoryUser",
-            foreingKey : "category_id",
-            
+    UserCategory.associate = (models)=> {
+        UserCategory.hasMany(models.User,{
+            as : "user",
+            foreignKey : "userCategory_id",
         })
     }
     return UserCategory;

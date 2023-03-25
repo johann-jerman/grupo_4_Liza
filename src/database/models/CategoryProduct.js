@@ -1,11 +1,11 @@
 module.exports = (sequelize,DataType) => {
-    const alias = "Category";
+    const alias = "CategoryProduct";
 
     const cols =  {
         id : {
             primaryKey : true,
             autoIncrement : true,
-            type : DataType.INTERGER
+            type : DataType.INTEGER
         },
 
         category : {
@@ -16,7 +16,7 @@ module.exports = (sequelize,DataType) => {
     };
     
     const config =  {
-        tableName : "CategorysProduct",
+        tableName : "categorysproduct",
         timestamp : true,
         underscored : true,
         paranoid : true,

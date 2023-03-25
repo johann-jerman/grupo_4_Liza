@@ -4,7 +4,7 @@ module.exports = (sequelize,DataType) => {
             id : {
                 primaryKey : true,
                 autoIncrement : true,
-                type : DataType.INTERGER
+                type : DataType.INTEGER
             },
             name : {
                 type : DataType.STRING(100),
@@ -12,16 +12,28 @@ module.exports = (sequelize,DataType) => {
             },
             care : {
                 type : DataType.TEXT,
-                allowNull : false
+                allowNull : true
             },
             description : {
                 type : DataType.TEXT,
                 allowNull : false,
             },
             price : {
-                type : DataType.INTERGER,
+                type : DataType.INTEGER,
                 allowNull : false,
             },
+            category_product_id: {
+                type : DataType.INTEGER,
+            },
+            color_id: {
+                type : DataType.INTEGER,
+            },
+            size_id: {
+                type : DataType.INTEGER,
+            },
+            image_id: {
+                type : DataType.INTEGER,
+            }
 
         },
         {
@@ -35,13 +47,13 @@ module.exports = (sequelize,DataType) => {
         }
     );
 
-    Product.associate = (models)=> {
-        Product.belongsTo(models.CategoryProduct,{
-            as : "categoryProduct",
-            foreingKey : "category_id",
+    // Product.associate = (models)=> {
+    //     Product.belongsTo(models.CategoryProduct,{
+    //         as : "categoryProduct",
+    //         foreingKey : "category_id",
             
-        })
-    }
+    //     })
+    // }
 
     return Product;
 }
