@@ -1,5 +1,4 @@
 const {validationResult} = require('express-validator');
-const User = require('../services/User');
 const Admin = require('../services/Admin');
 const bcrypt = require('bcrypt');
 const db = require('../database/models')
@@ -8,44 +7,11 @@ const userController = {
     register : (req, res) => {
         res.render('./users/register',{
             css: '/css/register.css'
-        })
+        });
     },
-    // registerProcess : (req, res) => {
-    //     const error = validationResult(req)
-    //     const body = {
-    //         ...req.body,
-    //         password: bcrypt.hashSync(req.body.password,10),
-    //         image: req.file? req.file.filename: "usuarioDefault.png"
-    //     }
-        
-    //     if(!error.isEmpty()) {
-    //         return res.render('users/register',{
-    //             css: '/css/register.css', 
-    //             error: error.mapped(),
-    //             oldBody: req.body
-    //         })  
-    //     }
-    //     let invalidEmail = User.findByField('email', body.email)
-    //     if(invalidEmail){
-    //         return res.render('users/register',{
-    //             css: '/css/register.css', 
-    //             error: {
-    //                 email: {
-    //                     msg: 'El email ya existente'
-    //                 }
-    //             },
-    //             oldBody: req.body
-    //         })  
-    //     }
-
-    //     delete body.confirmPassword
-
-    //     User.createUser(body);
-    //     return res.redirect('/user/login');
-    // },
     
     registerProcess : async (req, res) => {
-        const error = validationResult(req)
+        const error = validationResult(req);
         
         console.log(error.mapped());
 
@@ -54,7 +20,7 @@ const userController = {
                 css: '/css/register.css', 
                 error: error.mapped(),
                 oldBody: req.body
-            })
+            });
         }
         
         try {
@@ -82,7 +48,7 @@ const userController = {
                         }
                     },
                     oldBody: req.body
-                })
+                });
             };
 
             await db.User.create(userToRegist, {
@@ -92,9 +58,7 @@ const userController = {
             res.redirect('/user/login');
 
         } catch (error) {
-            res.json({
-                error
-            })
+            res.render('error');
         }
     },
     
@@ -107,68 +71,106 @@ const userController = {
         })
     },
 
-    loginPocess : (req, res) => {
-        let body = req.body;
-        let error = validationResult(req);
-
-        if (!error.isEmpty()) {
-            return res.render('./users/login',{
+    loginPocess : async (req, res) => {
+        const error = validationResult(req);
+        
+        if ( !error.isEmpty() ) {
+            return res.render('users/login', {
                 css: '/css/register.css',
                 error: error.mapped(),
-            })    
-        }
-
-        let toLoggin = User.findByField('email', body.email);
-        let validPassword = bcrypt.compareSync(body.password, toLoggin.password);        
+            });
+        };
         
-        if(toLoggin.status == 'admin'){
-            req.session.admin = toLoggin
+        try {
+            
+            let userToLogin = await db.User.findOne({
+                where:{
+                    email: req.body.email,
+                },
+                attributes: [
+                    'id',
+                    'name',
+                    'lastname',
+                    'password',
+                    'email',
+                    'image',
+                    'userCategory_id',
+                ]
+            });
 
-            return res.redirect('/user/admin')
+            if (!userToLogin) {
+
+                return res.render('users/login', {
+                    css: '/css/register.css',
+                    error: {
+                        email: {
+                            msg: 'Email no resgistrado'
+                        }
+                    },
+                });
+            };
+
+            const confirmPassword = bcrypt.compareSync(req.body.password, userToLogin.password );
+
+            if (!confirmPassword) {
+
+                return res.render('users/login', {
+                    css: '/css/register.css',
+                    error: {
+                        password: {
+                            msg: 'Contaseña incorrecta'
+                        }
+                    },
+                });
+            };
+            
+            if (userToLogin.userCategory_id === 2) {
+                delete userToLogin.dataValues.password;
+
+                req.session.admin = userToLogin.dataValues;
+            
+                return res.redirect('/user/admin');
+            };
+
+            if (userToLogin.userCategory_id === 1) {
+                delete userToLogin.dataValues.password;
+    
+                req.session.userLogged = userToLogin.dataValues;
+
+                if(req.body.rememberme){
+
+                    res.cookie('userCookie', userToLogin, {maxage: 1000*60*15});
+                };
+
+                res.redirect('/user/profile');
+            };
+            
+
+        } catch (error) {
+            res.render('error');
         }
-
-        if (toLoggin && validPassword) {
-
-            delete toLoggin.password;
-            req.session.userLogged = toLoggin;
-                
-                if (toLoggin.rememberme) {
-                    res.cookie('userCookie', toLoggin, {maxage:1000*60*5})
-                }
-
-            return res.redirect('/user/profile');
-        }
-        let mensage = toLoggin? 'Password invalida' : 'Mail invalido';
-
-        res.render('./users/login',{
-            css: '/css/register.css',
-            error: {
-                campo : {
-                    msg: mensage
-                }
-            }
-        })
-
     },
+
     logout : (req, res) => {
-        req.session.destroy()
-        res.clearCookie('userCookie')
-        res.redirect('/')
-
+        req.session.destroy();
+        res.clearCookie('userCookie');
+        res.redirect('/');
     },
+
     profile : (req, res) => {
         res.render('./users/profile', {
             css : null ,
             user : req.session.userLogged
-        })
+        });
     },
+    
     admin: (req, res)=> {
-        let products = Admin.getAllProduct()
+        let products = Admin.getAllProduct();
         
         res.render('./users/admin',{
             css: '/css/admin.css',
             products
-        })
+        });
     },
     
     
