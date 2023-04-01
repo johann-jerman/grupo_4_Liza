@@ -3,33 +3,35 @@
 <%- include('../partials/head.ejs') %>
 <body>
     <%- include('../partials/header.ejs') %>
-    <div>
-        <div class="adcolums addireccion">
-            <a href="#adman">Hombres</a>
-            <a href="#adwomen">Mujeres</a>
-        </div>
-        <h1 id="adman">Hombres</h1>
-        
-        <% products.forEach(product => { %>    
-        
-        <% if (product.category == 'man') { %>
-        
-        <div class="adcolums adproduct">
-            <div>
-                <img src="/images/products/<%= product.image %>" alt="<%= product.image %>">
+    
+
+        <main>
+            <div class="adcolums addireccion">
+                <a href="#adman">Hombres</a>
+                <a href="#adwomen">Mujeres</a>
             </div>
+            <h1 id="adman">Hombres</h1>
             
-            <div class="adcolums">
-                <h2><%= product.name %></h2>
-                <p><%= product.description %></p>
-                <p> $<%= product.price %></p>
-                <p>Talle:<%= product.size %></p>
-            </div>
-            <div>
-                <a href="">
-                    <i class="fa-sharp fa-solid fa-trash">
-                        <p>Eliminar</p>
-                    </i>
+            <% products.forEach(product => { %>    
+                
+                <% if (product.category == 'man') { %>
+                    
+                    <div class="adcolums adproduct">
+                        <div>
+                            <img src="/images/products/<%= product.image %>" alt="<%= product.image %>">
+                        </div>
+                        
+                        <div class="adcolums">
+                            <h2><%= product.name %></h2>
+                            <p><%= product.description %></p>
+                            <p> $<%= product.price %></p>
+                            <p>Talle:<%= product.size %></p>
+                        </div>
+                        <div>
+                            <a href="">
+                                <i class="fa-sharp fa-solid fa-trash">
+                                    <p>Eliminar</p>
+                                </i>
                 </a>
                 <a href="">
                     <i class="fa-sharp fa-solid fa-file-pen">
@@ -41,23 +43,41 @@
         <% } %>
         <% }) %>
         <div>
-             <h1 id="adwomen">Mujeres</h1>
+            <h1 id="adwomen">Mujeres</h1>
             <% products.forEach(product => { %>
-             
-                <% if (product.category == 'women') { %>
-            <div>
-                <img src="/images/products/<%= product.image %>" alt="<%= product.image %>">
-            </div>
                 
-            <h2><%= product.name %></h2>
-            <p><%= product.description %></p>
-            <p><%= product.price %></p>
-            <p><%= product.size %></p>
- 
-
+                <% if (product.category == 'women') { %>
+                    
+                    <div class="adcolums adproduct">
+                        <div>
+                            <img src="/images/products/<%= product.image %>" alt="<%= product.image %>">
+                        </div>
+                        
+                        <div class="adcolums addesc">
+                            <h2><%= product.name %></h2>
+                            <p><%= product.description %></p>
+                            <p> $<%= product.price %></p>
+                            <p>Talle:<%= product.size %></p>
+                        </div>
+                        <div>
+                            <a href="">
+                                <i class="fa-sharp fa-solid fa-trash">
+                            <p>Eliminar</p>
+                        </i>
+                    </a>
+                    <a href="">
+                        <i class="fa-sharp fa-solid fa-file-pen">
+                            <p>Editar</p>
+                        </i>
+                    </a>
+                </div>
+            </div>
+            
             <% } %>
             <% }) %>
         </div>
-    </div>
+    </main>
+    
+    <%- include('../partials/footer.ejs') %>
 </body>
 </html>

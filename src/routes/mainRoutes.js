@@ -5,6 +5,8 @@ const mainController = require('../controller/mainController');
 
 router.get('/',mainController.home);
 
+router.get('/prueba',   mainController.prueba);
+
 // const productController = require('../controller/productController');
 // router.get('/man',productController.man);
 // router.get('/women',productController.women);

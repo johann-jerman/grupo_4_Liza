@@ -203,5 +203,13 @@
   "password": "$2b$10$AX8kNjqmWaqS3FMT60JDEeZkF4NKDsE7dqEIKb6E2PtA7w0KeD.P2",
   "image": "usuarioDefault.png",
   "status": "admin"
+ },
+ {
+  "id": 1680358271470,
+  "name": "asd",
+  "lastname": "asd",
+  "email": "jhona@gmail.com",
+  "password": "$2b$10$IfbaWMFdlCslD5yvlNu3EuOK4/kX5goK7Mhvqlfi/28Lu9F8vvMDW",
+  "image": "usuarioDefault.png"
  }
 ]

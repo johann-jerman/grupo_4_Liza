@@ -16,7 +16,7 @@ module.exports = (sequelize,DataType) => {
     };
     
     const config =  {
-        tableName : "imagesproduct",
+        tableName : "images",
         timestamp : true,
         underscored : true,
         paranoid : true,

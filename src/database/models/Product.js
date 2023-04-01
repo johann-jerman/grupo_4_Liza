@@ -25,16 +25,9 @@ module.exports = (sequelize,DataType) => {
             category_product_id: {
                 type : DataType.INTEGER,
             },
-            color_id: {
-                type : DataType.INTEGER,
-            },
             size_id: {
                 type : DataType.INTEGER,
-            },
-            image_id: {
-                type : DataType.INTEGER,
             }
-
         },
         {
             tableName : "products",

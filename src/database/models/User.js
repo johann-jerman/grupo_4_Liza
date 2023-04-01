@@ -51,6 +51,7 @@ module.exports = (sequelize,datatype) => {
     }
 
     const User = sequelize.define(alias,cols,config);
+    
     User.associate = (models)=> {
         User.belongsTo(models.UserCategory,{
             as : "userCategory",

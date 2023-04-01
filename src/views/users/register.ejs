@@ -88,6 +88,14 @@
        <p><%= error.image.msg %></p>
       <% } %>
 
+      <% if (locals.isAdmin) { %>
+        <select name="category" id="">
+          <option value="2">User</option>
+          <option value="1">Admin</option>
+        </select>
+      <% } %>
+
+
       <button class="submit" type="submit">Crear cuenta</button>
       <button class="submit" type="reset">Reiniciar Formulario</button>
     </form>
