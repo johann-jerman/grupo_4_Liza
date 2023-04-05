@@ -25,7 +25,16 @@ module.exports = (sequelize,DataType) => {
         deleted_at : "deleted_at",
     }
 
-    const ImageProduct = sequelize.define(alias,cols,config);
+    const Image = sequelize.define(alias,cols,config);
 
-    return ImageProduct;
+    Image.associate = (models)=> {
+        Image.belongsToMany(models.Product,{
+            as : "product",
+            through: "image_product",
+            foreignKey : "image_id",
+            otherKey: "product_id"
+        })
+    }
+
+    return Image;
 }

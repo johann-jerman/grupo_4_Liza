@@ -13,16 +13,14 @@ const userController = {
     registerProcess : async (req, res) => {
         const error = validationResult(req);
         
-        console.log(error.mapped());
-
         if ( !error.isEmpty() ) {
             return res.render('users/register', {
                 css: '/css/register.css', 
                 error: error.mapped(),
                 oldBody: req.body
             });
-        }
-        
+        };
+
         try {
             const userToRegist = {
                 name: req.body.name,
@@ -62,13 +60,11 @@ const userController = {
         }
     },
     
-    
-
     login : (req, res) => {
 
         res.render('./users/login',{
             css: '/css/register.css'
-        })
+        });
     },
 
     loginPocess : async (req, res) => {
@@ -139,7 +135,7 @@ const userController = {
 
                 if(req.body.rememberme){
 
-                    res.cookie('userCookie', userToLogin, {maxage: 1000*60*15});
+                    res.cookie('userCookie', userToLogin.dataValues, {maxage: 1000*60*60});
                 };
 
                 res.redirect('/user/profile');
@@ -158,12 +154,13 @@ const userController = {
     },
 
     profile : (req, res) => {
+        console.log(req.session.userLogged);
         res.render('./users/profile', {
-            css : null ,
+            css : '/css/profile.css' ,
             user : req.session.userLogged
         });
     },
-    
+
     admin: (req, res)=> {
         let products = Admin.getAllProduct();
         

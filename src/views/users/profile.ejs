@@ -3,9 +3,28 @@
 <%- include('../partials/head.ejs') %>
 <body>
     <%- include('../partials/header.ejs') %>
-    <p><%= user.email %></p>
-    <form action="/user/logout" method="POST"> 
-        <button type="submit">Logout</button>
-    </form>
+    <main class="profile">
+        <div class="profile-conteiner">
+        
+            <img src="/images/users/<%= user.image %>" class="profile-img" alt="<%= user.image %>">
+            <div class="name-p">
+                <p><%= user.name %></p>
+                <p><%= user.lastname %></p>
+            </div>
+          
+            
+            <p><%= user.email %></p>
+            <form action="/user/logout" method="POST"> 
+                <button class="button" type="submit">Logout</button>
+            </form>
+            <form action="" method="POST"> 
+                <button class="button" type="submit">Editar</button>
+            </form>
+            <form action="" method="POST"> 
+                <button class="button" type="submit">Eliminar</button>
+            </form>
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>
 </body>
 </html>

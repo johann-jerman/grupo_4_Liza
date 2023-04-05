@@ -1,0 +1,44 @@
+main{
+    position: relative;
+    height: 70vh;
+}
+.profile{
+    box-shadow: 5px 5px 15px #147c8c;
+    width: 90%;
+    max-width: 900px;
+    padding: 10px;
+    margin: 75px auto;
+    display: flex;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+    border-radius: 25px;
+}
+ .profile-conteiner{
+    margin: 0px auto;
+}
+.profile-conteiner p{
+    padding: 7px;
+}
+.name-p{
+    padding: 3px;
+    display: flex;
+    justify-content: space-around;
+}
+.profile-img{
+    padding: 3px;
+    margin: 0px auto;
+    width: 200px;
+    height: 200px;
+}
+.button{
+    
+    margin: 15px;
+    width: 150px;
+    height: 35px;
+    background-color: #2792d5;
+    box-shadow: 2px 4px 3px #74bdeb;
+    color: #f3eeee;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer
+}

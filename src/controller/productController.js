@@ -1,10 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 const {validationResult} = require("express-validator");
+const db = require('../database/models')
 
 let productsFilePath = path.join(__dirname, '../data/products.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
 const productController = {
     //muestra de productos man y woman
     man : (req, res) => {

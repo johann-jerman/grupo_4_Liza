@@ -16,7 +16,7 @@ module.exports = (sequelize,DataType) => {
     };
     
     const config =  {
-        tableName : "sizesproduct",
+        tableName : "sizes",
         timestamp : true,
         underscored : true,
         paranoid : true,
@@ -25,7 +25,16 @@ module.exports = (sequelize,DataType) => {
         deleted_at : "deleted_at",
     }
 
-    const SizeProduct = sequelize.define(alias,cols,config);
+    const Size = sequelize.define(alias,cols,config);
 
-    return SizeProduct;
+    Size.associate = (models)=> {
+        Size.belongsToMany(models.Product,{
+            as : "product",
+            through: "size_product",
+            foreignKey : "size_id",
+            otherKey: "product_id"
+        })
+    }
+
+    return Size;
 }

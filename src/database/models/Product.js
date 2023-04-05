@@ -22,12 +22,9 @@ module.exports = (sequelize,DataType) => {
                 type : DataType.INTEGER,
                 allowNull : false,
             },
-            category_product_id: {
+            category_id: {
                 type : DataType.INTEGER,
             },
-            size_id: {
-                type : DataType.INTEGER,
-            }
         },
         {
             tableName : "products",
@@ -40,13 +37,33 @@ module.exports = (sequelize,DataType) => {
         }
     );
 
-    // Product.associate = (models)=> {
-    //     Product.belongsTo(models.CategoryProduct,{
-    //         as : "categoryProduct",
-    //         foreingKey : "category_id",
-            
-    //     })
-    // }
+    Product.associate = (models)=> {
+        Product.belongsTo(models.CategoryProduct,{
+            as : "category",
+            foreignKey : "category_id",
+        })
+
+        Product.belongsToMany(models.Size,{
+            as : "size",
+            through: "size_product",
+            foreignKey : "product_id",
+            otherKey: "size_id"
+        })
+
+        Product.belongsToMany(models.Image,{
+            as : "image",
+            through: "image_product",
+            foreignKey : "product_id",
+            otherKey: "image_id"
+        })  
+        
+        Product.belongsToMany(models.Color,{
+            as : "color",
+            through: "color_product",
+            foreignKey : "product_id",
+            otherKey: "color_id"
+        })
+    }
 
     return Product;
 }
