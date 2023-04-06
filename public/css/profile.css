@@ -10,7 +10,8 @@ main{
     margin: 75px auto;
     display: flex;
     justify-content: center;
-    /* flex-wrap: wrap; */
+    max-width: 500px;
+    max-height: 500px;
     border-radius: 25px;
 }
  .profile-conteiner{
@@ -24,6 +25,10 @@ main{
     display: flex;
     justify-content: space-around;
 }
+.img-count{
+    display: flex;
+    justify-content: center;
+}
 .profile-img{
     padding: 3px;
     margin: 0px auto;
@@ -31,14 +36,25 @@ main{
     height: 200px;
 }
 .button{
-    
-    margin: 15px;
-    width: 150px;
+
+    margin: 10px 5px;
+    width: 100%;
+    max-width: 250px;
     height: 35px;
-    background-color: #2792d5;
-    box-shadow: 2px 4px 3px #74bdeb;
+    background-color: #048484;
+    box-shadow: 2px 4px 3px #048484;
     color: #f3eeee;
     border-radius: 7px;
     border: none;
     cursor: pointer
+}
+.editar{
+    background-color: #2792d5;
+    box-shadow: 2px 4px 3px #2792d5;
+
+}
+.eliminar{
+    background-color: #9b1222;
+    box-shadow: 2px 4px 3px #9b1222;
+
 }
