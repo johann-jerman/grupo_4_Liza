@@ -63,22 +63,23 @@ const productController = {
         
         try {
             let color = await db.Color.findAll();
+            let category = await db.CategoryProduct.findAll();
             let size = await db.Size.findAll();
-            console.log(color);
+            
             res.render('./products/new-product',{
                 css: '/css/new-product.css',
                 color,
-                size
+                size,
+                category
             })
         } catch (error) {
-            res.render("error")
+            res.json(error)
         }
 
         
     },
-    store: (req, res)=> {
-        let body = req.body
-        let file = req.file
+    store: async (req, res)=> {
+        
         let error = validationResult(req)
        
 
@@ -93,17 +94,47 @@ const productController = {
         
         // console.log(newProduct);
 
-        let newProduct = {
-            ...body,
-            id : Date.now(),
-            image : file ? file.filename : ' ' 
+        try {
+            let body = req.body
+            let files = req.files
+            let size = req.body.size
+            let color = req.body.color
+            
+            let fileToCreate = files.map(file=>({image:file.filename}))
+            let productCreate = await db.Product.create({
+                name:req.body.name,
+                description:req.body.description,
+                price:req.body.price,
+                category_id:req.body.category,
+
+            });
+            let colorToCreate = color.map(color=>{
+                return {
+                    color_id : parseInt(color),
+                    product_id : productCreate.id
+                }
+            })
+            await db.ColorProduct.bulkCreate(colorToCreate)
+            let sizeToCreate = size.map(size => {
+                return {
+                    size_id : parseInt(size),
+                    product_id : productCreate.id
+                }
+            })          
+            await db.SizeProduct.bulkCreate(sizeToCreate)
+            let createImage = await db.Image.bulkCreate(fileToCreate)
+            let pivotImage = createImage.map(image => {
+                return {
+                    image_id : image.id,
+                    product_id : productCreate.id
+                }
+            })
+            await db.ImageProduct.bulkCreate(pivotImage)
+            res.redirect("/")
+
+        } catch (error) {
+            res.json(error)
         }
-
-        products.push(newProduct);
-
-        fs.writeFileSync(productsFilePath ,JSON.stringify(products, null, ' '))
-
-        res.redirect('/product/newProduct')
     },
     //edicion de producto
     edit: (req, res)=>{

@@ -28,7 +28,7 @@
         
         <div class="form-group">
           <label for="image">Imagen:</label>
-          <input type="file" id="image" name="image">
+          <input type="file" id="image" name="image" multiple>
           <% if (locals.error && error.image) { %>
            <p><%= error.image.msg %></p>
           <% } %>
@@ -37,20 +37,19 @@
         <div class="form-group">
           <label for="category">Categoria:</label>
           <select id="category" name="category">
-            <option value="">Seleccionar categoria</option>
-            <option value="man">Man</option>
-            <option value="women">women</option>
+            <option disabled selected>Seleccionar categoria</option>
+            <% category.forEach(categoria => { %>
+             <option value="<%= categoria.id %>"><%= categoria.category %></option> 
+            <% }) %>
           </select>
         </div>
         
         <div class="form-group">
           <label for="size">Talla:</label>
-          <select id="size" name="size">
-            <option value="">Seleccionar categoria</option>
-            <option value="S">S</option>
-            <option value="L">L</option>
-            <option value="M">M</option>
-          </select>
+          <% size.forEach(size => { %>
+           <input type="checkbox" name="size" value="<%=size.id%> " id=""><%= size.size %>
+          <% }) %>
+          
         </div>
         
         <div class="form-group">

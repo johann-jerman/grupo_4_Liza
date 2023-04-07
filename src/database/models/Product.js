@@ -45,21 +45,21 @@ module.exports = (sequelize,DataType) => {
 
         Product.belongsToMany(models.Size,{
             as : "size",
-            through: "size_product",
+            through: "size_products",
             foreignKey : "product_id",
             otherKey: "size_id"
         })
 
         Product.belongsToMany(models.Image,{
             as : "image",
-            through: "image_product",
+            through: "image_products",
             foreignKey : "product_id",
             otherKey: "image_id"
         })  
         
         Product.belongsToMany(models.Color,{
             as : "color",
-            through: "color_product",
+            through: "color_products",
             foreignKey : "product_id",
             otherKey: "color_id"
         })

@@ -11,7 +11,7 @@ router.get('/women',productController.women);
 
 //ruta de cracion de producto
 router.get('/newProduct',productController.create);
-router.post('/newProduct', upload.single('image'),productValidator ,productController.store);
+router.post('/newProduct', upload.any('image'),productValidator ,productController.store);
 
 //rutas de edicion de producto
 router.get('/edit/:id', productController.edit);
