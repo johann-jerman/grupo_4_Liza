@@ -60,6 +60,14 @@
            <p><%= error.price.msg %></p>
           <% } %>
         </div>
+
+        <div class="form-group">
+          <label for="color">Color:</label>
+          <% color.forEach(color => { %>
+           <input type="checkbox" name="color" value="<%=color.id%> " id=""><%= color.color %>
+          <% }) %>
+          
+        </div>
         
         <button type="submit" class="add-btn">Add</button>
     </div>

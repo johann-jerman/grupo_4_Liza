@@ -1,27 +1,51 @@
 const fs = require('fs');
 const path = require('path');
 const {validationResult} = require("express-validator");
-const db = require('../database/models')
+const db = require('../database/models');
+const { log } = require('console');
 
-let productsFilePath = path.join(__dirname, '../data/products.json');
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+//let productsFilePath = path.join(__dirname, '../data/products.json');
+//let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const productController = {
     //muestra de productos man y woman
-    man : (req, res) => {
-        res.render('./products/man',{
-            css: '/css/genre.css',
-            products
-        })
+    man : async (req, res) => {
+        try {  
+            let products = await db.Product.findAll({
+                where : {
+                    category_id : 1
+                }
+            })
+            res.render('./products/man',{
+                css: '/css/genre.css',
+                products
+            })
+            
+        }catch (error) {
+            res.render("error")
+        }
+     
     },
-    women : (req, res) => {
-        res.render('./products/women',{
-            css: '/css/genre.css',
-            products
-        })
+    women : async (req, res) => {
+        try {  
+            let products = await db.Product.findAll({
+                where : {
+                    category_id : 2
+                }
+            })
+            res.render('./products/women',{
+                css: '/css/genre.css',
+                products
+            })
+            
+        }catch (error) {
+            res.render("error")
+        }
+   
     },
     // muestra de producto particular
-    detail : (req, res) => {
-        let producto = products.find(product => product.id == req.params.id)
+    detail :async(req, res) => {
+        let id = req.params.id
+        let producto = await db.Product.findByPk(id)
         
         res.render('./products/detail',{
             css: '/css/product.css',
@@ -35,10 +59,22 @@ const productController = {
         })
     },
     // creacion de producto
-    create: (req, res)=> {
-        res.render('./products/new-product',{
-         css: '/css/new-product.css'
-         })
+    create: async (req, res)=> {
+        
+        try {
+            let color = await db.Color.findAll();
+            let size = await db.Size.findAll();
+            console.log(color);
+            res.render('./products/new-product',{
+                css: '/css/new-product.css',
+                color,
+                size
+            })
+        } catch (error) {
+            res.render("error")
+        }
+
+        
     },
     store: (req, res)=> {
         let body = req.body
