@@ -1,4 +1,5 @@
 const {body} = require("express-validator");
+const { type } = require("os");
 const path = require("path");
 const productValidator = [
     body("name")
@@ -12,15 +13,17 @@ const productValidator = [
     
     body("image")
         .custom((val, {req})=>{
-            const file = req.file
+            const file = req.files
             const validExtension = [".jpg" ,".png" ,".svg" , ".jpeg"]
-            if(!req.file){
+            if(!file){
                 throw new Error("ingresar una imagen")
             }
-            const extension = path.extname(file.originalname)
-            if(!validExtension.includes(extension)){
-                throw new Error(`Las extenciones validas son ${validExtension.join(', ')}`)
-            }
+            file.forEach(file => {
+                const extension = path.extname(file.originalname)
+                if(!validExtension.includes(extension)){
+                    throw new Error(`Las extenciones validas son ${validExtension.join(', ')}`)
+                }
+            });
             return true
         })
 ]

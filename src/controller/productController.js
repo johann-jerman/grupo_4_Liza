@@ -3,6 +3,7 @@ const path = require('path');
 const {validationResult} = require("express-validator");
 const db = require('../database/models');
 const { log } = require('console');
+const { col } = require('sequelize');
 
 //let productsFilePath = path.join(__dirname, '../data/products.json');
 //let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -81,25 +82,36 @@ const productController = {
     store: async (req, res)=> {
         
         let error = validationResult(req)
-       
-
         if(!error.isEmpty()){
+            let color = await db.Color.findAll();
+            let category = await db.CategoryProduct.findAll();
+            let size = await db.Size.findAll();
+
             return res.render('./products/new-product',{
                 css: '/css/new-product.css',
                 error : error.mapped(),
-                oldBody: req.body
-                })
-                
+                oldBody: req.body,
+                color,
+                category,
+                size
+            })   
         }
         
-        // console.log(newProduct);
 
         try {
-            let body = req.body
             let files = req.files
             let size = req.body.size
             let color = req.body.color
-            
+            console.log(color,size);
+        
+            if (!Array.isArray(color)) {
+                color = [req.body.color]
+            }
+            if (!Array.isArray(size)) {
+                size = [req.body.size]
+            }
+            console.log(color, size);
+
             let fileToCreate = files.map(file=>({image:file.filename}))
             let productCreate = await db.Product.create({
                 name:req.body.name,
@@ -133,7 +145,11 @@ const productController = {
             res.redirect("/")
 
         } catch (error) {
-            res.json(error)
+            console.log(error   );
+            res.json({
+                status: 400,
+                data: error
+            })
         }
     },
     //edicion de producto
