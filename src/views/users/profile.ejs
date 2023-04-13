@@ -12,9 +12,10 @@
                 <p><%= user.name %></p>
                 <p><%= user.lastname %></p>
             </div>
+        
           
             
-            <p><%= user.email %></p>
+        <div class="buttons">
             <form action="/user/logout" method="POST"> 
                 <button class="button" type="submit">Logout</button>
             </form>
@@ -24,7 +25,43 @@
             <form action="" method="POST"> 
                 <button class="button eliminar" type="submit">Eliminar  <i class="fa-solid fa-trash"></i></button>
             </form>
+            </div>
         </div>
+        
+        <div class="contenedor">
+            <div>
+                <ul class="tabs">
+                <li class="li activo"> <a href="#tab1"> <p class="tab-text">MIS DATOS</p></button> </a>  </li>
+                <li> <a href="#tab2"> <p class="tab-text">MIS DIRECCIONES</p> </a> </li>
+                <li> <a href="#tab3"> <p class="tab-text">MIS COMPRAS</p> </a> </li>
+                <li> <a href="#tab4"> <p class="tab-text">WISH LIST</p> </a> </li>
+                </ul>
+            <div>
+            <div class="bloque activo">
+                    <ul id="tab1">
+                    <li class="elementos-de-bloque"> Nombre</li>
+                    <li class="elementos-de-bloque">Apellido</li>
+                    <li class="elementos-de-bloque">Doc. de Identidad</li>
+                    <li class="elementos-de-bloque">Email</li>
+                    <li class="elementos-de-bloque">Contraseña</li>
+                </ul> </div>
+            <div class="bloque"><ul id="tab2">
+                    <li><button>Ingresa Direccion</button></li>
+                </ul></div>
+
+            <div class="bloque"><ul id="tab3">
+                    <li class="elementos-de-bloque">Nro de Orden</li>
+                    <li class="elementos-de-bloque">Estado</li>
+                    <li class="elementos-de-bloque">Fecha</li>
+                    <li class="elementos-de-bloque">Importe</li>
+                    <li><button>Compras Anteriores</button></li>
+                </ul></div>
+                
+            <div class="bloque"><ul id="tab4">
+                    <li><button>Agrega Productos</button></li>
+                </ul></div>
+        </div>
+
     </main>
     <%- include('../partials/footer.ejs') %>
 </body>
