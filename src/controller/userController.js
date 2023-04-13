@@ -154,7 +154,6 @@ const userController = {
     },
 
     profile : (req, res) => {
-        console.log(req.session.userLogged);
         res.render('./users/profile', {
             css : '/css/profile.css' ,
             user : req.session.userLogged

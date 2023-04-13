@@ -2,20 +2,18 @@ const fs = require('fs');
 const path = require('path');
 const {validationResult} = require("express-validator");
 const db = require('../database/models');
-const { log } = require('console');
-const { col } = require('sequelize');
 
-//let productsFilePath = path.join(__dirname, '../data/products.json');
-//let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const productController = {
     //muestra de productos man y woman
     man : async (req, res) => {
         try {  
             let products = await db.Product.findAll({
+                include: [{association: 'image'}],
                 where : {
                     category_id : 1
                 }
             })
+
             res.render('./products/man',{
                 css: '/css/genre.css',
                 products
@@ -45,13 +43,23 @@ const productController = {
     },
     // muestra de producto particular
     detail :async(req, res) => {
-        let id = req.params.id
-        let producto = await db.Product.findByPk(id)
-        
-        res.render('./products/detail',{
-            css: '/css/product.css',
-            producto
-        })
+        try {
+            let id = req.params.id
+            let producto = await db.Product.findByPk(id, {
+                include: [
+                    {association: 'image'},
+                    {association: 'size'},
+                    {association: 'color'}
+                ]
+            })
+    
+            res.render('./products/detail',{
+                css: '/css/product.css',
+                producto
+            })
+        } catch (error) {
+            res.render('error');
+        }
     },
     //carrito de compras
     shoppingCart : (req, res) => {
@@ -74,7 +82,7 @@ const productController = {
                 category
             })
         } catch (error) {
-            res.json(error)
+            res.render('error');
         }
 
         
@@ -102,7 +110,6 @@ const productController = {
             let files = req.files
             let size = req.body.size
             let color = req.body.color
-            console.log(color,size);
         
             if (!Array.isArray(color)) {
                 color = [req.body.color]
@@ -110,7 +117,6 @@ const productController = {
             if (!Array.isArray(size)) {
                 size = [req.body.size]
             }
-            console.log(color, size);
 
             let fileToCreate = files.map(file=>({image:file.filename}))
             let productCreate = await db.Product.create({
@@ -145,11 +151,7 @@ const productController = {
             res.redirect("/")
 
         } catch (error) {
-            console.log(error   );
-            res.json({
-                status: 400,
-                data: error
-            })
+            res.render('error');
         }
     },
     //edicion de producto
@@ -178,27 +180,35 @@ const productController = {
         res.redirect('/')
     },
     // eliminar 1 producto
-    delete: (req, res)=>{
-        let idUrl = req.params.id; 
-        let producto = products.find(product => product.id == idUrl);
-
-        res.render('./products/delete-product',{
-            css: '/css/new-product.css',
-            producto
-        })
+    delete: async (req, res)=>{
+        try {
+            let {id} = req.params; 
+            let producto = await db.Product.findByPk(id, {
+                include: [
+                    {association: 'image'},
+                    {association: 'size'},
+                    {association: 'color'}
+                ]
+            })
+    
+            res.render('./products/delete-product',{
+                css: '/css/new-product.css',
+                producto
+            })
+        } catch (error) {
+            res.render('error');
+        }
     },
-    erase: (req, res)=>{
-        let idUrl = req.params.id; 
-        let product = products.find(product => product.id == idUrl);
-        let index = products.indexOf(product);
+    erase: async (req, res)=>{
+        try {
+            let {id} = req.params; 
+            await db.Product.destroy(id)
+            
+            res.redirect('/');
+        } catch (error) {
+            res.render('error');
+        }
 
-        products.splice(index, 1);
-
-
-        fs.unlinkSync(path.resolve(__dirname, '../../public/images/products/' + product.image));
-        fs.writeFileSync(productsFilePath ,JSON.stringify(products, null, ' '));
-
-        res.redirect('/');
     } 
 };
 
