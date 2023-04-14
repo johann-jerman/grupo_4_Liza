@@ -44,7 +44,7 @@ main{
     border-radius: 10px;
     opacity: 0;
     transition: all .5s ease;
-    box-shadow: 2px 4px 3px #048484;
+    box-shadow: 2px 4px 3px #147c8c;
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
     color: white;
@@ -90,8 +90,8 @@ font-weight: bold;
     }
 
 .contenedor .li.activo {
-   background-color: #042850;
-   box-shadow: 2px 4px 3px #042850;
+   background-color: #045c94;
+   box-shadow: 2px 4px 3px #045c94;
 }
 
 .elementos-de-bloque {
@@ -126,6 +126,19 @@ font-weight: bold;
     background-color: #048484;
     box-shadow: 2px 4px 3px #048484;
     color: #f3eeee;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer
+}
+
+.button-bloque{
+    margin: 10px 5px;
+    width: 100%;
+    max-width: 250px;
+    height: 15px;
+    background-color: white;
+    box-shadow: 2px 4px 3px white;
+    color: #042850;
     border-radius: 7px;
     border: none;
     cursor: pointer
