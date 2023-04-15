@@ -21,39 +21,56 @@
           <textarea id="description" name="description"><%= producto.description %></textarea>
         </div>
         
-        <div class="form-group">
-          <!-- <label for="image">Imagen:</label>
-          <input type="file" id="image" name="image"> -->
-          <img src="/images/products/<%= producto.image %>" alt="<%= producto.image %>">
-        </div>
         
         <div class="form-group">
           <label for="category">Categoria:</label>
           <select id="category" name="category">
-            <option value="">Seleccionar categoria</option>
-            <option value="man">Man</option>
-            <option value="women">women</option>
+            <option disabled selected>Seleccionar Categoria:</option>
+            <% category.forEach(category => { %>
+              <% if (producto.category_id == category.id) { %>
+                <option value="<%= category.id %>" selected><%= category.category %></option>
+              <% } else {%>
+                <option value="<%= category.id %>"><%= category.category %></option>
+              <% } %>
+              <% }) %>
           </select>
         </div>
         
         <div class="form-group">
           <label for="size">Talla:</label>
-          <select id="size" name="size">
-            <option value="">Seleccionar categoria</option>
-            <option value="S">S</option>
-            <option value="L">L</option>
-            <option value="M">M</option>
+          <% size.forEach(size => { %>
+            <input type="checkbox" name="size" value="<%=size.id%>" id=""><%= size.size %>
+          <% }) %>
           </select>
         </div>
-        
         <div class="form-group">
-          <label for="price">Precio:</label>
-          <input type="text" id="price" name="price" value="<%= producto.price %>">
-        </div>
-        
-        <button type="submit" class="add-btn">Add</button>
+          <label for="color">Colores:</label>
+          <% color.forEach(color => { %>
+            <input type="checkbox" name="color" value="<%=color.id%>" id=""><%= color.color %>
+          <% }) %>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="price">Precio:</label>
+        <input type="text" id="price" name="price" value="<%= producto.price %>">
+      </div>
+      
+      <button type="submit" class="add-btn">Add</button>
     </div>
+  </form>
+  <div class="form-group">
+    <% producto.image.forEach(image => { %>
+      <img src="/images/products/<%= image.image %>?_method=put" alt="<%= image.image %>">
+      <form action="/productFile/edit/<%= image.id %>" method="post" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <button type="submit">Editar</button>
       </form>
+      <form action="/productFile/delete/<%= image.id %>?_method=delete" method="post">
+        <button type="submit">Delete</button>
+      </form>
+    <% }) %>
+  </div>
     <Div class="foot">
     <%- include('../partials/footer') %>
     </Div>    

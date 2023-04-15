@@ -156,29 +156,65 @@ const productController = {
         }
     },
     //edicion de producto
-    edit: (req, res)=>{
-        let producto = products.find(product => product.id == req.params.id)
+    edit: async (req, res)=>{
+        try {
+            const {id} = req.params;
+            const producto = await db.Product.findByPk(id, {
+                include: [{association: 'image'}]
+            });
+            let color = await db.Color.findAll();
+            let category = await db.CategoryProduct.findAll();
+            let size = await db.Size.findAll();
 
-        res.render('./products/edit-product',{
-            css: '/css/new-product.css',
-            producto
-        })
+            res.render('./products/edit-product',{
+                css: '/css/new-product.css',
+                producto,
+                color,
+                category,
+                size
+            })
+        } catch (error) {
+            // console.log(error);
+            res.json({
+                error
+            })
+        }
     },
-    update: (req, res)=>{
-        let idUrl = req.params.id; 
-        let product = products.find(product => product.id == idUrl);
-        
-        let body = req.body;
-        
-        product.name = body.name;
-        product.description = body.description;
-        product.price = body.price;
-        product.size = body.size;
-        product.category = body.category;
-        
-        fs.writeFileSync(productsFilePath ,JSON.stringify(products, null, ' '))
-        
-        res.redirect('/')
+    update: async (req, res)=>{
+        try {
+            let {id} = req.params;
+            let editProduct = await db.Product.update(
+                {
+                    name:req.body.name,
+                    description:req.body.description,
+                    price:req.body.price,
+                    category_id:req.body.category,
+                },
+                {
+                    where: {
+                        id
+                    }
+                }
+            )
+            let {size} = req.body 
+            if (!Array.isArray(size)) {
+                size = [req.body.size]
+            }
+            let sizeToUpdate = size.map(size => {
+                return {
+                    size_id : parseInt(size),
+                    product_id : parseInt(id)
+                }
+            })
+
+            res.redirect('/product/edit/' + id)
+            // res.redirect('/product/detail/' + id)
+        } catch (error) {
+            // console.log(error);
+            res.json({
+                error
+            })
+        }
     },
     // eliminar 1 producto
     delete: async (req, res)=>{
@@ -191,7 +227,6 @@ const productController = {
                     {association: 'color'}
                 ]
             })
-    
             res.render('./products/delete-product',{
                 css: '/css/new-product.css',
                 producto
