@@ -27,6 +27,7 @@ const productController = {
     women : async (req, res) => {
         try {  
             let products = await db.Product.findAll({
+                include: [{association: 'image'}],
                 where : {
                     category_id : 2
                 }

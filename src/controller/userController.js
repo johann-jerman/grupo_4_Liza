@@ -140,8 +140,6 @@ const userController = {
 
                 res.redirect('/user/profile');
             };
-            
-
         } catch (error) {
             res.render('error');
         }
