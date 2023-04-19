@@ -3,8 +3,8 @@ const db = require('../database/models')
 module.exports = {
     edit: async (req, res) => {
         try {
-            const {id, productoId} = req.params
-            let a= await db.Image.update(
+            const {id} = req.params
+            await db.Image.update(
                 {
                     image: req.file.filename
                 },
