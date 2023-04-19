@@ -2,13 +2,20 @@ const fs = require('fs');
 const path = require('path');
 const {validationResult} = require("express-validator");
 const db = require('../database/models');
+const { log } = require('console');
 
 const productController = {
     //muestra de productos man y woman
     man : async (req, res) => {
         try {  
             let products = await db.Product.findAll({
-                include: [{association: 'image'}],
+                attributes: ['id', 'price', 'description', 'name'],
+                include: [ 
+                    {
+                        association: 'image',
+                        attributes:['id', 'image']
+                    }
+                ],
                 where : {
                     category_id : 1
                 }
@@ -237,12 +244,18 @@ const productController = {
     },
     erase: async (req, res)=>{
         try {
+            console.log('aaa');
             let {id} = req.params; 
-            await db.Product.destroy(id)
+            await db.Product.destroy({
+                where: {
+                    id
+                }
+            })
             
             res.redirect('/');
         } catch (error) {
-            res.render('error');
+            console.log(error);
+            res.json(error);
         }
 
     } 
