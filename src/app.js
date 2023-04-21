@@ -11,6 +11,8 @@ const mainRoutes = require('./routes/mainRoutes');
 const fileRoutes = require('./routes/fileRoutes');
 const productRoutes = require('./routes/productRoutes');
 const userRoutes = require('./routes/userRoutes');
+const apiUserRoutes = require('./api/routes/user.routes');
+const apiMainRoutes = require('./api/routes/main.routes');
 
 app.use(session({
     secret : 'Este mensage es secreto',
@@ -37,7 +39,11 @@ app.use(express.json());
 app.use(mainRoutes);
 app.use('/product', productRoutes);
 app.use('/user', userRoutes);
-app.use('/productFile', fileRoutes)
+app.use('/productFile', fileRoutes);
+
+// API routes
+app.use('/api', apiUserRoutes);
+app.use('/api', apiMainRoutes);
 
 // app.use((req, res, next)=>{
 //     res.status(404).render('error' , {css:null});

@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const {validationResult} = require("express-validator");
 const db = require('../database/models');
-const { log } = require('console');
 
 const productController = {
     //muestra de productos man y woman
@@ -244,7 +243,6 @@ const productController = {
     },
     erase: async (req, res)=>{
         try {
-            console.log('aaa');
             let {id} = req.params; 
             await db.Product.destroy({
                 where: {
