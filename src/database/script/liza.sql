@@ -137,7 +137,7 @@ CREATE TABLE `image_products` (
 
 ALTER TABLE `products` ADD CONSTRAINT `FK_fefec837-67c0-4da4-a925-7a680145cad8` FOREIGN KEY (`category_id`) REFERENCES `categorysProduct`(`id`)  ;
 
-ALTER TABLE `userCategory` ADD CONSTRAINT `FK_86420a92-1653-4292-9f19-6d32cbd02f5b` FOREIGN KEY (`id`) REFERENCES `users`(`id`)  ;
+ALTER TABLE `users` ADD CONSTRAINT `FK_86420a92-1653-4292-9f19-6d32cbd02f5b` FOREIGN KEY (`user_category_id`) REFERENCES `usercategory`(`id`)  ;
 
 ALTER TABLE `favorite` ADD CONSTRAINT `FK_df032319-ec14-47df-bd6c-185aa7c03617` FOREIGN KEY (`users_id`) REFERENCES `users`(`id`)  ;
 
