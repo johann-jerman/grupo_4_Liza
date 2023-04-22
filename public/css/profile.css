@@ -1,9 +1,14 @@
+*{ margin: 0;
+padding: 0;
+/*-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;*/
+box-sizing: border-box; }
+
 main{
     position: relative;
     height: 70vh;
 }
 .profile{
-    box-shadow: 5px 5px 15px #147c8c;
     width: 90%;
     max-width: 900px;
     padding: 10px;
@@ -20,10 +25,90 @@ main{
 .profile-conteiner p{
     padding: 7px;
 }
+
+.contenedor {
+    width: 100%;
+    max-width: 120em;
+    padding: 1em;
+    position: relative;
+    min-height: 10vh;
+    text-align: center;
+}
+
+.bloque {
+    padding: 1em;
+    position: absolute;
+    /*background-color: #147c8c;*/
+    width: 93%;
+    height: 58%;
+    border-radius: 10px;
+    opacity: 0;
+    transition: all .5s ease;
+    box-shadow: 0px 2px 0px #147c8c;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    color:#042850;
+
+}
+
+.contenedor .bloque.activo {
+   opacity: 1;
+}
+
+.contenedor .li {
+    transition: all .5s ease;
+ } 
+
+ul.tabs {
+width: 100%;
+background-color: #147c8c;
+border-radius: 10px;
+list-style: none;
+display: flex;
+justify-content: space-between;
+margin: 0px;
+padding: 0px;
+box-shadow: 2px 4px 3px #048484; 
+
+}
+
+.tab-text {
+margin-left: 10px;
+
+    }
+
+
+
+ul.tabs li a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 20px 0px;
+    font-family: "Montserrat", sans-serif;
+font-weight: bold;
+    }
+
+.contenedor .li.activo {
+   background-color: #045c94;
+   box-shadow: 2px 4px 3px #045c94;
+}
+
+.elementos-de-bloque {
+    padding: 15px;
+ }
+
+.li {
+    border-radius: 10px;
+ }
 .name-p{
     padding: 3px;
     display: flex;
     justify-content: space-around;
+    box-shadow: 0px 2px 0px #048484;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+font-weight: bold;
 }
 .img-count{
     display: flex;
@@ -48,6 +133,19 @@ main{
     border: none;
     cursor: pointer
 }
+
+.button-bloque{
+    margin: 10px 5px;
+    width: 100%;
+    max-width: 250px;
+    height: 15px;
+    background-color: #147c8c;
+    box-shadow: 2px 4px 3px #147c8c;
+    color: white;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer
+}
 .editar{
     background-color: #2792d5;
     box-shadow: 2px 4px 3px #2792d5;
@@ -58,3 +156,7 @@ main{
     box-shadow: 2px 4px 3px #9b1222;
 
 }
+
+.p {font-family: "Montserrat", sans-serif;
+font-weight: bold;
+color: white;}

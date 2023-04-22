@@ -8,6 +8,21 @@
 <%- include('../partials/header') %>
 <main>
     <h2 class="genre-tittle">WOMEN</h2>
+    <% products.forEach(product => { %>
+      <article class="box-index">
+        <a href="/product/detail/<%= product.id %> ">
+          <img
+            src="/images/products/<%= product.image[0] %> "
+            alt="Imagen del Producto"
+          />
+          <div>
+            <p>$<%= product.price %> </p>
+            <p><%= product.description %> </p>
+            <h4><%= product.name %> </h4>
+          </div>
+        </a>
+      </article>  
+    <% }) %>
     <section class="index-section">
       <% for( let i = 0; i < products.length; i++ ) { %>
         <% if (products[i].category == 'women') { %>

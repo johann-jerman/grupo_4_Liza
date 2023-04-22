@@ -1,18 +1,25 @@
-const db = require('../database/models')
+const db = require('../../database/models')
 
 
 const mainController = {
     home : (req, res) => {
-        res.render('index',{
-            css: '/css/styles.css',
-        })
+        try {
+            res.status(200).json({
+    
+            })
+        } catch (error) {
+            res.status(500).json({
+                status: 500,
+                data: 'no se puede acceder a la informacion actualmente'
+            })
+        }
     },
     prueba: async (req, res) => {
         try {
              let userCategory= await db.UserCategory.findAll(
                 {
-         include: 'user'
-                 }
+                    include: 'user'
+                }
              )
              let user= await db.User.findAll(
                  {
@@ -31,16 +38,16 @@ const mainController = {
             let SizeProduct = await db.SizeProduct.findAll()
     
             res.json( {
-                // colorProduct,
-                // imageProduct,
-                // SizeProduct,
-                // producto,
+                colorProduct,
+                imageProduct,
+                SizeProduct,
+                producto,
                 user,
                 userCategory,
                 category,
                 color,
                 size,
-                // image
+                image
             })
             
         } catch (error) {
@@ -49,6 +56,13 @@ const mainController = {
             })
         }
         
+    },
+    favorite: (req, res) => {
+        
+        res.json({
+            status: 200,
+            data: req.body
+        })
     }
 
 };

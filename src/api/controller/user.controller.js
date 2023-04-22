@@ -1,21 +1,16 @@
-const {validationResult} = require('express-validator');
-const Admin = require('../services/Admin');
+require('dotenv').config()
+const { validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
-const db = require('../database/models')
+const { User } = require('../../database/models');
+const jwt = require('jsonwebtoken');
 
-const userController = {
-    register : (req, res) => {
-        res.render('./users/register',{
-            css: '/css/register.css'
-        });
-    },
-    
+const apiUserController = { 
     registerProcess : async (req, res) => {
         const error = validationResult(req);
         
         if ( !error.isEmpty() ) {
-            return res.render('users/register', {
-                css: '/css/register.css', 
+            return res.status(400).json({
+                status: 400,
                 error: error.mapped(),
                 oldBody: req.body
             });
@@ -25,21 +20,20 @@ const userController = {
             const userToRegist = {
                 name: req.body.name,
                 lastname: req.body.lastname,
-                password: bcrypt.hashSync( req.body.password, 10),
+                password: await bcrypt.hash( req.body.password, 10),
                 email: req.body.email,
                 image: 'usuarioDefault.png',
                 userCategory_id: req.body.category ? req.body.category : '1' 
             };
             
-            const invalidEmail = await db.User.findOne({
+            const invalidEmail = await User.findOne({
                 where: {
                     email : req.body.email
                 }
             });
 
             if (invalidEmail) {
-                return res.render('users/register', {
-                    css: '/css/register.css', 
+                return res.status(404).json({
                     error: {
                         email: {
                             msg: 'El email ya existe'
@@ -49,37 +43,39 @@ const userController = {
                 });
             };
 
-            await db.User.create(userToRegist, {
+            const user = await User.create(userToRegist, {
                 include: 'userCategory'
             });
 
-            res.redirect('/user/login');
+            const token = jwt.sign(user.id, process.env.TOKEN_SECRET, {
+                algorithm: 'HS256',
+            })
+
+            res.status(200).json({
+                status: 200,
+                data: user,
+                token
+            });
 
         } catch (error) {
-            res.render('error');
+            res.status(400).json({
+                error
+            });
         }
     },
-    
-    login : (req, res) => {
-
-        res.render('./users/login',{
-            css: '/css/register.css'
-        });
-    },
-
     loginPocess : async (req, res) => {
         const error = validationResult(req);
         
         if ( !error.isEmpty() ) {
-            return res.render('users/login', {
-                css: '/css/register.css',
+            return res.status(400).json({
+                status: 400,
                 error: error.mapped(),
             });
         };
         
         try {
             
-            let userToLogin = await db.User.findOne({
+            let userToLogin = await User.findOne({
                 where:{
                     email: req.body.email,
                 },
@@ -96,8 +92,8 @@ const userController = {
 
             if (!userToLogin) {
 
-                return res.render('users/login', {
-                    css: '/css/register.css',
+                return res.status(400).json({
+                    status: 400,
                     error: {
                         email: {
                             msg: 'Email no resgistrado'
@@ -106,12 +102,12 @@ const userController = {
                 });
             };
 
-            const confirmPassword = bcrypt.compareSync(req.body.password, userToLogin.password );
+            const confirmPassword = await bcrypt.compare(req.body.password, userToLogin.password );
 
             if (!confirmPassword) {
 
-                return res.render('users/login', {
-                    css: '/css/register.css',
+                return res.status(400).json({
+                    status: 400,
                     error: {
                         password: {
                             msg: 'Contaseña incorrecta'
@@ -119,13 +115,21 @@ const userController = {
                     },
                 });
             };
+
+            const token = jwt.sign(userToLogin.id, process.env.TOKEN_SECRET, {
+                algorithm: 'HS256',
+            });
             
             if (userToLogin.userCategory_id === 2) {
                 delete userToLogin.dataValues.password;
 
                 req.session.admin = userToLogin.dataValues;
             
-                return res.redirect('/user/admin');
+                return res.status(200).json({
+                    status: 200,
+                    user: req.session.admin,
+                    token
+                });
             };
 
             if (userToLogin.userCategory_id === 1) {
@@ -138,28 +142,56 @@ const userController = {
                     res.cookie('userCookie', userToLogin.dataValues, {maxage: 1000*60*60});
                 };
 
-                res.redirect('/user/profile');
+                res.status(200).json({
+                    status: 200,
+                    user: req.session.userLogged,
+                    token
+                });
             };
         } catch (error) {
-            res.render('error');
+            console.log(error);
+            res.json({
+                status: 400,
+                error
+            });
         }
     },
 
     logout : (req, res) => {
         req.session.destroy();
         res.clearCookie('userCookie');
-        res.redirect('/');
-    },
-
-    profile : (req, res) => {
-        res.render('./users/profile', {
-            css : '/css/profile.css' ,
-            user : req.session.userLogged
+        res.status(200).json({
+            status: 200,
+            data: 'session finished succesful'
         });
     },
 
+    profile : (req, res) => {
+        try {
+            const auth= req.headers.auth
+
+            const validAuth = jwt.verify(auth, process.env.TOKEN_SECRET)
+
+            if(!validAuth) {
+                return res.status(400).json({
+                    status: 400, 
+                    data: 'token invalido'
+                })
+            }
+
+            res.status(200).json({
+                status: 200,
+                userData : req.session.userLogged
+            });
+        } catch (error) {
+            res.status(400).json({
+                error
+            })
+        }
+    },
+    // esto se hace en el 8 sprint 
     admin: (req, res)=> {
-        let products = Admin.getAllProduct();
+        let products = getAllProduct();
         
         res.render('./users/admin',{
             css: '/css/admin.css',
@@ -170,4 +202,4 @@ const userController = {
     
 };
 
-module.exports = userController
+module.exports = apiUserController
