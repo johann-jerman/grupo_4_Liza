@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const {validationResult} = require("express-validator");
 const db = require('../database/models');
+const { log } = require('console');
 
 const productController = {
     //muestra de productos man y woman
@@ -89,7 +90,8 @@ const productController = {
                 category
             })
         } catch (error) {
-            res.render('error');
+            console.log(error);
+            res.json(error);
         }
 
         
@@ -158,7 +160,8 @@ const productController = {
             res.redirect("/")
 
         } catch (error) {
-            res.render('error');
+            console.log(error);
+            res.json(error);
         }
     },
     //edicion de producto

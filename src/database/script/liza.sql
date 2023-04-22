@@ -1,5 +1,5 @@
 CREATE TABLE `products` (
-   `id` INT NOT NULL,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `name` VARCHAR(100) NOT NULL,
    `care` TEXT,
    `description` TEXT NOT NULL,
@@ -105,7 +105,7 @@ CREATE TABLE `categorysProduct` (
 );
 
 CREATE TABLE `color_products` (
-   `id` int NOT NULL,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `color_id` int,
    `product_id` int,
    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -115,7 +115,7 @@ CREATE TABLE `color_products` (
 );
 
 CREATE TABLE `size_products` (
-   `id` int NOT NULL,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `size_id` int,
    `product_id` int,
    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -125,7 +125,7 @@ CREATE TABLE `size_products` (
 );
 
 CREATE TABLE `image_products` (
-   `id` int NOT NULL,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `image_id` int,
    `product_id` int,
    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -162,3 +162,5 @@ ALTER TABLE `size_products` ADD CONSTRAINT `FK_991c9fcf-f51f-405b-916e-92c534f0f
 ALTER TABLE `image_products` ADD CONSTRAINT `FK_eb8bb568-f30a-4415-bdb5-7f1a40d6e850` FOREIGN KEY (`image_id`) REFERENCES `images`(`id`)  ;
 
 ALTER TABLE `image_products` ADD CONSTRAINT `FK_e0547c9c-e50f-4c6d-bfee-4debb2fac256` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`)  ;
+
+
