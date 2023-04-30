@@ -7,9 +7,7 @@ const eventDetail = ()=>{
         e.preventDefault()
         
         const confirmation = await sweetConferm()
-        console.log(
-          deleteButton.dataset.productdelete
-        );
+        
         if(confirmation.isConfirmed){
           await fetch(`http://localhost:3004/api/product/delete/${deleteButton.dataset.productdelete}`, {
             method: 'delete'
@@ -23,7 +21,7 @@ const eventDetail = ()=>{
 const sweetConferm = async () => {
     const confirm = await Swal.fire({
       title: 'Estas Seguro?',
-      text: "Una vez <b>elimininado</b> no se puede recuperar!",
+      text: "Una vez elimininado no se puede recuperar!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',

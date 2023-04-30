@@ -18,11 +18,13 @@
             data-id="<%= image.id %>"
               />
           <% }) %>
+          <div class="pointer-btn">
           <% producto.image.map( (image, i) => { %>
-              <i class="<%= i==0? 'fa-solid' : 'fa-regular' %> fa-circle " data-id="<%= image.id %>"></i>
-
-          <% }) %>
-
+            <i class="<%= i==0? 'fa-solid' : 'fa-regular' %> fa-circle " data-id="<%= image.id %>"></i>
+            
+            <% }) %>
+            </div>
+          
         </div>
         <div class="description-product">
           <h3><%= producto.name %> </h3>
@@ -43,13 +45,30 @@
             <button type="submit" class="add-cart">Agregar al carrito</button>
           </div> 
           <h4>Descripcion</h4>
-          <p>
+          <p style="text-align: center;">
             <%= producto.description %> .
           </p>
-          <a href="/product/edit/<%= producto.id %>">Editar</a>
-          <form action="/product/delete/<%= producto.id %>" method="post" id="delete" data-productdelete="<%= producto.id %>">
-            <button type="submit" >Eliminar!!</button>
+          <!-- <a href="/product/edit/<%= producto.id %>" class="detail-btn">Editar</a> -->
+          <div class="flex-conteiner">
+            <form 
+            action="/product/edit/<%= producto.id %>" 
+            method="get" 
+            id="edit" 
+            data-productedit="<%= producto.id %>"
+            class="detail-btn "
+            >
+            <button type="submit" class="btn-edit">Editar!!</button>
+            </form>
+            <form 
+            action="/product/delete/<%= producto.id %>" 
+            method="post" 
+            id="delete" 
+            data-productdelete="<%= producto.id %>"
+            class="detail-btn"
+            >
+            <button type="submit" class="btn-delete">Eliminar!!</button>
           </form>
+        </div>
         </div>
       </article>
 
