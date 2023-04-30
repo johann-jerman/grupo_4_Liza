@@ -57,13 +57,6 @@ const mainController = {
         }
         
     },
-    favorite: (req, res) => {
-        
-        res.json({
-            status: 200,
-            data: req.body
-        })
-    }
 
 };
 

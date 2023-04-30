@@ -10,13 +10,21 @@
     <section>
       <article class="product-article">
         <div class="all-product">
-          <% producto.image.forEach(image => { %>
+          <% producto.image.map( (image, i) => { %>
             <img
-              src="/images/products/<%= image.image %> "
-              alt="imagen principal de producto"
-              class="main-product"
-            />
+            src="/images/products/<%= image.image %> "
+            alt="imagen principal de producto"
+            class="main-product <%= i == 0? 'is-visible' : null %>"
+            data-id="<%= image.id %>"
+              />
           <% }) %>
+          <div class="pointer-btn">
+          <% producto.image.map( (image, i) => { %>
+            <i class="<%= i==0? 'fa-solid' : 'fa-regular' %> fa-circle " data-id="<%= image.id %>"></i>
+            
+            <% }) %>
+            </div>
+          
         </div>
         <div class="description-product">
           <h3><%= producto.name %> </h3>
@@ -37,13 +45,48 @@
             <button type="submit" class="add-cart">Agregar al carrito</button>
           </div> 
           <h4>Descripcion</h4>
-          <p>
+          <p style="text-align: center;">
             <%= producto.description %> .
           </p>
-          <a href="/product/edit/<%= producto.id %>">Editar</a>
-          <a href="/product/delete/<%= producto.id %>">Eleminar</a>
+          <!-- <a href="/product/edit/<%= producto.id %>" class="detail-btn">Editar</a> -->
+          <div class="flex-conteiner">
+            <form 
+            action="/product/edit/<%= producto.id %>" 
+            method="get" 
+            id="edit" 
+            data-productedit="<%= producto.id %>"
+            class="detail-btn "
+            >
+            <button type="submit" class="btn-edit">Editar!!</button>
+            </form>
+            <form 
+            action="/product/delete/<%= producto.id %>" 
+            method="post" 
+            id="delete" 
+            data-productdelete="<%= producto.id %>"
+            class="detail-btn"
+            >
+            <button type="submit" class="btn-delete">Eliminar!!</button>
+          </form>
+        </div>
         </div>
       </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <article>
         <h3>Te puede interesar</h3>
         <div class="offer-conteiner">
@@ -93,5 +136,8 @@
   </main>
 
 <%- include('../partials/footer') %>    
+<script src="/js/detail.js"></script>
+<script src="/js/sweetConfirm.js"></script>
+
 </body>
 </html>
