@@ -7,6 +7,5 @@ router.get('/', mainController.home);
 
 router.get('/prueba',   mainController.prueba);
 
-router.get('/favorite',   mainController.favorite);
 
 module.exports = router

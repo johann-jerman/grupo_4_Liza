@@ -95,7 +95,23 @@ h3, h4, h5{
 .offer-conteiner div h6,.price-product{
   text-align: center;
 }
-
+.main-product{
+  display: none;
+}
+.is-visible{
+  display: block;
+}
+.fa-circle{
+  cursor: pointer;
+}
+.fa-regular{
+  color: #048484;
+  transition: 250ms;  
+}
+.fa-solid{
+  color: #048484;
+  transition: 1000ms;  
+}
 
 @media (min-width: 768px) {
   

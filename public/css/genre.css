@@ -40,28 +40,47 @@ font-family: 'Montserrat', sans-serif;
     background-size: cover;
     border-radius: 7px;
   }
-  .box-index p{
-    display: none;
-  }
   .box-index p,h4{
     color: #fefefe;
   }
-  .box-index:hover p{
-    display: block;
+  .product-name{
+    font-size: 16px;
   }
   .box-index div {
+    position: relative;
     text-align: center;
-    background-color: #048484;
+    background-color: #045c94;
     /* color: black; */
     border-radius: 7px;
     padding: 10px;
   }
-
-
-
+  div .fa-regular{
+    font-size: 20px;
+    display: none;
+  }
+  div .fa-solid{
+    font-size: 20px;
+  }
+  .box-index:hover .fa-regular{
+    color: #ff0051;
+    display: block;
+    transition: 1000ms;
+  }
+  .fav-position{
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    padding: 5px;
+  }
+  .fa-beat{
+    color: #ff0051;
+    transition: 1000ms;
+  }
 
 @media (min-width: 768px) {
-  
+  .product-name{
+    font-size: 22px;
+  }
 }
 
 @media (min-width: 1024px) {
