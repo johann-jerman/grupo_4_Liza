@@ -7,7 +7,7 @@
 <body>
 <%- include('../partials/header') %>
 <main>
-  <form class="register-form" action="/user/register" method="post" enctype="multipart/form-data">
+  <form class="register-form" action="/user/register" method="post" enctype="multipart/form-data" id = "form-register">
     
 
     <h3 class="register-tittle">
@@ -96,11 +96,14 @@
       <% } %>
 
 
-      <button class="submit" type="submit">Crear cuenta</button>
+      <button class="submit" type="submit" id="btn-register">Crear cuenta</button>
       <button class="submit" type="reset">Reiniciar Formulario</button>
     </form>
   </main>
   
   <%- include('../partials/footer') %>    
 </body>
+
+<script src="/js/userValidator.js"></script>
+<script src="/js/userFunction.js"> </script>
 </html>
