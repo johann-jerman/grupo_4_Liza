@@ -4,6 +4,8 @@ CREATE TABLE `products` (
    `care` TEXT,
    `description` TEXT NOT NULL,
    `price` INT NOT NULL,
+   `stock` INT NOT NULL,
+   `offer` INT,
    `category_id` INT,
    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

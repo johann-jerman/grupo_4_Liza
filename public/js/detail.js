@@ -8,7 +8,7 @@ const eventDeteil = ()=>{
     
     imgButtonDetail.forEach( (button) => {
         button.addEventListener('click', ()=>{
-            showImg(button.dataset.id, button) 
+            showImg(button.dataset.id) 
             deleteVisible()
             if (!button.classList.contains('fa-solid')) {
                 button.classList.add('fa-solid')
@@ -18,7 +18,7 @@ const eventDeteil = ()=>{
     
 }
 
-const showImg = (dataId, button) => {
+const showImg = (dataId) => {
     imageDetail.forEach( image => {
         if (image.dataset.id == dataId && !image.classList.contains('is-visible') ) {
            image.classList.add('is-visible')

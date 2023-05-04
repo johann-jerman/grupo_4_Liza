@@ -8,12 +8,11 @@ const form = document.getElementById("form-register")
 window.addEventListener("DOMContentLoaded",() => validator())
 
 const validator = () => {
-   form.addEventListener("submit", (e) =>  {
+  form.addEventListener("submit", (e) =>  {
     
     let validatorResult = isEmpty(inputArray)
-    if(validatorResult.includes(true)){
-    e.preventDefault()
-    }
+    if(validatorResult.includes(true)) e.preventDefault()
+    
     let lastnameLength = isLength(lastname, 4)
     if (!lastnameLength) e.preventDefault()
 
@@ -25,6 +24,9 @@ const validator = () => {
 
     let imageForma = imgFormat(image)
     if(!imageForma) e.preventDefault()
+
+    let validMail = validateEmail(email)
+    if (!validMail) e.preventDefault()
   })
     
 }

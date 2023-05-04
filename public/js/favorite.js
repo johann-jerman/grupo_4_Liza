@@ -8,6 +8,5 @@ const heathDom = ()=>{
         heath.classList.toggle('fa-beat')
         heath.classList.toggle('fa-solid')
         heath.classList.toggle('fa-regular')
-
     })
 }
