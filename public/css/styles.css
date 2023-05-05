@@ -109,8 +109,8 @@ h2 {
 }
 .box-index {
     width: 55vw;
-    max-width: 300px;
-    margin: 15px;
+    max-width: 200px;
+    /* margin: 15px; */
     border-radius: 7px;
   }
   .box-index:hover {
@@ -197,11 +197,11 @@ footer li {
   }
   /* aca comienza la seccion ofertas y fav */
   .box-index {
-    width: 15vw;
+    width: 13vw;
     max-width: none;
   }
   .product-name{
-    font-size: 22px;
+    font-size: 13px;
   }
 }
 

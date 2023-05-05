@@ -8,7 +8,7 @@
 <%- include('../partials/header') %>
 <main class="main">    
     <div class="paint">
-      <form action="/product/newProduct" method="post" enctype="multipart/form-data">
+      <form id="form-create" action="/product/newProduct" method="post" enctype="multipart/form-data">
         
         <div class="form-group">
           <label for="name">Nombre:</label>
@@ -30,7 +30,7 @@
         <div class="form-group">
           <label for="category">Categoria:</label>
           <select id="category" name="category">
-            <option disabled selected>Seleccionar categoria</option>
+            <option disabled selected value="">Seleccionar categoria</option>
             <% category.forEach(categoria => { %>
               <option value="<%= categoria.id %>"><%= categoria.category %></option> 
               <% }) %>
@@ -93,4 +93,6 @@
         <%- include('../partials/footer') %>
       </Div>    
 </body>
+<script src="/js/createValidation.js"></script>
+<script src="/js/userFunction.js"></script>
 </html>
