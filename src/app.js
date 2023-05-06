@@ -6,6 +6,7 @@ const methodOverride =  require('method-override');
 const PORT = process.env.PORT || 3004;
 const session = require ('express-session');
 const cookie = require('cookie-parser');
+const cors = require('cors');
 const userLoggedMiddelware = require('./middleware/userLoggedMiddleware');
 const mainRoutes = require('./routes/mainRoutes');
 const fileRoutes = require('./routes/fileRoutes');
@@ -35,7 +36,9 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
+app.use(cors({
+    origin: '*'
+}))
 
 //uso de rutas
 app.use(mainRoutes);

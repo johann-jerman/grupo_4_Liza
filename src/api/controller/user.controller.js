@@ -19,6 +19,7 @@ const apiUserController = {
 
             res.status(200).json({
                 status: 200,
+                total: users.length,
                 data: users
             })
         } catch (error) {

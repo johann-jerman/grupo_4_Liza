@@ -27,7 +27,8 @@ const apiProductController = {
 
             res.status(200).json({
                 status: 200,
-                data: products
+                total: products.length,
+                data: products,
             })
         } catch (error) {
             res.status(400).json({
