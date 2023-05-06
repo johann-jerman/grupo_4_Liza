@@ -44,8 +44,8 @@ app.use('/user', userRoutes);
 app.use('/productFile', fileRoutes);
 
 // API routes
-app.use('/api', apiUserRoutes);
 app.use('/api', apiMainRoutes);
+app.use('/api/user', apiUserRoutes);
 app.use('/api/product', apiProductRoutes);
 app.use('/api/category', apiCategoryRoutes);
 

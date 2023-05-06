@@ -7,7 +7,8 @@ const jwt = require('jsonwebtoken');
 const apiUserController = { 
     getAll: async (req, res) => {
         try {
-            let users = db.User.findAll({
+            let users = await User.findAll({
+                attributes: ['id', 'name', 'lastname', 'email', 'image', 'created_at'],
                 include: [
                     {
                         association: 'userCategory',
@@ -23,7 +24,8 @@ const apiUserController = {
         } catch (error) {
             res.status(400).json({
                 status: 400,
-                data: error
+                data: error,
+                a: 'esto es un error'
             })   
         }
     },

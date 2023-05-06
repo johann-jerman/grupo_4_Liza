@@ -4,7 +4,7 @@ const apiProductController = {
     getAll: async (req, res) => {
         try {
             let products = await db.Product.findAll({
-                attributes: ['id', 'price', 'description', 'name'],
+                attributes: ['id', 'name', 'price', 'stock', 'offer', 'description', 'care'],
                 include: [
                     {
                         association: 'image',

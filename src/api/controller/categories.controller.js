@@ -3,12 +3,14 @@ const db = require('../../database/models');
 const apiCategoriesController = {
     getAll: async (req, res) => {
         try {
-            let productCategories = db.CategoryProduct.findAll({
-                attributes: ['id', 'category', 'created_at'],
+            let userCategories= await db.UserCategory.findAll({
+                attributes: ['id', 'category'],
             })
-            let userCategories = db.UserCategory.findAll({
-                attributes: ['id', 'category', 'created_at'],
+            
+            let productCategories= await db.CategoryProduct.findAll({
+                attributes: ['id', 'category'],
             })
+
             
             res.status(200).json({
                 status: 200,
