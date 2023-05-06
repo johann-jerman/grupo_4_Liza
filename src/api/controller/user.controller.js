@@ -5,6 +5,28 @@ const { User } = require('../../database/models');
 const jwt = require('jsonwebtoken');
 
 const apiUserController = { 
+    getAll: async (req, res) => {
+        try {
+            let users = db.User.findAll({
+                include: [
+                    {
+                        association: 'userCategory',
+                        attributes:['id', 'category']
+                    },
+                ]
+            })
+
+            res.status(200).json({
+                status: 200,
+                data: users
+            })
+        } catch (error) {
+            res.status(400).json({
+                status: 400,
+                data: error
+            })   
+        }
+    },
     registerProcess : async (req, res) => {
         const error = validationResult(req);
         

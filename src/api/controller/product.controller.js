@@ -1,6 +1,41 @@
 const db = require('../../database/models');
 
 const apiProductController = {
+    getAll: async (req, res) => {
+        try {
+            let products = await db.Product.findAll({
+                attributes: ['id', 'price', 'description', 'name'],
+                include: [
+                    {
+                        association: 'image',
+                        attributes:['id', 'image']
+                    },
+                    {
+                        association: 'size',
+                        attributes:['id', 'size']
+                    },
+                    {
+                        association: 'color',
+                        attributes:['id', 'color']
+                    },
+                    {
+                        association: 'category',
+                        attributes:['id', 'category']
+                    },
+                ]
+            })
+
+            res.status(200).json({
+                status: 200,
+                data: products
+            })
+        } catch (error) {
+            res.status(400).json({
+                status: 400,
+                data: error
+            })
+        }
+    },
     detail :async(req, res) => {
         try {
             let id = req.params.id
