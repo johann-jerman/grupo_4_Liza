@@ -7,7 +7,7 @@
 <body>
 <%- include('../partials/header') %>
 <main>
-    <div class="grid-cart">
+    <div class="grid-cart" id="cart-conteiner">
       <!-- cajones con el detalle del producto -->
       <section class="product-detail">
         <h3>Carrito de Compras</h3>
@@ -101,6 +101,10 @@
     </div>
   </main>
 
-<%- include('../partials/footer') %>    
+<%- include('../partials/footer') %>   
+<!-- <script src="/js/cartEvent.js"></script> -->
+<script src="/js/cartLogic.js"></script>
+<script src="/js/cartRender.js"></script>
+
 </body>
 </html>

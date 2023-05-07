@@ -14,9 +14,9 @@ const errors = []
         if(input.value.trim() && errorText){
             errorText.remove()
         }
-            });
-            console.log(errors);    
-            return errors
+    });
+
+    return errors
 }
 
 const isLength = (input,inputMinLength) => {
@@ -37,8 +37,9 @@ const isLength = (input,inputMinLength) => {
 
 const imgFormat = (input) => {
 
-    let extensions = ['.jpg', '.jpeg', '.png', '.gif']
+    let extensions = ['.jpg', '.jpeg', '.png', '.gif', '.PNG', '.JPG', '.JPEG']
     let inputExtension = input.value.substring(input.value.lastIndexOf('.'));
+    console.log(input);
     if (!extensions.includes(inputExtension)) {
 
         let nameError = document.getElementById("error-img"+input.attributes.id)
@@ -62,15 +63,45 @@ const imgFormat = (input) => {
 
     } else {
 
-        let nameError = document.getElementById(createErrorId)
+        let nameError = document.getElementById("error-img"+input.attributes.id)
 
         if (nameError) {
             nameError.remove()
         }
 
-        console.log('estoy en el else');
-
         return true
 
     }
+}
+
+function validateEmail(email){
+    //capturamos el error si esta creado
+    let errorText = document.getElementById("error-email"+ email.attributes.id)
+
+    //expreciones regulares para validar email
+	var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+
+    //creamos el error si el mail es invalido y el error no existe
+    if( !validEmail.test(email.value) && !errorText){
+		let error = document.createElement("p")
+            error.innerHTML = "El mail tiene que ser valido"
+            error.setAttribute("id","error-email"+ email.attributes.id)
+            error.classList.add("input-error")
+            email.insertAdjacentElement("afterend",error)
+	}
+
+    // retornamos false si el mail no es valido
+    if (!validEmail.test(email.value))  return false 
+
+    //retornamos true si el mail es valido y eliminamos el error si existe
+    if(validEmail.test(email.value)){
+        errorText ? errorText.remove(): null
+        return true
+    }
+} 
+
+
+
+const emailRegistered = () => {
+
 }

@@ -27,28 +27,38 @@
           
         </div>
         <div class="description-product">
-          <h3><%= producto.name %> </h3>
-          <h5>$<%= producto.price %> </h5>
-          <h4>Talla</h4>
+          <h3 style="margin: 25px 15px;"><%= producto.name %> </h3>
+          <h3 style="font-size: 25px;">$  <%= producto.offer? producto.price * producto.offer / 100 : producto.price %> </h5>
+          <h4>Talla:</h4>
           <div class="size-conteiner">
             <% producto.size.forEach(size => { %>
               <div class="size"><%= size.size %></div>
             <% }) %>
           </div>
-          <h4>Color</h4>
+          <h4>Color:</h4>
           <div class="color-conteiner">
             <% producto.color.forEach(color => { %>
               <div class="product-color "><%= color.color %></div>
             <% }) %>
           </div>
-          <div class="add-conteiner">
-            <button type="submit" class="add-cart">Agregar al carrito</button>
-          </div> 
-          <h4>Descripcion</h4>
-          <p style="text-align: center;">
-            <%= producto.description %> .
+          
+          <h4>Stock:</h4>
+          <p class="detail-tx" style="font-size: 20px;">
+            <%= producto.stock %> 
           </p>
-          <!-- <a href="/product/edit/<%= producto.id %>" class="detail-btn">Editar</a> -->
+          <h4>Descripcion:</h4>
+          <p class="detail-tx" >
+            <%= producto.description %>
+          </p>
+          
+          <!-- <div class="add-conteiner">
+            <button type="submit" class="add-cart">Agregar al carrito</button>
+          </div>  -->
+          <button class="button2" id="add-cart" 
+          data-id="<%= producto.id %>"
+          >
+            Agregar al Carrito
+        </button>
           <div class="flex-conteiner">
             <form 
             action="/product/edit/<%= producto.id %>" 
@@ -138,6 +148,8 @@
 <%- include('../partials/footer') %>    
 <script src="/js/detail.js"></script>
 <script src="/js/sweetConfirm.js"></script>
+<script src="/js/cartEvent.js"></script>
+<script src="/js/cartLogic.js"></script>
 
 </body>
 </html>

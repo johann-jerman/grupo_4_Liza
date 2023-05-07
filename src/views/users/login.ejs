@@ -10,7 +10,7 @@
     <!-- elegi una opcion para entrar hasta ingresar con contraseña -->
     
     <!-- form con usuario y password -->
-    <form action="/user/login" method="post" class="register-form"  >
+    <form id="form" action="/user/login" method="post" class="register-form"  >
       <h3 class="register-tittle">Ingresar con Contraseña</h3>
       <label for="email" class="register-label">Nombre de usuario:</label>
       <input
@@ -59,5 +59,7 @@
   </main>
 
 <%- include('../partials/footer') %>    
+<script src="/js/loginValidation.js"></script>
+<script src="/js/userFunction.js"></script>
 </body>
 </html>

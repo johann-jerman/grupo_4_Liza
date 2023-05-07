@@ -8,7 +8,7 @@
 <%- include('../partials/header') %>
 <main class="main">    
     <div class="paint">
-      <form action="/product/newProduct" method="post" enctype="multipart/form-data">
+      <form id="form-create" action="/product/newProduct" method="post" enctype="multipart/form-data">
         
         <div class="form-group">
           <label for="name">Nombre:</label>
@@ -26,24 +26,49 @@
           <% } %>
         </div>
         
-        <div class="form-group">
-          <label for="image">Imagen:</label>
-          <input type="file" id="image" name="image" multiple>
-          <% if (locals.error && error.image) { %>
-           <p><%= error.image.msg %></p>
-          <% } %>
-        </div>
         
         <div class="form-group">
           <label for="category">Categoria:</label>
           <select id="category" name="category">
-            <option disabled selected>Seleccionar categoria</option>
+            <option disabled selected value="">Seleccionar categoria</option>
             <% category.forEach(categoria => { %>
-             <option value="<%= categoria.id %>"><%= categoria.category %></option> 
-            <% }) %>
-          </select>
+              <option value="<%= categoria.id %>"><%= categoria.category %></option> 
+              <% }) %>
+            </select>
         </div>
-        
+          
+        <div class="form-group">
+          <label for="price">Precio:</label>
+          <input type="text" id="price" name="price" value="<%= locals.oldBody && oldBody.price? oldBody.price:"" %>">
+          <% if (locals.error && error.price) { %>
+            <p><%= error.price.msg %></p>
+            <% } %>
+        </div>
+
+        <div class="form-group">
+          <label for="offer">Descuento:</label>
+          <input type="text" id="offer" name="offer" value="<%= locals.oldBody && oldBody.offer? oldBody.offer: 0 %>">
+          <% if (locals.error && error.offer) { %>
+            <p><%= error.offer.msg %></p>
+            <% } %>
+        </div>
+
+        <div class="form-group">
+          <label for="stock">Stock:</label>
+          <input type="text" id="stock" name="stock" value="<%= locals.oldBody && oldBody.stock? oldBody.stock:"" %>">
+          <% if (locals.error && error.stock) { %>
+            <p><%= error.stock.msg %></p>
+            <% } %>
+        </div>
+          
+        <div class="form-group">
+            <label for="image">Imagen:</label>
+            <input type="file" id="image" name="image" multiple>
+            <% if (locals.error && error.image) { %>
+              <p><%= error.image.msg %></p>
+            <% } %>
+        </div>
+
         <div class="form-group">
           <label for="size">Talla:</label>
           <% size.forEach(size => { %>
@@ -52,13 +77,6 @@
           
         </div>
         
-        <div class="form-group">
-          <label for="price">Precio:</label>
-          <input type="text" id="price" name="price" value="<%= locals.oldBody && oldBody.price? oldBody.price:"" %>">
-          <% if (locals.error && error.price) { %>
-           <p><%= error.price.msg %></p>
-          <% } %>
-        </div>
 
         <div class="form-group">
           <label for="color">Color:</label>
@@ -75,4 +93,6 @@
         <%- include('../partials/footer') %>
       </Div>    
 </body>
+<script src="/js/createValidation.js"></script>
+<script src="/js/userFunction.js"></script>
 </html>

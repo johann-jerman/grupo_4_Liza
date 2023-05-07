@@ -1,10 +1,21 @@
 const db = require('../database/models')
+const { Op } = require('sequelize')
 
 
 const mainController = {
-    home : (req, res) => {
+    home : async (req, res) => {
+        const inOffer = await db.Product.findAll({
+            include: [{association: 'image'}],
+            where: {
+                offer: {
+                    [Op.ne]: 0
+                }
+            }
+        }) 
+
         res.render('index',{
             css: '/css/styles.css',
+            productsInOffer: inOffer
         })
     },
     prueba: async (req, res) => {

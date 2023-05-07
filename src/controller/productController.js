@@ -71,7 +71,7 @@ const productController = {
     },
     //carrito de compras
     shoppingCart : (req, res) => {
-        res.render('./products/shopping-cart',{
+        res.render('./products/shopping-cart2',{
             css: '/css/shopping-cart.css'
         })
     },
@@ -114,6 +114,7 @@ const productController = {
             })   
         }
         
+        console.log(req.body.offer);
 
         try {
             let files = req.files
@@ -126,14 +127,14 @@ const productController = {
             if (!Array.isArray(size)) {
                 size = [req.body.size]
             }
-
             let fileToCreate = files.map(file=>({image:file.filename}))
             let productCreate = await db.Product.create({
                 name:req.body.name,
                 description:req.body.description,
                 price:req.body.price,
+                offer:req.body.offer,
+                stock:req.body.stock,
                 category_id:req.body.category,
-
             });
             let colorToCreate = color.map(color=>{
                 return {

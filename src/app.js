@@ -6,6 +6,7 @@ const methodOverride =  require('method-override');
 const PORT = process.env.PORT || 3004;
 const session = require ('express-session');
 const cookie = require('cookie-parser');
+const cors = require('cors');
 const userLoggedMiddelware = require('./middleware/userLoggedMiddleware');
 const mainRoutes = require('./routes/mainRoutes');
 const fileRoutes = require('./routes/fileRoutes');
@@ -14,6 +15,7 @@ const userRoutes = require('./routes/userRoutes');
 const apiUserRoutes = require('./api/routes/user.routes');
 const apiMainRoutes = require('./api/routes/main.routes');
 const apiProductRoutes = require('./api/routes/product.routes');
+const apiCategoryRoutes = require('./api/routes/categories.routes');
 
 app.use(session({
     secret : 'Este mensage es secreto',
@@ -34,7 +36,9 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
+app.use(cors({
+    origin: '*'
+}))
 
 //uso de rutas
 app.use(mainRoutes);
@@ -43,9 +47,10 @@ app.use('/user', userRoutes);
 app.use('/productFile', fileRoutes);
 
 // API routes
-app.use('/api', apiUserRoutes);
 app.use('/api', apiMainRoutes);
+app.use('/api/user', apiUserRoutes);
 app.use('/api/product', apiProductRoutes);
+app.use('/api/category', apiCategoryRoutes);
 
 // app.use((req, res, next)=>{
 //     res.status(404).render('error' , {css:null});
