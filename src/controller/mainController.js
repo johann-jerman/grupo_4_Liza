@@ -31,16 +31,16 @@ const mainController = {
             let SizeProduct = await db.SizeProduct.findAll()
     
             res.json( {
-                // colorProduct,
-                // imageProduct,
-                // SizeProduct,
-                // producto,
+                colorProduct,
+                imageProduct,
+                SizeProduct,
+                producto,
                 user,
                 userCategory,
                 category,
                 color,
                 size,
-                // image
+                image
             })
             
         } catch (error) {

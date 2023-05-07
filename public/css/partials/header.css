@@ -7,56 +7,57 @@
 
 /* comienza el header */
 .header-conteiner {
-  background-color: #0093E9;
-  background-image: linear-gradient(180deg, #0093E9 0%, #254362 100%);
+  background-color: #0093e9;
+  background-image: linear-gradient(180deg, #0093e9 0%, #254362 100%);
   display: grid;
   width: 100%;
   height: 100px;
-  grid-template-columns:1fr 30px 30px;
+  grid-template-columns: 1fr 30px 30px;
   grid-template-rows: 60px 1fr;
   grid-template-areas:
-  "rows1 cart user"
-  "buscar buscar buscar";
+    "rows1 cart user"
+    "buscar buscar buscar";
   place-content: center;
 }
 /* primera fila del header smarphone */
 
-.rows1{
+.rows1 {
   display: flex;
   grid-area: rows1;
 }
 
-  /* empieza el burger menu */
-  .burger-menu {
-    align-self: center;
-    justify-self: center;
-    width: 10%;
-  }
-  .burger-menu i {
-    color: #f4f4f4;
-    margin-left: 10px;
-  }
-  /* empieza el LOGO */
-  .logo{
+/* empieza el burger menu */
+.burger-menu {
+  align-self: center;
+  justify-self: center;
+  width: 10%;
+  display: none;
+}
+.burger-menu i {
+  color: #f4f4f4;
+  margin-left: 10px;
+}
+/* empieza el LOGO */
+.logo {
   width: 90%;
   display: flex;
   place-content: center;
   margin-left: 30px;
   margin-top: 10px;
-  }
-  .size-logo {
+}
+.size-logo {
   object-fit: cover;
-  width:100%;
-  height:100%;
-  }
+  width: 115px;  
+  margin-left: 20px;
+}
 
 /* barra de busqueda */
-.search-conteiner{
+.search-conteiner {
   display: flex;
   place-content: center;
   grid-area: buscar;
 }
-.form{
+.form {
   width: 90%;
   height: 30px;
   max-width: 300px;
@@ -64,9 +65,8 @@
   overflow: hidden;
   justify-self: center;
   align-self: center;
-
 }
-.form input{
+.form input {
   width: 100%;
   height: 100%;
   background: none;
@@ -74,7 +74,7 @@
   border: none;
   outline: 0px;
 }
-.form .lbl-nombre{
+.form .lbl-nombre {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -83,8 +83,8 @@
   pointer-events: none;
   border-bottom: 1px solid #c7c7c7;
 }
-.form .lbl-nombre:after{
-  content: '';
+.form .lbl-nombre:after {
+  content: "";
   position: absolute;
   left: 0;
   bottom: -1px;
@@ -94,7 +94,7 @@
   transform: translateX(-100%);
   transition: all 0.3s ease;
 }
-.text-nomb{
+.text-nomb {
   position: absolute;
   bottom: 5px;
   left: 0;
@@ -102,30 +102,31 @@
   color: #fff;
   font-size: 12px;
 }
-.form input:focus + .lbl-nombre .text-nomb,.form input:valid + .lbl-nombre .text-nomb{
+.form input:focus + .lbl-nombre .text-nomb,
+.form input:valid + .lbl-nombre .text-nomb {
   transform: translateY(-100%);
   font-size: 10px;
   color: #ffd154;
 }
-.form input:focus + .lbl-nombre:after, .form input:valid + .lbl-nombre:after{
+.form input:focus + .lbl-nombre:after,
+.form input:valid + .lbl-nombre:after {
   transform: translateX(0%);
 }
 .cart {
   grid-area: cart;
   align-self: center;
-
 }
-.user{
+.user {
   grid-area: user;
   align-self: center;
 }
 
 .user i {
-  color: #f4f4f4
+  color: #f4f4f4;
 }
 
 .cart i {
-  color: #f4f4f4
+  color: #f4f4f4;
 }
 
 /* barra promoción */
@@ -139,39 +140,35 @@
   width: 100%;
   display: grid;
   place-content: center;
-
 }
 
-#promotion1, #promotion2{
+#promotion1,
+#promotion2 {
   font-size: 12px;
+}
+
+@media (min-width: 768px) {
+  .header-conteiner {
+    grid-template-columns: 500px 1fr 30px 30px;
+    grid-template-rows: 60px;
+    grid-template-areas: "rows1 buscar cart user";
   }
 
-
-  @media (min-width: 768px) {
-    .header-conteiner {
-      grid-template-columns:500px 1fr 30px 30px;
-      grid-template-rows: 60px;
-      grid-template-areas:
-      "rows1 buscar cart user"      
-      
-    }
-    
-    .header-conteiner {
-      height: 60px;
-    }
-
-    .search-conteiner{
-      justify-content: flex-end;
-      margin-right: 20px;
-    }
-
-    .logo{
-      width: 50%;        
-      place-content: none;
-      margin-left: 0px;
-      margin-top: 5px;
-      margin-bottom: 5px;
-      justify-content: flex-start;
-            
-      }
+  .header-conteiner {
+    height: 60px;
   }
+
+  .search-conteiner {
+    justify-content: flex-end;
+    margin-right: 20px;
+  }
+
+  .logo {
+    width: 50%;
+    place-content: none;
+    margin-left: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    justify-content: flex-start;
+  }
+}
