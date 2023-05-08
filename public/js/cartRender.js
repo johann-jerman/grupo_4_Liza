@@ -1,5 +1,6 @@
 const APIDetail = `http://localhost:3004/api/product/detail/`
 const cartConteiner = document.getElementById('cart-conteiner')
+const main = document.getElementById('cart-main')
 
 window.addEventListener('DOMContentLoaded', () => shoppingCart() )
 
@@ -12,6 +13,7 @@ const shoppingCart = () => {
 const  renderCart = async ()  => {
     // const cartConteiner = document.getElementById('cart-conteiner')
     let cart =  getCart()
+    let total = 0
     let dataProduct = await Promise.all (
         cart.map(async product => {
             let req = await fetch(APIDetail + product.id);
@@ -25,6 +27,7 @@ const  renderCart = async ()  => {
 
     dataProduct.forEach(product => {
         let img = product.data.data.image[0].image
+        total += product.data.data.price * product.data.data.offer / 100
         cartConteiner.innerHTML += 
             `
                 <h3>${product.data.data.name}</h3>
@@ -42,4 +45,5 @@ const  renderCart = async ()  => {
                 <button id="delete-product" data-id="${product.data.data.id}">Eliminar Producto</button>
             `
     })
+    main.innerHTML += `<p>Total: ${total} </p>`
 }

@@ -1,11 +1,11 @@
 const deleteProduct = (productId) => {
-    const cart =  getCart()
+    let cart =  getCart()
 
-    cart.filter(product => {
-        console.log(product.id != productId, 'es desigual');
-    })
-    // cartConteiner.innerHTML = ''
-    // renderCart()
+    cart = cart.filter(product => product.id != productId )
+
+    setCart(cart)
+
+    location.reload()
 }
 const deleteAllCart = () => {
     window.localStorage.clear()
