@@ -130,8 +130,8 @@
 }
 
 /* barra promoción */
-.promotion-bar {
-  /* position: relative; */
+.promotionbar {
+ position: relative; 
   background-color: #3f3f3f;
   position: relative;
   color: #f4f4f4;

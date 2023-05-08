@@ -37,34 +37,33 @@
       </div>
       <!-- icono User -->
       <% if (!locals.logged) { %>
-        <div class="user">
-          <a href="/user/login">
-            <i class="fa-solid fa-user"></i>
-          </a>
-        </div>
-      <% } %>
-      <% if (locals.logged) { %>
-        <div class="user">
-          <a href="/user/profile">
-            <i class="fa-solid fa-user"></i>
-          </a>
-        </div>
-      <% } %>
-    <% if (locals.isAdmin) { %>
-        <div class="user">
-          <a href="/user/admin">
-            <i class="fa-solid fa-user"></i>
-          </a>
-        </div>
+      <div class="user">
+        <a href="/user/login">
+          <i class="fa-solid fa-user"></i>
+        </a>
+      </div>
+      <% } %> <% if (locals.logged) { %>
+      <div class="user">
+        <a href="/user/profile">
+          <i class="fa-solid fa-user"></i>
+        </a>
+      </div>
+      <% } %> <% if (locals.isAdmin) { %>
+      <div class="user">
+        <a href="/user/admin">
+          <i class="fa-solid fa-user"></i>
+        </a>
+      </div>
       <% } %>
       <!-- <div> 
 evento on click mouse over
       </div> -->
     </div>
     <!-- marcador de promocion superior -->
-    <div class="promotion-bar">
+    <div class="promotionbar">
       <p id="promotion1">Envío Gratis en compras superiores a $25.000</p>
-      <!-- <p id="promotion2">3 x 2 Aprovecha !! </p> -->
+      <p id="promotion2">3 x 2 Aprovecha !!</p>
     </div>
+    <script src="/js/header-baner.js"></script>
   </header>
 </body>
