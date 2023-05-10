@@ -21,6 +21,7 @@ font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   
+  
 }
 /* aca empieza el slider */
 
@@ -155,19 +156,32 @@ font-family: 'Montserrat', sans-serif;
   color: #f4f4f4;
   padding: 20px;
 }
+.reelfavorites{
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(180deg, #254362 0%, #0093e9 100%);
+  padding-right: 20px; 
+  padding-left: 20px;
+  margin-bottom: 1px;
+  
+}
 
 .index-section2 {
   display: grid;
-  grid-template-columns: 40px 1fr 1fr 1fr 1fr 40px;
-  justify-content: center;
-  align-items: center;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2px;
-  padding: 20px;
-  
-  background-image: linear-gradient(180deg, #254362 0%, #0093e9 100%);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2px;
+    padding: 20px;
+     
 }
+
 .box-index {
   position: relative;
   width: 100%;
@@ -262,19 +276,18 @@ footer li {
     background-color: #3f3f3f;
     margin: 0px 10px 0px 10px;
   }
+  .index-section2 {
+    display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-row: auto;  
+       
+  }
   .main-nav p {
     
     font-size: 1em;
     
   }
-  .index-section2 {
-    display: grid;
-    grid-template-columns: 40px 1fr 1fr 40px;
-    grid-template-rows: auto;
 
-    
-    background-image: linear-gradient(180deg, #254362 0%, #0093e9 100%);
-  }
 }
 
 
@@ -286,7 +299,37 @@ footer li {
     justify-content: center;
     align-items: center;
     background-color: #3f3f3f;
-    margin: 0px;
-    
+    margin: 0px;    
   }
+  .index-section2 {
+    display: grid;
+      grid-template-columns: 1fr;
+      grid-row: auto;  
+       
+  }
+  .arrow-parent {
+
+    align-self: flex-end;
+    justify-self: center
 }
+.reelfavorites {
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 20px;
+}
+div .fa-solid {
+  font-size: 12px;
+}
+.arrow-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #cfcfcf;
+  width: 20px;
+  height: 20px;
+}
+}
+
+
+

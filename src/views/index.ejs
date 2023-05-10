@@ -121,34 +121,40 @@
       </section>
  -->
       <h2 id="Offers-link">Ofertas</h2>
-      <section class="index-section2">
+      <div class="reelfavorites">
         <div class="arrow-parent">
           <i class="fa-solid fa-chevron-left arrow" id="left"></i>
         </div>
-        <% productsInOffer.forEach((product, i) => { %>
-        <article
-          class="offers box-index <%= i < 5? 'is-visible': null %>"
-          data-id="<%= i %>"
-        >
-          <a href="/product/detail/<%= product.id %> ">
-            <img
-              src="/images/products/<%= product.image[0].image %> "
-              alt="Imagen del Producto"
-            />
-          </a>
-          <div>
-            <!-- fa-beat -->
-            <p class="product-name"><%= product.name %></p>
-            <p>$<%= product.price %></p>
-            <!-- <p>%= product.description %> </p> -->
-            <i class="fa-regular fa-heart fav-position" id="fav-heath"></i>
-          </div>
-        </article>
-        <% }) %>
+        <section class="index-section2">
+          
+          <% productsInOffer.forEach((product, i) => { %>        
+            <article
+            class="offers box-index <%= i < 4? 'is-visible': null %>"
+            data-id="<%= i %>"
+          >
+            <a href="/product/detail/<%= product.id %> ">
+              <img
+                src="/images/products/<%= product.image[0].image %> "
+                alt="Imagen del Producto"
+              />
+            </a>
+            <div>
+              <!-- fa-beat -->
+              <p class="product-name"><%= product.name %></p>
+              <p>$<%= product.price %></p>
+              <!-- <p>%= product.description %> </p> -->
+              
+            </div>
+          </article>
+          <% }) %>
+          
+            
+        </section>
         <div class="arrow-parent">
           <i class="fa-solid fa-chevron-right arrow" id="right"></i>
         </div>
-      </section>
+      </div>
+      
     </main>
     <%- include('./partials/footer')%>
     <script src="/js/offers.js"></script>
