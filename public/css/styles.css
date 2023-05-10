@@ -20,39 +20,71 @@ font-family: 'Montserrat', sans-serif;
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+  
 }
-/* aca empieza el main */
+/* aca empieza el slider */
 
 .slider {
   display: flex;
+  flex-direction: column; /* Agrega esta línea para que los puntos aparezcan debajo de las imágenes */
+  justify-content: center; /* Agrega esta línea para centrar verticalmente los elementos */
+  align-items: center; /* Agrega esta línea para centrar horizontalmente los elementos */
   width: 100%;
   height: 670px;
   overflow: hidden;
   position: relative;
   background-color: #3f3f3f;
 }
+
 .slider img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 600px%;
+  height: 100%; /* Cambia esto de 600px a 100% para que la imagen ocupe toda la altura del slider */
   object-fit: cover;
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
+
 .slider img.active {
   opacity: 1;
 }
 
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  background-color: #3f3f3f;
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.slider-dot.active {
+  background-color: #fff;
+}
 /* aca comienza la navegacion del main */
 
+.main-margin{
+    background-color: #3f3f3f;
+}
 .section-navegation {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
   background-color: #3f3f3f;
+  margin: 0px 100px 0px 100px;
+  padding-bottom: 20px;
 }
 
 .main-nav {
@@ -65,7 +97,9 @@ font-family: 'Montserrat', sans-serif;
   height: auto;
   display: block;
   padding: 20px;
+  
 }
+  
 
 .main-nav p {
   position: absolute;
@@ -100,34 +134,12 @@ font-family: 'Montserrat', sans-serif;
 }
 
 /* aca comienza la seccion favoritas y ofertas */
-h2 {
-  text-align: center;
-  margin: 10px;
-}
+
 .index-section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 15px;
-}
-.box-index {
-  width: 55vw;
-  max-width: 260px;
-  margin: 15px;
-  /* margin-bottom: 25px; */
-  border-radius: 7px;
-}
-.box-index img {
-  width: 100%;
-  height: 90%;
-  background-size: cover;
-  border-radius: 7px;
-}
-.box-index div {
-  text-align: center;
-  background-color: #042850;
-  color: white;
-  border-radius: 10px;
 }
 
 .offers {
@@ -136,27 +148,39 @@ h2 {
 .is-visible {
   display: block;
 }
-.index-section {
-  display: flex;
-  flex-wrap: wrap;
+#Offers-link{
+  
+  background-image: linear-gradient(180deg, #3f3f3f 0%, #254362 100%);
+  text-align: center;
+  color: #f4f4f4;
+  padding: 20px;
+}
+
+.index-section2 {
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr 1fr 1fr 40px;
   justify-content: center;
   align-items: center;
-  margin: 15px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2px;
+  padding: 20px;
+  
+  background-image: linear-gradient(180deg, #254362 0%, #0093e9 100%);
 }
 .box-index {
-  width: 55vw;
-  max-width: 200px;
-  /* margin: 15px; */
-  border-radius: 7px;
+  position: relative;
+  width: 100%;
 }
 .box-index:hover {
   box-shadow: 0px 0px 10px #042850;
 }
 .box-index img {
   width: 100%;
-  /* height: 80%; */
-  background-size: cover;
-  border-radius: 7px;
+  height: auto;
+  display: block;
+  padding: 20px;
+  padding-bottom: 0;
 }
 .box-index p,
 h4 {
@@ -166,12 +190,10 @@ h4 {
   font-size: 16px;
 }
 .box-index div {
-  position: relative;
-  text-align: center;
+   text-align: center;
   background-color: #045c94;
-  /* color: black; */
-  border-radius: 7px;
-  padding: 10px;
+  margin-left: 20px;
+  margin-right: 20px
 }
 div .fa-regular {
   font-size: 20px;
@@ -227,6 +249,10 @@ footer li {
     display: none;
   }
 
+  .slider-dots {
+    display: none
+  }
+
   .section-navegation {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
@@ -234,15 +260,22 @@ footer li {
     justify-content: center;
     align-items: center;
     background-color: #3f3f3f;
+    margin: 0px 10px 0px 10px;
   }
   .main-nav p {
     
     font-size: 1em;
     
   }
+  .index-section2 {
+    display: grid;
+    grid-template-columns: 40px 1fr 1fr 40px;
+    grid-template-rows: auto;
 
+    
+    background-image: linear-gradient(180deg, #254362 0%, #0093e9 100%);
+  }
 }
-
 
 
 @media (max-width: 425px) {
@@ -253,5 +286,7 @@ footer li {
     justify-content: center;
     align-items: center;
     background-color: #3f3f3f;
+    margin: 0px;
+    
   }
 }
