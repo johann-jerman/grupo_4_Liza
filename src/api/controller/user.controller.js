@@ -3,6 +3,7 @@ const { validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 const { User } = require('../../database/models');
 const jwt = require('jsonwebtoken');
+const { json } = require('sequelize');
 
 const apiUserController = { 
     getAll: async (req, res) => {
@@ -27,7 +28,23 @@ const apiUserController = {
                 status: 400,
                 data: error,
                 a: 'esto es un error'
-            })   
+            })  
+        }
+    },
+    getByPk : async (req, res) => {
+        try {
+            let {id} = req.params
+            let user = await db.User.findByPk(id)
+
+            res.status(200).json({
+                status: 200,
+                data: user
+            })
+        } catch (error) {
+            res.status(400).json({
+                status: 400,
+                data: error,
+            })  
         }
     },
     registerProcess : async (req, res) => {

@@ -13,6 +13,7 @@ const adminMiddleware = require('../../middleware/adminMiddleware')
 const upload = require('../../middleware/multer');
 
 router.get('/', apiUserController.getAll)
+router.get('/:id', apiUserController.getByPk)
 
 // register rutes
 router.post('/register',upload.single("image"),userValidator,apiUserController.registerProcess);

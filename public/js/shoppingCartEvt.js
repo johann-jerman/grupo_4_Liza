@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', () => shoppingCartEvt() )
 const shoppingCartEvt = () => {
     document.addEventListener('click', (e)=> {
         let btnDelete =  e.target
-
+        console.log(btnDelete);
         if (btnDelete.id == 'delete-cart') {
             deleteAllCart()
         }

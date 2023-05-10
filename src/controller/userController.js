@@ -27,7 +27,7 @@ const userController = {
                 lastname: req.body.lastname,
                 password: bcrypt.hashSync( req.body.password, 10),
                 email: req.body.email,
-                image: 'usuarioDefault.png',
+                image: req.file? req.file.filename : 'usuarioDefault.png',
                 userCategory_id: req.body.category ? req.body.category : '1' 
             };
             

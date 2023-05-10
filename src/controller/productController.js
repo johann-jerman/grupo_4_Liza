@@ -72,7 +72,7 @@ const productController = {
     //carrito de compras
     shoppingCart : (req, res) => {
         res.render('./products/shopping-cart2',{
-            css: '/css/shopping-cart.css'
+            css: '/css/carrito-styles.css'
         })
     },
     // creacion de producto

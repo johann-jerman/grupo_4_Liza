@@ -8,7 +8,6 @@ const errors = []
             error.setAttribute("id","error-"+i)
             error.classList.add("input-error")
             input.insertAdjacentElement("afterend",error)
-            //errors.push(true)
         }
         !input.value.trim()? errors.push(true) : null
         if(input.value.trim() && errorText){
@@ -20,26 +19,29 @@ const errors = []
 }
 
 const isLength = (input,inputMinLength) => {
-    let errorText = document.getElementById("error-"+input.attributes.id)    
-    if(input.value.length < inputMinLength && !errorText){
+    let errorText = document.getElementById("error-" + input.attributes.id) 
+
+        if(input.value.length < inputMinLength && !errorText){
             let error = document.createElement("p")
-            error.innerHTML = "El campo debe tener mínimo " + inputMinLength + " caracteres"
-            error.setAttribute("id","error-"+input.attributes.id)
+            error.innerHTML = `El campo debe tener mínimo ${inputMinLength} caracteres`
+            error.setAttribute("id","error-length"+input.attributes.id)
             error.classList.add("input-error")
-            input.insertAdjacentElement("afterend",error)
-            return false
-        }  
+            input.insertAdjacentElement("afterend", error)
+        };
+
+        if (input.value.length < inputMinLength) return false 
+
         if(input.value.length >= inputMinLength && errorText){
             errorText.remove()
             return true
-        }
+        };
 }
 
 const imgFormat = (input) => {
 
     let extensions = ['.jpg', '.jpeg', '.png', '.gif', '.PNG', '.JPG', '.JPEG']
     let inputExtension = input.value.substring(input.value.lastIndexOf('.'));
-    console.log(input);
+    
     if (!extensions.includes(inputExtension)) {
 
         let nameError = document.getElementById("error-img"+input.attributes.id)

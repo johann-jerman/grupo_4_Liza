@@ -1,49 +1,81 @@
 const APIDetail = `http://localhost:3004/api/product/detail/`
 const cartConteiner = document.getElementById('cart-conteiner')
+const productConteiner = document.getElementById('products')
+const cartTotal = document.getElementById('cart-total')
 const main = document.getElementById('cart-main')
 
 window.addEventListener('DOMContentLoaded', () => shoppingCart() )
 
-const shoppingCart = () => {
+const shoppingCart = async () => {
     
-    renderCart()
-    
+    let total = await renderCart()
+    console.log(total);
+    statsCart(total)
 }
 
 const  renderCart = async ()  => {
-    // const cartConteiner = document.getElementById('cart-conteiner')
-    let cart =  getCart()
-    let total = 0
-    let dataProduct = await Promise.all (
-        cart.map(async product => {
-            let req = await fetch(APIDetail + product.id);
-            let data = await req.json()
-            return {
-                data,
-                quantity: product.quantity
-            }
-        })
-    );
+    let total = 0    
+    let totalWithDiscounts = 0    
+    let dataProduct = await getProducts()
 
     dataProduct.forEach(product => {
         let img = product.data.data.image[0].image
-        total += product.data.data.price * product.data.data.offer / 100
-        cartConteiner.innerHTML += 
-            `
-                <h3>${product.data.data.name}</h3>
-                <p>
-                $  ${ product.data.data.price} - ${product.data.data.offer}% = 
-                ${product.data.data.price * product.data.data.offer / 100}
-                </p>
-                <p>----</p>
-                <p>${product.data.data.stock}</p>
-                <p>${product.data.data.description}</p>
-                <img src="/images/products/${img}" style=" width: 150px; heigth: 150px;" />
-                <i class="fa-solid fa-arrow-right" data-id="${product.data.data.id}" id="add-quantity"></i>
-                <p>${product.quantity}</p>
-                <i class="fa-solid fa-arrow-left" data-id="${product.data.data.id}" id="subtract-quantity"></i>
-                <button id="delete-product" data-id="${product.data.data.id}">Eliminar Producto</button>
-            `
+        total +=  product.data.data.price * product.quantity ;
+        totalWithDiscounts +=  product.data.data.price * product.quantity * product.data.data.offer / 100  ;
+        productConteiner.innerHTML += 
+        ` 
+            <div class="product">
+                <img src="/images/products/${img}" class="carrito-img">
+                <div class="product-info">
+                    <h2 class="product-name">${product.data.data.name}</h2>
+                    <h2 class="product-price">
+                    $  ${ product.data.data.price} 
+                    </h2>
+                    <h2 class="product-offer">${product.data.data.offer}%  : Total
+                    ${ Math.ceil( product.data.data.price * product.quantity * product.data.data.offer / 100 ) }
+                    </h2>
+                    <p class="product-quantity">Cantidad: 
+                    <i class="fa-solid fa-arrow-left" data-id="${product.data.data.id}" id="subtract-quantity"></i>
+                    ${product.quantity} 
+                    <i class="fa-solid fa-arrow-right" data-id="${product.data.data.id}" id="add-quantity"></i>
+                    
+                    <p class="product-remove" >
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                        <span class="remove" id="delete-product" data-id="${product.data.data.id}">
+                        Eliminar Producto
+                        </span>
+                    </p>
+                </div>
+            </div>
+        `
     })
-    main.innerHTML += `<p>Total: ${total} </p>`
+    return {
+        total: Math.ceil( total ),
+        totalWithDiscounts: Math.ceil( totalWithDiscounts )
+    }
 }
+
+const statsCart = ( total ) => {
+    let totalProducts = getCart().length
+    cartTotal.innerHTML += `
+        <p>
+            <span>Total</span>
+            <span>$ ${total.total}</span>
+        </p>
+        <p>
+          <span>Total a pagar </span>
+          <span>$${total.totalWithDiscounts}</span>
+        </p>
+        <p>
+            <span>Productos</span>
+            <span>${totalProducts}</span>
+        </p>
+        <a href="#">Comprar</a>
+        <a  id="delete-cart">Vaciar carrito</a>
+    `
+
+}
+ 
+
+
+//<article class="container"> </article>

@@ -53,8 +53,7 @@ const addQueantity = (productAddQnt) => {
     })
     setCart(cart)
 
-    cartConteiner.innerHTML = ''
-    renderCart()
+    location.reload()
 }
 
 const subtractQueantity = (productsubtractQnt) => {
@@ -67,6 +66,20 @@ const subtractQueantity = (productsubtractQnt) => {
     })
     setCart(cart)
 
-    cartConteiner.innerHTML = ''
-    renderCart()
+    location.reload()
+}
+
+const getProducts = async () => {
+    let cart =  getCart()
+    let data = await Promise.all (
+        cart.map(async product => {
+            let req = await fetch(APIDetail + product.id);
+            let data = await req.json()
+            return {
+                data,
+                quantity: product.quantity
+            }
+        })
+    );
+    return data
 }
