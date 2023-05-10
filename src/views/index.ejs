@@ -1,137 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('./partials/head') %>
 
-<%- include('./partials/head') %>
-
-
-<body>
+  <body>
     <%- include('./partials/header')%>
     <main>
-      
       <div class="slider">
-        <img src="/images/slider1.jpg">
-        <img src="/images/slider2.jpg">
-        <img src="/images/slider3.jpg">        
+        <img src="/images/slider1.jpg" />
+        <img src="/images/slider2.jpg" />
+        <img src="/images/slider3.jpg" />
       </div>
 
-        <section class="section-navegation">
-          <article class="main-nav">
-            <a href="/product/man">
-              <img
-                src="https://http2.mlstatic.com/D_NQ_NP_649598-MLA53016061105_122022-O.jpg"
-                alt="imagen de hombre"
-                class="img-main"
-              />
-              <p>HOMBRES</p>
-            </a>
-          </article>
-          <article class="main-nav">
-            <a href="/product/women">
-              <img
-                src="https://m.media-amazon.com/images/I/316bU2GtqEL._SL500_.jpg"
-                alt="imagen de mujer"
-                class="img-main"
-              />
-              <p>MUJERES</p>
-            </a>
-          </article>
-          <article class="main-nav">
-            <a href="#Offers-link">
-              <img
-                src="https://png.pngtree.com/png-vector/20201208/ourmid/pngtree-question-mark-sign-flat-design-png-image_2521719.jpg"
-                alt="imagen de ofertas"
-                class="img-main"
-              />
-              <p>OFERTAS</p>
-            </a>
-          </article>
-        </section>
-  
-        <h2>Favoritos</h2>
-        <section class="index-section">
-          
-          <article class="box-index">
+      <section class="section-navegation">
+        <article class="main-nav">
+          <a href="/product/man">            
             <img
-              src="https://png.pngtree.com/png-vector/20201208/ourmid/pngtree-question-mark-sign-flat-design-png-image_2521719.jpg"
-              alt=""
+              src="/images/Men.jpg"
+              alt="imagen de hombre"
+              class="img-main"
             />
-            <div>
-              <p>remera</p>
-              <p>200pesos</p>
-            </div>
-          </article>
-          <article class="box-index">
             <img
-              src="https://png.pngtree.com/png-vector/20201208/ourmid/pngtree-question-mark-sign-flat-design-png-image_2521719.jpg"
-              alt=""
-            />
-            <div>
-              <p>remera</p>
-              <p>200pesos</p>
-            </div>
-          </article>
-          <article class="box-index">
+              src="/images/men4.png"
+              alt="imagen de hombre"
+              class="img-hover"
+            />          
+            <p>HOMBRES</p>
+          </a>
+        </article>
+        <article class="main-nav">
+          <a href="/product/women">
             <img
-              src="https://png.pngtree.com/png-vector/20201208/ourmid/pngtree-question-mark-sign-flat-design-png-image_2521719.jpg"
-              alt=""
+              src="/images/women.jpg"
+              alt="imagen de mujer"
+              class="img-main"
             />
-            <div>
-              <p>remera</p>
-              <p>200pesos</p>
-            </div>
-          </article>
-          <article class="box-index">
             <img
-              src="https://png.pngtree.com/png-vector/20201208/ourmid/pngtree-question-mark-sign-flat-design-png-image_2521719.jpg"
-              alt=""
+              src="/images/women4.png"
+              alt="imagen de mujer"
+              class="img-hover"
             />
-            <div>
-              <p>remera</p>
-              <p>200pesos</p>
-            </div>
-          </article>
-          <article class="box-index">
+            <p>MUJERES</p>
+          </a>
+        </article>
+        <article class="main-nav">
+          <a href="#Offers-link">
             <img
-              src="https://png.pngtree.com/png-vector/20201208/ourmid/pngtree-question-mark-sign-flat-design-png-image_2521719.jpg"
-              alt=""
+              src="/images/Ofertas.jpg"
+              alt="imagen de ofertas"
+              class="img-main"
             />
-            <div>
-              <p>remera</p>
-              <p>200pesos</p>
-            </div>
-          </article>
-        </section>
-  
-        <h2 id="Offers-link">Ofertas</h2>
-        <section class="index-section">
-          
-          <div class="arrow-parent">
-            <i class="fa-solid fa-chevron-left arrow" id="left"></i>
+            <img
+              src="/images/sale3.png"
+              alt="imagen de ofertas"
+              class="img-hover"
+            />
+            <p>OFERTAS</p>
+          </a>
+        </article>
+      </section>
+
+      <h2>Favoritos</h2>
+      <section class="index-section">
+        <article class="box-index">
+          <img
+            src="https://png.pngtree.com/png-vector/20201208/ourmid/pngtree-question-mark-sign-flat-design-png-image_2521719.jpg"
+            alt=""
+          />
+          <div>
+            <p>remera</p>
+            <p>200pesos</p>
           </div>
-          <% productsInOffer.forEach((product, i) => { %>
-            <article class="offers box-index <%= i < 5? 'is-visible': null %>" data-id="<%= i %>">
-              <a href="/product/detail/<%= product.id %> ">
-                <img
-                  src="/images/products/<%= product.image[0].image %> "
-                  alt="Imagen del Producto"
-                />
-              </a>
-              <div>
-                <!-- fa-beat -->
-                <p class="product-name"><%= product.name %> </p>
-                <p>$<%= product.price %> </p> 
-                <!-- <p>%= product.description %> </p> -->
-                <i class="fa-regular fa-heart fav-position" id="fav-heath"></i>
-              </div>
-            </article>  
-          <% }) %>
-          <div class="arrow-parent">
-            <i class="fa-solid fa-chevron-right arrow" id="right"></i>
+        </article>
+        <article class="box-index">
+          <img
+            src="https://png.pngtree.com/png-vector/20201208/ourmid/pngtree-question-mark-sign-flat-design-png-image_2521719.jpg"
+            alt=""
+          />
+          <div>
+            <p>remera</p>
+            <p>200pesos</p>
           </div>
-        </section>
-      </main>
+        </article>
+        <article class="box-index">
+          <img
+            src="https://png.pngtree.com/png-vector/20201208/ourmid/pngtree-question-mark-sign-flat-design-png-image_2521719.jpg"
+            alt=""
+          />
+          <div>
+            <p>remera</p>
+            <p>200pesos</p>
+          </div>
+        </article>
+        <article class="box-index">
+          <img
+            src="https://png.pngtree.com/png-vector/20201208/ourmid/pngtree-question-mark-sign-flat-design-png-image_2521719.jpg"
+            alt=""
+          />
+          <div>
+            <p>remera</p>
+            <p>200pesos</p>
+          </div>
+        </article>
+        <article class="box-index">
+          <img
+            src="https://png.pngtree.com/png-vector/20201208/ourmid/pngtree-question-mark-sign-flat-design-png-image_2521719.jpg"
+            alt=""
+          />
+          <div>
+            <p>remera</p>
+            <p>200pesos</p>
+          </div>
+        </article>
+      </section>
+
+      <h2 id="Offers-link">Ofertas</h2>
+      <section class="index-section">
+        <div class="arrow-parent">
+          <i class="fa-solid fa-chevron-left arrow" id="left"></i>
+        </div>
+        <% productsInOffer.forEach((product, i) => { %>
+        <article
+          class="offers box-index <%= i < 5? 'is-visible': null %>"
+          data-id="<%= i %>"
+        >
+          <a href="/product/detail/<%= product.id %> ">
+            <img
+              src="/images/products/<%= product.image[0].image %> "
+              alt="Imagen del Producto"
+            />
+          </a>
+          <div>
+            <!-- fa-beat -->
+            <p class="product-name"><%= product.name %></p>
+            <p>$<%= product.price %></p>
+            <!-- <p>%= product.description %> </p> -->
+            <i class="fa-regular fa-heart fav-position" id="fav-heath"></i>
+          </div>
+        </article>
+        <% }) %>
+        <div class="arrow-parent">
+          <i class="fa-solid fa-chevron-right arrow" id="right"></i>
+        </div>
+      </section>
+    </main>
     <%- include('./partials/footer')%>
     <script src="/js/offers.js"></script>
     <script src="/js/slider.js"></script>
-</body>
+  </body>
 </html>

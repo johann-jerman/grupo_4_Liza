@@ -7,7 +7,7 @@ setInterval(() => {
   images[currentImage].classList.remove('active');
   currentImage = (currentImage + 1) % images.length;
   images[currentImage].classList.add('active');
-}, 5000);
+}, 15000);
 
 
 function updateSliderHeight() {
