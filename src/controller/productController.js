@@ -2,7 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const {validationResult} = require("express-validator");
 const db = require('../database/models');
-const { log } = require('console');
+const { Op } = require('sequelize')
+
 
 const productController = {
     //muestra de productos man y woman
@@ -20,10 +21,11 @@ const productController = {
                     category_id : 1
                 }
             })
+            
 
             res.render('./products/man',{
                 css: '/css/genre.css',
-                products
+                products, 
             })
             
         }catch (error) {
@@ -60,9 +62,18 @@ const productController = {
                     {association: 'color'}
                 ]
             })
+            const inOffer = await db.Product.findAll({
+                include: [{association: 'image'}],
+                where: {
+                    offer: {
+                        [Op.ne]: 0
+                    }
+                }
+            }) 
     
             res.render('./products/detail',{
                 css: '/css/product.css',
+                productsInOffer: inOffer,
                 producto
             })
         } catch (error) {

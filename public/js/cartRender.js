@@ -9,7 +9,6 @@ window.addEventListener('DOMContentLoaded', () => shoppingCart() )
 const shoppingCart = async () => {
     
     let total = await renderCart()
-    console.log(total);
     statsCart(total)
 }
 
@@ -21,7 +20,8 @@ const  renderCart = async ()  => {
     dataProduct.forEach(product => {
         let img = product.data.data.image[0].image
         total +=  product.data.data.price * product.quantity ;
-        totalWithDiscounts +=  product.data.data.price * product.quantity * product.data.data.offer / 100  ;
+        totalWithDiscounts +=  total * product.data.data.offer / 100  ;
+
         productConteiner.innerHTML += 
         ` 
             <div class="product">
@@ -29,7 +29,7 @@ const  renderCart = async ()  => {
                 <div class="product-info">
                     <h2 class="product-name">${product.data.data.name}</h2>
                     <h2 class="product-price">
-                    $  ${ product.data.data.price} 
+                    $  ${ product.data.data.price * product.quantity  } 
                     </h2>
                     <h2 class="product-offer">${product.data.data.offer}%  : Total
                     ${ Math.ceil( product.data.data.price * product.quantity * product.data.data.offer / 100 ) }

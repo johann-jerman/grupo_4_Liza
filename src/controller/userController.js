@@ -22,13 +22,14 @@ const userController = {
         };
 
         try {
+            console.log(req.body);
             const userToRegist = {
                 name: req.body.name,
                 lastname: req.body.lastname,
                 password: bcrypt.hashSync( req.body.password, 10),
                 email: req.body.email,
                 image: req.file? req.file.filename : 'usuarioDefault.png',
-                userCategory_id: req.body.category ? req.body.category : '1' 
+                userCategory_id: req.body.category ? req.body.category : 1 
             };
             
             const invalidEmail = await db.User.findOne({
@@ -158,13 +159,24 @@ const userController = {
         });
     },
 
-    admin: (req, res)=> {
-        let products = Admin.getAllProduct();
-        
-        res.render('./users/admin',{
-            css: '/css/admin.css',
-            products
-        });
+    admin: async (req, res)=> {
+        try {
+            let products = await db.Product.findAll({
+                include: [ 
+                    {
+                        association: 'image',
+                        attributes:['id', 'image']
+                    },
+                ],
+            }) ;
+            console.log(products);
+            res.render('./users/admin',{
+                css: '/css/admin.css',
+                products
+            });
+        } catch (error) {
+            res.json({error})            
+        }
     },
     
     
