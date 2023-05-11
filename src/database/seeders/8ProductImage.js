@@ -8,10 +8,12 @@ module.exports = {
      *
      * Example:
     */
-    await queryInterface.bulkInsert('images', [
+    await queryInterface.bulkInsert('image_products', [
       {
-        image: ''
-      }
+        image_id: 1,
+        product_id: 1,
+      },
+      
     ], {});
   },
 
