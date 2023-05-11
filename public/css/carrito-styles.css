@@ -2,7 +2,7 @@
 /* Para los links*/
 a {
 	text-decoration: none;
-	color: black;
+	color: #fff;
   }
 /* ----
 
@@ -13,9 +13,14 @@ a {
 	max-width: 1200px;
 	margin: 0 auto;
 }
+#cart-main{
+	background-image: linear-gradient(180deg, #254362, #0093e9  100%);
+	margin-bottom: 1px;
+}
 
 .container > h1{
 	padding: 20px 0;
+	color: #fff;
 }
 
 .cart{
@@ -103,6 +108,7 @@ a {
 	justify-content: space-between;
 	margin-bottom: 30px;
 	font-size: 20px;
+	color: #fff;
 }
 
 .cart-total a{
@@ -111,10 +117,11 @@ a {
 	height: 40px;
 	line-height: 40px;
 	background-color: #5fc4ae;
-	color: #000;
+	color: #3f3f3f;
 	text-decoration: none;
 	margin: 20px;
 	font-size: 16px;
+	font-weight: bold;
 }
 
 .cart-total a:hover{
