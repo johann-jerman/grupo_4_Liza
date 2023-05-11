@@ -10,8 +10,14 @@ module.exports = {
     */
     await queryInterface.bulkInsert('images', [
       {
-        image: ''
-      }
+        image: '1.1.RemeraRosa.jpg'//1
+      },
+      {
+        image: '1.2.RemeraRosa.jpg'//2
+      },
+      {
+        image: '1.3.RemeraRosa.jpg'//3
+      },
     ], {});
   },
 

@@ -13,6 +13,14 @@ module.exports = {
         image_id: 1,
         product_id: 1,
       },
+      {
+        image_id: 2,
+        product_id: 1,
+      },
+      {
+        image_id: 3,
+        product_id: 1,
+      },
       
     ], {});
   },

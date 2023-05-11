@@ -10,13 +10,13 @@ module.exports = {
     */
     await queryInterface.bulkInsert('products', [
       {
-        name: '',//1
+        name: 'Remera rosa para mujer',//1
         care: null,
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, autem dolorum! Eius veniam maiores accusamus adipisci eligendi, architecto ab quidem molestiae provident dolorem tempore, laboriosam totam velit! Consequuntur, ipsa ex?',
-        price: 2000,
-        offer: 0,
+        price: 5000,
+        offer: 5,
         stock: 10,
-        category_id: 1
+        category_id: 2
       }
     ], {});
   },

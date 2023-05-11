@@ -10,7 +10,15 @@ module.exports = {
     */
     await queryInterface.bulkInsert('size_products', [
       {
-        size_id: 1,
+        size_id: 2,
+        product_id: 1,
+      },
+      {
+        size_id: 5,
+        product_id: 1,
+      },
+      {
+        size_id: 6,
         product_id: 1,
       },
       

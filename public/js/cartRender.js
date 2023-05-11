@@ -16,11 +16,15 @@ const  renderCart = async ()  => {
     let total = 0    
     let totalWithDiscounts = 0    
     let dataProduct = await getProducts()
+// console.log(dataProduct);
 
     dataProduct.forEach(product => {
         let img = product.data.data.image[0].image
-        total +=  product.data.data.price * product.quantity ;
-        totalWithDiscounts +=  total * product.data.data.offer / 100  ;
+        let price = product.data.data.price
+        let offer = product.data.data.offer
+        let quantity = product.quantity
+        total +=  price * quantity ;
+        totalWithDiscounts +=  Math.ceil( price * quantity - price* quantity * offer / 100 );
 
         productConteiner.innerHTML += 
         ` 
@@ -32,7 +36,7 @@ const  renderCart = async ()  => {
                     $  ${ product.data.data.price * product.quantity  } 
                     </h2>
                     <h2 class="product-offer">${product.data.data.offer}%  : Total
-                    ${ Math.ceil( product.data.data.price * product.quantity * product.data.data.offer / 100 ) }
+                    ${ Math.ceil( price * quantity - price* quantity * offer / 100 ) }
                     </h2>
                     <p class="product-quantity">Cantidad: 
                     <i class="fa-solid fa-arrow-left" data-id="${product.data.data.id}" id="subtract-quantity"></i>

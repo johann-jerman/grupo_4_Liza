@@ -10,25 +10,25 @@ module.exports = {
     */
     await queryInterface.bulkInsert('sizes', [
       {
-        size: 'XS'
+        size: 'XS'//1
       },
       {
-        size: 'S'
+        size: 'S'//2
       },
       {
-        size: 'M'
+        size: 'M'//3
       },
       {
-        size: 'L'
+        size: 'L'//4
       },
       {
-        size: 'XL'
+        size: 'XL'//5
       },
       {
-        size: 'XXL'
+        size: 'XXL'//6
       },
       {
-        size: 'XXXL'
+        size: 'XXXL'//7
       },
     ], {});
   },
