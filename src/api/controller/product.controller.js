@@ -78,7 +78,29 @@ const apiProductController = {
             res.json(error);
         }
 
-    } 
+    },
+    category: async(req, res) => {
+        try {
+            let categoryProducts = await db.CategoryProduct.findAll({
+                include: [
+                    {
+                        association: 'product',
+                        attributes: ['id', 'name'],
+                        order: [
+                            ['name', 'ASC']
+                        ]
+                    }
+                ]
+            }) 
+            res.json({
+                categoryProducts
+            })
+        } catch (error) {
+            console.log(error);
+            res.json({error})
+        }
+    }
+
 };
 
 module.exports = apiProductController

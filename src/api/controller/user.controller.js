@@ -10,6 +10,9 @@ const apiUserController = {
         try {
             let users = await User.findAll({
                 attributes: ['id', 'name', 'lastname', 'email', 'image', 'created_at'],
+                order: [
+                    ['created_at', 'DESC']
+                ],
                 include: [
                     {
                         association: 'userCategory',
@@ -34,7 +37,7 @@ const apiUserController = {
     getByPk : async (req, res) => {
         try {
             let {id} = req.params
-            let user = await db.User.findByPk(id)
+            let user = await User.findByPk(id)
 
             res.status(200).json({
                 status: 200,
