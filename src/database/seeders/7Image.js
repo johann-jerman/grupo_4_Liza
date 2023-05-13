@@ -205,6 +205,93 @@ module.exports = {
       {
         image: '4.11.CamperaDepRoja.jpeg'//65
       },
+
+      {
+        image: '1.1.RemeraHombBlanca.jpg'//66
+      },
+      {
+        image: '1.2.RemeraHombBlanca.jpg'//67
+      },
+      {
+        image: '1.3.RemeraHombBlanca.jpg'//68
+      },
+      {
+        image: '1.4.RemeraHombGris.jpg'//69
+      },
+      {
+        image: '1.5.RemeraHombGris.jpg'//70
+      },
+      {
+        image: '1.6.RemeraHombGris.jpg'//71
+      },
+      {
+        image: '1.7.RemeraHombRosa.jpg'//72
+      },
+      {
+        image: '1.8.RemeraHombRosa.jpg'//73
+      },
+      {
+        image: '1.9.RemeraHombBordo.jpg'//74
+      },
+      {
+        image: '1.10.RemeraHombBordo.jpg'//75
+      },
+      {
+        image: '1.11.RemeraHombBordo.jpg'//76
+      },
+      {
+        image: '3.4.CamperaDepAzul.jpg'//77
+      },
+      {
+        image: '3.5.CamperaDepAzul.jpg'//78
+      },
+      {
+        image: '3.6.CamperaDepAzul.jpg'//79
+      },
+      {
+        image: '3.7.CamperaDepVizon.jpg'//80
+      },
+      {
+        image: '3.8.CamperaDepVizon.jpg'//81
+      },
+      {
+        image: '3.10.CamperaDepNegra.jpg'//82
+      },
+      {
+        image: '3.11.CamperaDepNegra.jpg'//83
+      },
+      {
+        image: '3.12.CamperaDepNegra.jpg'//84
+      },
+
+      {
+        image: '4.1.PantalonDepVerde.jpg'//85
+      },
+      {
+        image: '4.2.PantalonDepVerde.jpg'//86
+      },
+      {
+        image: '4.3.PantalonDepVerde.jpg'//87
+      },
+      {
+        image: '4.4.PantalonDepNegro.jpg'//88
+      },
+      {
+        image: '4.5.PantalonDepNegro.jpg'//89
+      },
+      {
+        image: '4.6.PantalonDepNegro.jpg'//90
+      },
+      {
+        image: '4.7.PantalonDepGris.jpg'//91
+      },
+      {
+        image: '4.8.PantalonDepGris.jpg'//92
+      },
+      {
+        image: '4.9.PantalonDepGris.jpg'//93
+      },
+
     ], {});
   },
 

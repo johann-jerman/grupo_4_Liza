@@ -201,6 +201,86 @@ module.exports = {
         size_id: 6,
         product_id: 22,
       },
+      {
+        size_id: 4,
+        product_id: 23,
+      },
+      {
+        size_id: 2,
+        product_id: 23,
+      },
+      {
+        size_id: 4,
+        product_id: 24,
+      },
+      {
+        size_id: 2,
+        product_id: 24,
+      },
+      {
+        size_id: 4,
+        product_id: 25,
+      },
+      {
+        size_id: 2,
+        product_id: 25,
+      },
+      {
+        size_id: 4,
+        product_id: 26,
+      },
+      {
+        size_id: 2,
+        product_id: 26,
+      },
+      {
+        size_id: 4,
+        product_id: 27,
+      },
+      {
+        size_id: 2,
+        product_id: 27,
+      },
+      {
+        size_id: 4,
+        product_id: 28,
+      },
+      {
+        size_id: 2,
+        product_id: 28,
+      },
+      {
+        size_id: 4,
+        product_id: 29,
+      },
+      {
+        size_id: 2,
+        product_id: 29,
+      },
+      {
+        size_id: 4,
+        product_id: 30,
+      },
+      {
+        size_id: 2,
+        product_id: 30,
+      },
+      {
+        size_id: 4,
+        product_id: 31,
+      },
+      {
+        size_id: 2,
+        product_id: 31,
+      },
+      {
+        size_id: 4,
+        product_id: 32,
+      },
+      {
+        size_id: 2,
+        product_id: 32,
+      },
       
     ], {});
   },

@@ -185,6 +185,106 @@ module.exports = {
         color_id: 2,
         product_id: 22,
       },
+      {
+        color_id: 9,
+        product_id: 23,
+      },
+      {
+        color_id: 7,
+        product_id: 23,
+      },
+      {
+        color_id: 9,
+        product_id: 24,
+      },
+      {
+        color_id: 7,
+        product_id: 24,
+      },
+      {
+        color_id: 2,
+        product_id: 25,
+      },
+      {
+        color_id: 5,
+        product_id: 25,
+      },
+      {
+        color_id: 6,
+        product_id: 25,
+      },
+      {
+        color_id: 2,
+        product_id: 26,
+      },
+      {
+        color_id: 5,
+        product_id: 26,
+      },
+      {
+        color_id: 6,
+        product_id: 26,
+      },
+      {
+        color_id: 1,
+        product_id: 27,
+      },
+      {
+        color_id: 10,
+        product_id: 27,
+      },
+      {
+        color_id: 7,
+        product_id: 28,
+      },
+      {
+        color_id: 8,
+        product_id: 28,
+      },
+      {
+        color_id: 9,
+        product_id: 28,
+      },
+      {
+        color_id: 7,
+        product_id: 29,
+      },
+      {
+        color_id: 8,
+        product_id: 29,
+      },
+      {
+        color_id: 9,
+        product_id: 29,
+      },
+      {
+        color_id: 3,
+        product_id: 30,
+      },
+      {
+        color_id: 7,
+        product_id: 31,
+      },
+      {
+        color_id: 8,
+        product_id: 31,
+      },
+      {
+        color_id: 9,
+        product_id: 31,
+      },
+      {
+        color_id: 7,
+        product_id: 32,
+      },
+      {
+        color_id: 8,
+        product_id: 32,
+      },
+      {
+        color_id: 9,
+        product_id: 32,
+      },
       
     ], {});
   },

@@ -207,6 +207,96 @@ module.exports = {
         stock: 10,
         category_id: 2
       },
+      {
+        name: 'Remera para hombre',//23
+        care: null,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, autem dolorum! Eius veniam maiores accusamus adipisci eligendi, architecto ab quidem molestiae provident dolorem tempore, laboriosam totam velit! Consequuntur, ipsa ex?',
+        price: 4000,
+        offer: 7,
+        stock: 5,
+        category_id: 1
+      },
+      {
+        name: 'Remera para hombre',//24
+        care: null,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, autem dolorum! Eius veniam maiores accusamus adipisci eligendi, architecto ab quidem molestiae provident dolorem tempore, laboriosam totam velit! Consequuntur, ipsa ex?',
+        price: 4000,
+        offer: 7,
+        stock: 5,
+        category_id: 1
+      },
+      {
+        name: 'Remera para hombre',//25
+        care: null,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, autem dolorum! Eius veniam maiores accusamus adipisci eligendi, architecto ab quidem molestiae provident dolorem tempore, laboriosam totam velit! Consequuntur, ipsa ex?',
+        price: 4000,
+        offer: 7,
+        stock: 5,
+        category_id: 1
+      },
+      {
+        name: 'Remera para hombre',//26
+        care: null,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, autem dolorum! Eius veniam maiores accusamus adipisci eligendi, architecto ab quidem molestiae provident dolorem tempore, laboriosam totam velit! Consequuntur, ipsa ex?',
+        price: 4000,
+        offer: 7,
+        stock: 5,
+        category_id: 1
+      },
+      {
+        name: 'Campera para hombre',//27
+        care: null,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, autem dolorum! Eius veniam maiores accusamus adipisci eligendi, architecto ab quidem molestiae provident dolorem tempore, laboriosam totam velit! Consequuntur, ipsa ex?',
+        price: 4000,
+        offer: 7,
+        stock: 5,
+        category_id: 1
+      },
+      {
+        name: 'Campera para hombre',//28
+        care: null,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, autem dolorum! Eius veniam maiores accusamus adipisci eligendi, architecto ab quidem molestiae provident dolorem tempore, laboriosam totam velit! Consequuntur, ipsa ex?',
+        price: 4000,
+        offer: 7,
+        stock: 5,
+        category_id: 1
+      },
+      {
+        name: 'Campera para hombre',//29
+        care: null,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, autem dolorum! Eius veniam maiores accusamus adipisci eligendi, architecto ab quidem molestiae provident dolorem tempore, laboriosam totam velit! Consequuntur, ipsa ex?',
+        price: 4000,
+        offer: 7,
+        stock: 5,
+        category_id: 1
+      },
+      {
+        name: 'Pantalon para hombre',//30
+        care: null,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, autem dolorum! Eius veniam maiores accusamus adipisci eligendi, architecto ab quidem molestiae provident dolorem tempore, laboriosam totam velit! Consequuntur, ipsa ex?',
+        price: 4000,
+        offer: 7,
+        stock: 5,
+        category_id: 1
+      },
+      {
+        name: 'Pantalon para hombre',//31
+        care: null,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, autem dolorum! Eius veniam maiores accusamus adipisci eligendi, architecto ab quidem molestiae provident dolorem tempore, laboriosam totam velit! Consequuntur, ipsa ex?',
+        price: 4000,
+        offer: 7,
+        stock: 5,
+        category_id: 1
+      },
+      {
+        name: 'Pantalon para hombre',//32
+        care: null,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, autem dolorum! Eius veniam maiores accusamus adipisci eligendi, architecto ab quidem molestiae provident dolorem tempore, laboriosam totam velit! Consequuntur, ipsa ex?',
+        price: 4000,
+        offer: 7,
+        stock: 5,
+        category_id: 1
+      },
     ], {});
   },
 

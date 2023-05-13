@@ -269,6 +269,118 @@ module.exports = {
         image_id: 65,
         product_id: 22,
       },
+      {
+        image_id: 66,
+        product_id: 23,
+      },
+      {
+        image_id: 67,
+        product_id: 23,
+      },
+      {
+        image_id: 68,
+        product_id: 23,
+      },
+      {
+        image_id: 69,
+        product_id: 24,
+      },
+      {
+        image_id: 70,
+        product_id: 24,
+      },
+      {
+        image_id: 71,
+        product_id: 24,
+      },
+      {
+        image_id: 72,
+        product_id: 25,
+      },
+      {
+        image_id: 73,
+        product_id: 25,
+      },
+      {
+        image_id: 74,
+        product_id: 26,
+      },
+      {
+        image_id: 75,
+        product_id: 26,
+      },
+      {
+        image_id: 76,
+        product_id: 26,
+      },
+      {
+        image_id: 77,
+        product_id: 27,
+      },
+      {
+        image_id: 78,
+        product_id: 27,
+      },
+      {
+        image_id: 79,
+        product_id: 27,
+      },
+      {
+        image_id: 80,
+        product_id: 28,
+      },
+      {
+        image_id: 81,
+        product_id: 28,
+      },
+      {
+        image_id: 82,
+        product_id: 29,
+      },
+      {
+        image_id: 83,
+        product_id: 29,
+      },
+      {
+        image_id: 84,
+        product_id: 29,
+      },
+      {
+        image_id: 85,
+        product_id: 30,
+      },
+      {
+        image_id: 86,
+        product_id: 30,
+      },
+      {
+        image_id: 87,
+        product_id: 30,
+      },
+      {
+        image_id: 88,
+        product_id: 31,
+      },
+      {
+        image_id: 89,
+        product_id: 31,
+      },
+      {
+        image_id: 90,
+        product_id: 31,
+      },
+      {
+        image_id: 91,
+        product_id: 32,
+      },
+      {
+        image_id: 92,
+        product_id: 32,
+      },
+      {
+        image_id: 93,
+        product_id: 32,
+      },
       
     ], {});
   },
