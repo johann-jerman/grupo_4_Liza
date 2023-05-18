@@ -57,6 +57,30 @@ const mainController = {
         }
         
     },
+    cart: async (req, res) =>{
+        try {
+            // console.log(req.body);
+            if(!req.session.userLogged && !req.session.admin) {
+                return res.status(404).json({
+                    status: 404,
+                    data: 'usuario no logeado'
+                })
+            }
+            
+            
+            res.json({
+                status: 200,
+                data: 'ok',
+                persona: req.session.userLogged || req.session.admin
+            })
+            
+        } catch (error) {
+            console.log(error);
+            res.status(400).json({
+                error
+            })
+        }
+    }
 
 };
 
