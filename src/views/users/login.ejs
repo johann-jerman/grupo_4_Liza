@@ -3,63 +3,65 @@
 
 <%- include('../partials/head') %>
 
-</head>
-<body>
-  <main>
-  <%- include('../partials/header') %>
-    <!-- elegi una opcion para entrar hasta ingresar con contraseña -->
-    
-    <!-- form con usuario y password -->
-    <form id="form" action="/user/login" method="post" class="register-form"  >
-      <h3 class="register-tittle">Ingresar con Contraseña</h3>
-      <label for="email" class="register-label">Nombre de usuario:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="nombre de usuario"
-        class="register-input"
-      />
+  </head>
 
-      <% if (locals.error && error.email) { %>
-       <p><%= error.email.msg %></p>
-      <% } %>
+  <body>
 
-      <label for="password" class="register-label">Contraseña:</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        placeholder="contraseña"
-        class="register-input"
-      />
+    <main>
 
-      <% if (locals.error && error.password) { %>
-        <p><%= error.password.msg %></p>
-       <% } %>
+      <%- include('../partials/header') %>
+        <!-- elegi una opcion para entrar hasta ingresar con contraseña -->
+        <div class="content_login">
+          <Div class="imagen-woman">
+            <img src="/images/Login.jpg" alt="">            
+          </Div>          
+          <!-- form con usuario y password -->
+          <Div class="fondo-derecho">
+          <form id="form" action="/user/login" method="post" class="register-form">
+            <h3 class="register-tittle">Ingresar con Contraseña</h3>
+            <label for="email" class="register-label">Nombre de usuario:</label>
+            <input type="email" id="email" name="email" placeholder="nombre de usuario" class="register-input" />
 
-      <% if (locals.error && error.campo) { %>
-       <p><%= error.campo.msg %></p>
-      <% } %>
-        
-      <div class="cookie-div">
-        <input type="checkbox" 
-        name="rememberme" 
-        class="login-cookie" 
-        id="rememberme">
-        <p>Recordame</p>
-      </div>
+            <% if (locals.error && error.email) { %>
+              <p>
+                <%= error.email.msg %>
+              </p>
+              <% } %>
 
-      
-      <button type="submit" class="submit">Iniciar sesion</button>
-      <div class="ancor-conteiner">
-        <a href="/user/register" class="register-tologin">Crear cuenta</a>
-      </div>
-    </form>
-  </main>
+                <label for="password" class="register-label">Contraseña:</label>
+                <input type="password" id="password" name="password" placeholder="contraseña" class="register-input" />
 
-<%- include('../partials/footer') %>    
-<script src="/js/loginValidation.js"></script>
-<script src="/js/userFunction.js"></script>
-</body>
+                <% if (locals.error && error.password) { %>
+                  <p>
+                    <%= error.password.msg %>
+                  </p>
+                  <% } %>
+
+                    <% if (locals.error && error.campo) { %>
+                      <p>
+                        <%= error.campo.msg %>
+                      </p>
+                      <% } %>
+
+                        <div class="cookie-div">
+                          <input type="checkbox" name="rememberme" class="login-cookie" id="rememberme">
+                          <p>Recordame</p>
+                        </div>
+
+
+                        <button type="submit" class="submit">Iniciar sesion</button>
+                        <div class="ancor-conteiner">
+                          <a href="/user/register" class="register-tologin">Crear cuenta</a>
+                        </div>
+                      </Div>
+          </form>
+        </div>
+
+    </main>
+
+    <%- include('../partials/footer') %>
+      <script src="/js/loginValidation.js"></script>
+      <script src="/js/userFunction.js"></script>
+  </body>
+
 </html>

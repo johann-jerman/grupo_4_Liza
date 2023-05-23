@@ -20,6 +20,16 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
+.amarillo{
+  display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.amarillo img {
+  max-width: 100%; 
+  max-height: 100%; 
+  display: block;
+}
 
 /* aca comienza el main  */
 .register-form {
@@ -33,6 +43,7 @@
   align-items: center;
   border-radius: 30px;
 }
+
 
 .register-form .register-label {
   justify-content: flex-start;

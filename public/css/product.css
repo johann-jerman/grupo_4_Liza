@@ -326,14 +326,6 @@ h4 {
   font-size: 16px;
 }
 
-@media (max-width: 425px){
-  .index-section2 {
-    display: grid;
-      grid-template-columns: 1fr;
-      grid-row: auto;  
-       
-  }
-}
 
 @media (min-width: 768px) {
   
@@ -352,14 +344,8 @@ h4 {
     height: 100%;
     max-width: 600px;
     max-height: 600px;
-
   }
-  .index-section2 {
-    display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-row: auto;  
-       
-  }
+  
   .product-viewer{
     display: flex;
     flex-direction: column;
@@ -398,14 +384,10 @@ h4 {
     background-color: #3f3f3f;
     margin: 0px 10px 0px 10px;
   }
-  .index-section2 {
-    display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-row: auto;  
-       
-  }
+  
   
 }
+
 
 @media (min-width: 1024px) {
   /* aca empieza el main  */
@@ -418,3 +400,19 @@ h4 {
   } */
   
 }
+@media (max-width: 768px) {
+  .index-section2 {
+  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: auto;         
+}
+}
+
+@media (max-width: 425px){
+  .index-section2 {
+    display: grid;
+      grid-template-columns: 1fr;
+      grid-row: auto;  
+       
+  }
+ }

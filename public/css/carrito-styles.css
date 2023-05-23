@@ -60,10 +60,12 @@ a {
 	padding: 20px;
 	width: 100%;
 	position: relative;
+	color: white;
 }
 
 .product-name, .product-price, .product-offer{
 	margin-bottom: 20px;
+	color: white;
 }
 
 .product-remove{
@@ -71,17 +73,20 @@ a {
 	bottom: 20px;
 	right: 20px;
 	padding: 10px 25px;
-	background-color: red;
-	color: white;
+	background-color: #ffdf68;
+	color: #3f3f3f;
 	cursor: pointer;
 	border-radius: 5px;
 }
-
+.fa.fa-trash:before {
+    content: "\f2ed";
+    color: #3f3f3f;
+}
 .product-remove:hover{
-	background-color: white;
-	color: red;
+	background-color: #3f3f3f;
+	color: #ffdf68;
 	font-weight: 600;
-	border: 1px solid red;
+	border: 1px solid #ffdf68;
 }
 
 .product-quantity > input{
