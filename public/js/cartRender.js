@@ -10,6 +10,7 @@ const shoppingCart = async () => {
     
     let total = await renderCart()
     statsCart(total)
+    
 }
 
 const  renderCart = async ()  => {
@@ -74,12 +75,12 @@ const statsCart = ( total ) => {
             <span>Productos</span>
             <span>${totalProducts}</span>
         </p>
-        <a href="#">Comprar</a>
+        <a id="buy-btn">Comprar</a>
         <a  id="delete-cart">Vaciar carrito</a>
     `
 
 }
- 
+
 
 
 //<article class="container"> </article>

@@ -10,6 +10,9 @@ const apiUserController = {
         try {
             let users = await User.findAll({
                 attributes: ['id', 'name', 'lastname', 'email', 'image', 'created_at'],
+                order: [
+                    ['created_at', 'DESC']
+                ],
                 include: [
                     {
                         association: 'userCategory',
@@ -31,10 +34,33 @@ const apiUserController = {
             })  
         }
     },
+    getLast: async (req, res)=> {
+        try {
+            let user = await User.findOne({
+                attributes: ['id', 'name', 'lastname', 'email', 'image', 'created_at'],
+                order: [
+                    ['created_at', 'DESC']
+                ]
+            })
+
+            res.status(200).json({
+                status: 200,
+                data: user
+            })
+        } catch (error) {
+            res.status(400).json({
+                status: 400,
+                data: error,
+                a: 'esto es un error'
+            })
+        }
+    },
     getByPk : async (req, res) => {
         try {
             let {id} = req.params
-            let user = await db.User.findByPk(id)
+            let user = await User.findByPk(id, {
+                attributes: ['id', 'image', 'name', 'lastname', 'email', 'created_at']
+            })
 
             res.status(200).json({
                 status: 200,

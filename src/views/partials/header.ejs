@@ -37,7 +37,7 @@
         </a>
       </div>
       <!-- icono User -->
-      <% if (!locals.logged) { %>
+      <% if (!locals.logged && !locals.admin) { %>
       <div class="user">
         <a href="/user/login">
           <i class="fa-solid fa-user"></i>
@@ -46,13 +46,13 @@
       <% } %> <% if (locals.logged) { %>
       <div class="user">
         <a href="/user/profile">
-          <i class="fa-solid fa-user"></i>
+          <img class="icon" src="/images/users/<%= locals.userLogged.image %>" alt="imagen de usuario">
         </a>
       </div>
       <% } %> <% if (locals.isAdmin) { %>
-      <div class="user">
-        <a href="/user/admin">
-          <i class="fa-solid fa-user"></i>
+        <div class="user">
+          <a href="/user/admin">
+            <img class="icon" src="/images/users/<%= locals.admin.image %>" alt="imagen de usuario">
         </a>
       </div>
       <% } %>

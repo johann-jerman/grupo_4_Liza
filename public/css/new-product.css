@@ -1,13 +1,14 @@
 .main {
     
     display: flex;
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
     align-items: center;
     background-image: url(../images/fondo-form.jpg);
+    background-repeat: repeat;
     background-image: fixed;
     background-image: center;
-    -webkit-background-size: cover;
+    /* -webkit-background-size: cover; */
     -moz-background-size: cover;
     -o-background-size: cover;
     font-family: "Montserrat", sans-serif;
@@ -34,7 +35,8 @@
     width: 300px;
     margin: 20px 0;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
     align-items: center;
   }
   
@@ -42,7 +44,16 @@
     font-weight: bold;
     margin-bottom: 10px;
   }
-  
+  .size{
+    width: 153px;
+    height: 27px;
+    margin: 5px;
+  }
+  .color{
+    width: 153px;
+    height: 27px;
+    margin: 5px;
+  }
   input[type="text"],
   textarea,
   select,
@@ -52,6 +63,15 @@
     border-radius: 5px;
     border: 1px solid gray;
     font-size: 18px;
+  }
+  .img{
+    width: 80%;
+    max-width: 600px;
+    max-height: 600px;
+    object-fit: contain;
+  }
+  .edit-btn{
+    width: 100%;
   }
   
   .edit-btn,

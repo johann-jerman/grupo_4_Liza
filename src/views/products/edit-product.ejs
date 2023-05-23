@@ -20,6 +20,10 @@
           <label for="description">Descripción:</label>
           <textarea id="description" name="description"><%= producto.description %></textarea>
         </div>
+        <div class="form-group">
+          <label for="price">Precio:</label>
+          <input type="text" id="price" name="price" value="<%= producto.price %>">
+        </div>
         
         
         <div class="form-group">
@@ -36,38 +40,38 @@
           </select>
         </div>
         
+        <label for="size">Talla:</label>
         <div class="form-group">
-          <label for="size">Talla:</label>
           <% size.forEach(size => { %>
-            <input type="checkbox" name="size" value="<%=size.id%>" id=""><%= size.size %>
+            <input type="checkbox" class="size" name="size" value="<%=size.id%>" id=""><%= size.size %>
           <% }) %>
           </select>
         </div>
+        <label for="color">Colores:</label>
         <div class="form-group">
-          <label for="color">Colores:</label>
           <% color.forEach(color => { %>
-            <input type="checkbox" name="color" value="<%=color.id%>" id=""><%= color.color %>
+            <input type="checkbox" class="color" name="color" value="<%=color.id%>" id=""><%= color.color %>
           <% }) %>
         </select>
       </div>
       
-      <div class="form-group">
-        <label for="price">Precio:</label>
-        <input type="text" id="price" name="price" value="<%= producto.price %>">
-      </div>
+      
       
       <button type="submit" class="add-btn">Add</button>
     </div>
   </form>
-  <div class="form-group">
+  <!-- form-group -->
+  <div class="
+      paint
+   " >
     <% producto.image.forEach(image => { %>
-      <img src="/images/products/<%= image.image %>?_method=put" alt="<%= image.image %>">
+      <img class="img" src="/images/products/<%= image.image %>?_method=put" alt="<%= image.image %>">
       <form action="/productFile/edit/<%= image.id %>" method="post" enctype="multipart/form-data">
         <input type="file" name="image">
-        <button type="submit">Editar</button>
+        <button class="edit-btn" type="submit">Editar</button>
       </form>
       <form action="/productFile/delete/<%= image.id %>?_method=delete" method="post">
-        <button type="submit">Delete</button>
+        <button class="edit-btn" type="submit">Delete</button>
       </form>
     <% }) %>
   </div>

@@ -124,8 +124,30 @@ const productController = {
                 size
             })   
         }
-        
-        console.log(req.body.offer);
+        // let productExist = await db.Product.finaAll({
+        //     where: {
+        //         name: req.body.name
+        //     }
+        // })
+
+        // if (productExist) {
+        //     let color = await db.Color.findAll();
+        //     let category = await db.CategoryProduct.findAll();
+        //     let size = await db.Size.findAll();
+
+        //     return res.render('./products/new-product',{
+        //         css: '/css/new-product.css',
+        //         error : {
+        //             name: {
+        //                 msg: 'no pueden existir 2 campos iguales'
+        //             }
+        //         },
+        //         oldBody: req.body,
+        //         color,
+        //         category,
+        //         size
+        //     })   
+        // }
 
         try {
             let files = req.files

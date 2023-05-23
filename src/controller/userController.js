@@ -155,7 +155,7 @@ const userController = {
     profile : (req, res) => {
         res.render('./users/profile', {
             css : '/css/profile.css' ,
-            user : req.session.userLogged
+            user : req.session.userLogged || req.session.admin
         });
     },
 

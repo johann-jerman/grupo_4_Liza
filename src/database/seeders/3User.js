@@ -89,6 +89,22 @@ module.exports = {
         image:  'usuarioDefault.png',
         user_category_id: 1
       },
+      {
+        name: 'Tincho',
+        lastname: 'El Jefe',
+        password: '$2b$10$fPhbLYjxkIVHEZEW1azXJOxVBJcnDyphyuETlUgKg/w3KUksxgiUi',
+        email:  'eljefe@gmail.com',
+        image:  'jefe.jpg',
+        user_category_id: 2
+      },
+      {
+        name: 'Rocio',
+        lastname: 'Anahi Alvarez',
+        password: '$2b$10$fPhbLYjxkIVHEZEW1azXJOxVBJcnDyphyuETlUgKg/w3KUksxgiUi',
+        email:  'ro@gmail.com',
+        image:  'ro.jpg',
+        user_category_id: 1
+      },
     ], {});
   },
 

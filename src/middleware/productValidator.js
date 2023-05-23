@@ -3,6 +3,7 @@ const path = require("path");
 const productValidator = [
     body("name")
         .isLength({min:5}).withMessage("minimo 5 caracteres"),
+        
     
     body("description")
         .isLength({max:355}).withMessage("maximo 100 caracteres"),

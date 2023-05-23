@@ -20,7 +20,11 @@
   place-content: center;
 }
 /* primera fila del header smarphone */
-
+.icon{
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
 .rows1 {
   display: flex;
   grid-area: rows1;

@@ -69,19 +69,19 @@
             <% } %>
         </div>
 
+        <label for="size">Talla:</label>
         <div class="form-group">
-          <label for="size">Talla:</label>
           <% size.forEach(size => { %>
-           <input type="checkbox" name="size" value="<%=size.id%> " id=""><%= size.size %>
+           <input type="checkbox" class="size" name="size" value="<%=size.id%> " id=""><%= size.size %>
           <% }) %>
           
         </div>
         
 
+        <label for="color">Color:</label>
         <div class="form-group">
-          <label for="color">Color:</label>
           <% color.forEach(color => { %>
-           <input type="checkbox" name="color" value="<%=color.id%> " id=""><%= color.color %>
+           <input type="checkbox" class="color" name="color" value="<%=color.id%> " id=""><%= color.color %>
           <% }) %>
           
         </div>

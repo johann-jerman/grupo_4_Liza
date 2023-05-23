@@ -73,7 +73,7 @@ const getProducts = async () => {
     let cart =  getCart()
     let data = await Promise.all (
         cart.map(async product => {
-            let req = await fetch(APIDetail + product.id);
+            let req = await fetch(APIDetail + product.id)
             let data = await req.json()
             return {
                 data,

@@ -37,6 +37,33 @@ const apiProductController = {
             })
         }
     },
+    getLast: async (req, res)=> {
+        try {
+            let product = await db.Product.findOne({
+                attributes: ['id', 'name', 'price', 'stock', 'offer', 'description', 'care'],
+                // order: [
+                //     ['created_at', 'DESC']
+                // ],
+                include: [
+                    {
+                        association: 'image',
+                        attributes:['id', 'image']
+                    },
+                ]
+            })
+
+            res.status(200).json({
+                status: 200,
+                data: product
+            })
+        } catch (error) {
+            res.status(400).json({
+                status: 400,
+                data: error,
+                a: 'esto es un error'
+            })
+        }
+    },
     detail :async(req, res) => {
         try {
             let id = req.params.id
@@ -78,7 +105,29 @@ const apiProductController = {
             res.json(error);
         }
 
-    } 
+    },
+    category: async(req, res) => {
+        try {
+            let categoryProducts = await db.CategoryProduct.findAll({
+                include: [
+                    {
+                        association: 'product',
+                        attributes: ['id', 'name'],
+                        order: [
+                            ['name', 'ASC']
+                        ]
+                    }
+                ]
+            }) 
+            res.json({
+                categoryProducts
+            })
+        } catch (error) {
+            console.log(error);
+            res.json({error})
+        }
+    }
+
 };
 
 module.exports = apiProductController
