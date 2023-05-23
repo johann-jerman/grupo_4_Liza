@@ -60,7 +60,15 @@ const mainController = {
             })
         }
         
+    },
+    contactanos: (req, res) => {
+        res.render ("contactanos",{
+            css: '/css/styles.css'
+        })
     }
+    
+
+
 
 };
 
