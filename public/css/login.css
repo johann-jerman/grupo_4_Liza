@@ -24,7 +24,9 @@
   display: grid;
     grid-template-columns: 1fr 1fr;
 }
-
+.input-error{
+  color: red;
+}
 .amarillo img {
   max-width: 100%; 
   max-height: 100%; 

@@ -55,7 +55,7 @@ module.exports = {
         category_id: 2
       },
       {
-        name: 'Buso Deportivo para mujer',//6
+        name: 'Buzo Deportivo para mujer',//6
         care: null,
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, autem dolorum! Eius veniam maiores accusamus adipisci eligendi, architecto ab quidem molestiae provident dolorem tempore, laboriosam totam velit! Consequuntur, ipsa ex?',
         price: 5000,
@@ -64,7 +64,7 @@ module.exports = {
         category_id: 2
       },
       {
-        name: 'Buso Deportivo para mujer',//7
+        name: 'Buzo Deportivo para mujer',//7
         care: null,
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, autem dolorum! Eius veniam maiores accusamus adipisci eligendi, architecto ab quidem molestiae provident dolorem tempore, laboriosam totam velit! Consequuntur, ipsa ex?',
         price: 5000,
@@ -73,7 +73,7 @@ module.exports = {
         category_id: 2
       },
       {
-        name: 'Buso Deportivo para mujer',//8
+        name: 'Buzo Deportivo para mujer',//8
         care: null,
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, autem dolorum! Eius veniam maiores accusamus adipisci eligendi, architecto ab quidem molestiae provident dolorem tempore, laboriosam totam velit! Consequuntur, ipsa ex?',
         price: 5000,
@@ -82,7 +82,7 @@ module.exports = {
         category_id: 2
       },
       {
-        name: 'Buso Deportivo para mujer',//9
+        name: 'Buzo Deportivo para mujer',//9
         care: null,
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, autem dolorum! Eius veniam maiores accusamus adipisci eligendi, architecto ab quidem molestiae provident dolorem tempore, laboriosam totam velit! Consequuntur, ipsa ex?',
         price: 5000,
@@ -91,7 +91,7 @@ module.exports = {
         category_id: 2
       },
       {
-        name: 'Buso Deportivo para mujer',//10
+        name: 'Buzo Deportivo para mujer',//10
         care: null,
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, autem dolorum! Eius veniam maiores accusamus adipisci eligendi, architecto ab quidem molestiae provident dolorem tempore, laboriosam totam velit! Consequuntur, ipsa ex?',
         price: 5000,
@@ -100,7 +100,7 @@ module.exports = {
         category_id: 2
       },
       {
-        name: 'Buso Deportivo para mujer',//11
+        name: 'Buzo Deportivo para mujer',//11
         care: null,
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, autem dolorum! Eius veniam maiores accusamus adipisci eligendi, architecto ab quidem molestiae provident dolorem tempore, laboriosam totam velit! Consequuntur, ipsa ex?',
         price: 5000,
@@ -109,7 +109,7 @@ module.exports = {
         category_id: 2
       },
       {
-        name: 'Buso Deportivo para mujer',//12
+        name: 'Buzo Deportivo para mujer',//12
         care: null,
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, autem dolorum! Eius veniam maiores accusamus adipisci eligendi, architecto ab quidem molestiae provident dolorem tempore, laboriosam totam velit! Consequuntur, ipsa ex?',
         price: 5000,

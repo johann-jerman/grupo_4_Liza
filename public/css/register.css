@@ -18,6 +18,12 @@
   grid-template-columns: 2fr 1fr;
   overflow: hidden;
 }
+.input-error{
+  color: red !important; 
+}
+.text-labe{
+  color: black !important;
+}
 .imagen-woman{
   display: flex;
   flex-direction: column;

@@ -25,6 +25,8 @@ router.post('/logout', userController.logout);
 // profile rutes
 router.get('/profile', guessMiddleware,  userController.profile);
 
+router.get('/urlruta', (req, res)=> res.send('hola ro y jose'))
+
 // admin routes
 router.get('/admin', adminMiddleware,userController.admin);
 

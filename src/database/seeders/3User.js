@@ -14,7 +14,7 @@ module.exports = {
         lastname: 'jerman',
         password: '$2b$10$fPhbLYjxkIVHEZEW1azXJOxVBJcnDyphyuETlUgKg/w3KUksxgiUi',
         email:  'johann@gmail.com',
-        image:  'usuarioDefault.png',
+        image:  'johann.jpeg',
         user_category_id: 1
       },
       {
@@ -22,7 +22,7 @@ module.exports = {
         lastname: 'jerman',
         password: '$2b$10$fPhbLYjxkIVHEZEW1azXJOxVBJcnDyphyuETlUgKg/w3KUksxgiUi',
         email:  'johannadmin@gmail.com',
-        image:  'usuarioDefault.png',
+        image:  'johann.jpeg',
         user_category_id: 2
       },
       {
@@ -30,7 +30,7 @@ module.exports = {
         lastname: 'Jaime',
         password: '$2b$10$fPhbLYjxkIVHEZEW1azXJOxVBJcnDyphyuETlUgKg/w3KUksxgiUi',
         email:  'jaime.r@gnail.com',
-        image:  'usuarioDefault.png',
+        image:  'romi.jpg',
         user_category_id: 2
       },
       {
@@ -38,7 +38,7 @@ module.exports = {
         lastname: 'Jaime',
         password: '$2b$10$fPhbLYjxkIVHEZEW1azXJOxVBJcnDyphyuETlUgKg/w3KUksxgiUi',
         email:  'romina.j@gmail.com',
-        image:  'usuarioDefault.png',
+        image:  'romi.jpg',
         user_category_id: 1
       },
       {
@@ -46,7 +46,7 @@ module.exports = {
         lastname: 'Cisternas',
         password: '$2b$10$fPhbLYjxkIVHEZEW1azXJOxVBJcnDyphyuETlUgKg/w3KUksxgiUi',
         email:  'jose.c@gmail.com',
-        image:  'usuarioDefault.png',
+        image:  'jose.jpg',
         user_category_id: 2
       },
       {
@@ -54,7 +54,7 @@ module.exports = {
         lastname: 'Cisternas',
         password: '$2b$10$fPhbLYjxkIVHEZEW1azXJOxVBJcnDyphyuETlUgKg/w3KUksxgiUi',
         email:  'josefina.c@gmail.com',
-        image:  'usuarioDefault.png',
+        image:  'jose.jpg',
         user_category_id: 1
       },
       {
@@ -103,6 +103,14 @@ module.exports = {
         password: '$2b$10$fPhbLYjxkIVHEZEW1azXJOxVBJcnDyphyuETlUgKg/w3KUksxgiUi',
         email:  'ro@gmail.com',
         image:  'ro.jpg',
+        user_category_id: 1
+      },
+      {
+        name: 'Mati',
+        lastname: 'Chaves',
+        password: '$2b$10$fPhbLYjxkIVHEZEW1azXJOxVBJcnDyphyuETlUgKg/w3KUksxgiUi',
+        email:  'mati@gmail.com',
+        image:  'mati.jpg',
         user_category_id: 1
       },
     ], {});

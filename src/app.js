@@ -52,10 +52,10 @@ app.use('/api/user', apiUserRoutes);
 app.use('/api/product', apiProductRoutes);
 app.use('/api/category', apiCategoryRoutes);
 
-// app.use((req, res, next)=>{
-//     res.status(404).render('error' , {css:null});
-//     next();
-// })
+app.use((req, res, next)=>{
+    res.status(404).render('error' , {css:null});
+    next();
+})
 
 
 app.listen(PORT, ()=>{

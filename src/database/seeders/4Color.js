@@ -22,7 +22,7 @@ module.exports = {
         color: 'naranja'//4
       },
       {
-        color: 'violata'//5
+        color: 'violeta'//5
       },
       {
         color: 'rosa'//6

@@ -61,14 +61,15 @@ main{
 
 ul.tabs {
 width: 100%;
-background-color: #147c8c;
+/* background-color: #147c8c; */
+background-color: #3F3F3F;
 border-radius: 10px;
 list-style: none;
 display: flex;
 justify-content: space-between;
 margin: 0px;
 padding: 0px;
-box-shadow: 2px 4px 3px #048484; 
+box-shadow: 2px 4px 3px #746F6F; 
 
 }
 
@@ -90,8 +91,8 @@ font-weight: bold;
     }
 
 .contenedor .li.activo {
-   background-color: #045c94;
-   box-shadow: 2px 4px 3px #045c94;
+   background-color: #3F3F3F;
+   box-shadow: 2px 4px 3px #3F3F3F;
 }
 
 .elementos-de-bloque {
