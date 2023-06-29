@@ -14,7 +14,8 @@ module.exports = {
         lastname: 'jerman',
         password: '$2b$10$fPhbLYjxkIVHEZEW1azXJOxVBJcnDyphyuETlUgKg/w3KUksxgiUi',
         email:  'johann@gmail.com',
-        image:  'johann.jpeg',
+        // image:  'johann.jpeg',
+        image:  'usuarioDefault.png',
         user_category_id: 1
       },
       {
@@ -22,7 +23,8 @@ module.exports = {
         lastname: 'jerman',
         password: '$2b$10$fPhbLYjxkIVHEZEW1azXJOxVBJcnDyphyuETlUgKg/w3KUksxgiUi',
         email:  'johannadmin@gmail.com',
-        image:  'johann.jpeg',
+        // image:  'johann.jpeg',
+        image:  'usuarioDefault.png',
         user_category_id: 2
       },
       {
@@ -30,7 +32,8 @@ module.exports = {
         lastname: 'Jaime',
         password: '$2b$10$fPhbLYjxkIVHEZEW1azXJOxVBJcnDyphyuETlUgKg/w3KUksxgiUi',
         email:  'jaime.r@gnail.com',
-        image:  'romi.jpg',
+        // image:  'romi.jpg',
+        image:  'usuarioDefault.png',
         user_category_id: 2
       },
       {
@@ -38,7 +41,8 @@ module.exports = {
         lastname: 'Jaime',
         password: '$2b$10$fPhbLYjxkIVHEZEW1azXJOxVBJcnDyphyuETlUgKg/w3KUksxgiUi',
         email:  'romina.j@gmail.com',
-        image:  'romi.jpg',
+        // image:  'romi.jpg',
+        image:  'usuarioDefault.png',
         user_category_id: 1
       },
       {
@@ -46,7 +50,8 @@ module.exports = {
         lastname: 'Cisternas',
         password: '$2b$10$fPhbLYjxkIVHEZEW1azXJOxVBJcnDyphyuETlUgKg/w3KUksxgiUi',
         email:  'jose.c@gmail.com',
-        image:  'jose.jpg',
+        // image:  'jose.jpg',
+        image:  'usuarioDefault.png',
         user_category_id: 2
       },
       {
@@ -54,7 +59,8 @@ module.exports = {
         lastname: 'Cisternas',
         password: '$2b$10$fPhbLYjxkIVHEZEW1azXJOxVBJcnDyphyuETlUgKg/w3KUksxgiUi',
         email:  'josefina.c@gmail.com',
-        image:  'jose.jpg',
+        // image:  'jose.jpg',
+        image:  'usuarioDefault.png',
         user_category_id: 1
       },
       {
@@ -94,7 +100,8 @@ module.exports = {
         lastname: 'El Jefe',
         password: '$2b$10$fPhbLYjxkIVHEZEW1azXJOxVBJcnDyphyuETlUgKg/w3KUksxgiUi',
         email:  'eljefe@gmail.com',
-        image:  'jefe.jpg',
+        // image:  'jefe.jpg',
+        image:  'usuarioDefault.png',
         user_category_id: 2
       },
       {
@@ -102,7 +109,8 @@ module.exports = {
         lastname: 'Anahi Alvarez',
         password: '$2b$10$fPhbLYjxkIVHEZEW1azXJOxVBJcnDyphyuETlUgKg/w3KUksxgiUi',
         email:  'ro@gmail.com',
-        image:  'ro.jpg',
+        // image:  'ro.jpg',
+        image:  'usuarioDefault.png',
         user_category_id: 1
       },
       {
@@ -110,7 +118,9 @@ module.exports = {
         lastname: 'Chaves',
         password: '$2b$10$fPhbLYjxkIVHEZEW1azXJOxVBJcnDyphyuETlUgKg/w3KUksxgiUi',
         email:  'mati@gmail.com',
-        image:  'mati.jpg',
+        // image:  'mati.jpg',
+        image:  'usuarioDefault.png',
+
         user_category_id: 1
       },
     ], {});
